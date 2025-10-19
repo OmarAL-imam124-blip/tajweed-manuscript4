@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مخطوطة التجويد الذهبية</title>
     <meta name="description" content="مخطوطة التجويد الذهبية: رحلة تفاعلية لتعلم وإتقان أحكام التجويد الأساسية. أداة مثالية لمعلمي وطلاب القرآن الكريم. إعداد: عمر بن عبدالحميد الإمام.">
-    <meta name="keywords" content="التجويد, أحكام التجويد, تعلم القرآن, نون ساكنة, مدود, مخارج الحروف, صفات الحروف, عمر الإمام">
+    <meta name="keywords" content="التجويد, أحكام التجويد, تعلم القرآن, نون ساكنة, مدود, مخارج الحروف, صفات الحروف, عمر الإمام, تحفة الأطفال">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
             font-family: 'Amiri', serif;
         }
 
-        #islamic-arch-background {
+        #islamic-background {
             position: fixed;
             top: 0;
             left: 0;
@@ -50,14 +50,14 @@
             height: 100%;
             z-index: -10;
             overflow: hidden;
+            background-color: #f5eeda; /* Fallback color */
+            background-image:
+                /* Subtle calligraphic pattern */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cpath d='M 50 10 C 80 150, 150 80, 180 290' stroke='%23442a29' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.08'/%3E%3Cpath d='M 10 200 C 100 50, 180 150, 290 10' stroke='%23442a29' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.08'/%3E%3Cpath d='M 290 200 C 150 50, 80 250, 10 290' stroke='%23442a29' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.08'/%3E%3C/svg%3E"),
+                /* Earthy gradient */
+                radial-gradient(circle at center, #f5eeda, #d7c8b8);
+            background-size: 300px, 100%;
         }
-
-        #islamic-arch-background svg {
-            width: 100%;
-            height: 100%;
-            /* FIX: Removed object-fit: cover to allow preserveAspectRatio to work correctly */
-        }
-
 
         .page-transition {
             transition: opacity 0.4s ease-out, transform 0.4s ease-out;
@@ -176,10 +176,8 @@
             max-width: 800px;
             overflow: hidden;
         }
-        .rule-card-header {
-            padding: 1rem 1.5rem;
-            background-color: #e9dcc3;
-            border-bottom: 1px solid var(--border-light);
+        .rule-card-header, .node.text-center {
+            position: relative;
         }
         .rule-card-body {
             padding: 1.5rem;
@@ -200,7 +198,7 @@
         .example-panel { background-color: var(--bg-manuscript); border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; text-align: right; animation: fadeIn 0.5s ease-in-out; border: 1px solid var(--border-light); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .example-title { font-weight: 700; color: var(--color-gold-dark); margin-bottom: 0.75rem; }
-        .example-item { font-size: 1.2rem; font-family: 'Amiri', serif; color: var(--ink-red); padding: 0.5rem 0; display: flex; align-items: center; justify-content: space-between; }
+        .example-item { font-size: 1.2rem; font-family: 'Amiri', serif; color: var(--text-dark); padding: 0.5rem 0; display: flex; align-items: center; justify-content: space-between; }
         .audio-icon { cursor: pointer; color: var(--color-gold-dark); margin-right: 1rem; background: none; border: none; font-size: 1.5rem;}
         .audio-icon:hover { color: var(--text-dark); }
         
@@ -456,31 +454,79 @@
             font-size: 0.9rem;
             z-index: 100;
         }
+
+        .poem-verse {
+            font-family: 'Amiri', serif;
+            background-color: rgba(0,0,0,0.03);
+            padding: 1rem;
+            border-right: 4px solid var(--color-gold);
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+            line-height: 2;
+        }
+
+        .tuhfa-card {
+            background-color: var(--bg-manuscript-dark);
+            border: 1px solid var(--border-light);
+            border-radius: .75rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .tuhfa-card-header {
+            padding: 1rem 1.5rem;
+            background-color: #e9dcc3;
+            border-bottom: 1px solid var(--border-light);
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+        .tuhfa-card-body {
+            padding: 1.5rem;
+        }
+        
+        .smart-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            background-color: var(--color-gold);
+            color: var(--text-dark);
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .smart-nav-btn:hover {
+            background-color: var(--color-gold-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .smart-nav-btn svg {
+            width: 1rem;
+            height: 1rem;
+        }
+        .back-to-tuhfa {
+            /* Removed absolute positioning to let it sit below the title */
+            margin-top: 1rem; /* Space below the title */
+            background-color: var(--bg-manuscript);
+            border: 1px solid var(--border-light);
+            border-radius: 0.5rem;
+            color: var(--text-dark);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .back-to-tuhfa:hover {
+            background-color: var(--bg-manuscript-dark);
+            border-color: var(--color-gold);
+            color: var(--text-dark);
+        }
     </style>
 </head>
 <body>
-    <div id="islamic-arch-background">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024" preserveAspectRatio="xMidYMin meet">
-            <defs>
-                <linearGradient id="bgGradient" x1="0.5" y1="0" x2="0.5" y2="1">
-                    <stop offset="0%" stop-color="#f5eeda" />
-                    <stop offset="100%" stop-color="#fbf8f0" />
-                </linearGradient>
-                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.3"/>
-                </filter>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#bgGradient)" />
-            <path d="M-10,0 H1450 V200 C1200,150 1000,250 720,250 C440,250 240,150 -10,200 V0 Z" fill="#442a29" />
-            <path d="M-10,0 H1450 V180 C1200,130 1000,230 720,230 C440,230 240,130 -10,180 V0 Z" fill="#c5a05d" />
-            <path d="M-10,0 H1450 V160 C1200,110 1000,210 720,210 C440,210 240,110 -10,160 V0 Z" fill="#442a29" />
-
-            <path filter="url(#shadow)" d="M720,550 C500,550 350,400 300,150 H1140 C1090,400 940,550 720,550 Z" fill="#fbf8f0"/>
-            <path d="M720,520 C550,520 420,420 380,200 H1060 C1020,420 890,520 720,520 Z" fill="#f5eeda"/>
-            <path d="M720,500 C600,500 500,450 450,250 H990 C940,450 840,500 720,500 Z" fill="#c5a05d" opacity="0.5"/>
-            <path d="M720,480 C686,480 656,474 628,462 C638,410 674,350 720,350 C766,350 802,410 812,462 C784,474 754,480 720,480 Z" fill="#fbf8f0"/>
-        </svg>
-    </div>
+    <div id="islamic-background"></div>
     
     <div id="intro-page" class="flex flex-col items-center justify-center min-h-screen text-center p-6 relative page-transition">
         <div class="max-w-3xl">
@@ -500,64 +546,64 @@
     <div id="main-content-area" class="hidden page-transition">
         <header id="main-header" class="p-2 md:p-3">
             <div class="header-content">
-                 <div class="header-controls">
-                     <button id="back-to-intro-btn" title="العودة للبداية" class="header-icon-btn">
-                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.47 3.84a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-.69-.69V21a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1-.75-.75v-6a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v6a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V11.71l-.69.69a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" /></svg>
-                     </button>
-                 </div>
-                 <div class="flex-1 text-center px-2">
-                     <h1 class="text-xl md:text-2xl font-bold title-font">مخطوطة التجويد الذهبية</h1>
-                     <p class="mt-1 text-sm text-amber-900/80 hidden md:block">
-                         إن لم تفهم قاعدة ما، فهذا الرابط هو مرجعك لسماع شرحها بالتفصيل: 
-                         <a href="https://youtube.com/playlist?list=PLJi21Zen45zQ-p3e38-Wb94LhDKIZ7sac&si=_E8KBiY304HEkqw3" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-amber-700 transition-colors">
-                             اضغط هنا
-                         </a>
-                     </p>
-                 </div>
-                 <div class="header-controls">
-                     <div id="search-container">
-                         <button id="search-btn" title="بحث" class="header-icon-btn">
-                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 5.293 14.293l4.414 4.414a1 1 0 0 0 1.414-1.414l-4.414-4.414A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12A6 6 0 0 1 10 4Z"/></svg>
-                         </button>
-                         <input type="search" id="search-bar" placeholder="ابحث..." class="p-2 rounded-md border-2 bg-white/80 border-amber-800/20 focus:border-amber-600 focus:ring-0 text-amber-900 placeholder-amber-900/50">
-                     </div>
-                     <button id="increase-font" title="تكبير الخط" class="header-icon-btn text-lg font-bold">A+</button>
-                     <button id="decrease-font" title="تصغير الخط" class="header-icon-btn text-sm font-bold">A-</button>
-                     <button id="contrast-toggle" title="وضع التباين" class="header-icon-btn">
-                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.106a.75.75 0 0 1 0 1.06l-1.591 1.59a.75.75 0 1 1-1.06-1.061l1.59-1.591a.75.75 0 0 1 1.061 0ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5h2.25a.75.75 0 0 1 .75.75ZM17.894 17.894a.75.75 0 0 1-1.06 0l-1.59-1.591a.75.75 0 1 1 1.06-1.06l1.591 1.59a.75.75 0 0 1 0 1.061ZM12 18a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.894a.75.75 0 0 1 0-1.06l1.59-1.591a.75.75 0 1 1 1.061 1.06l-1.59 1.591a.75.75 0 0 1-1.061 0ZM6.106 7.167a.75.75 0 0 1 1.06 0l1.591 1.59a.75.75 0 0 1-1.06 1.061L6.106 8.227a.75.75 0 0 1 0-1.061ZM3 12a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Z" /></svg>
-                     </button>
-                     <div class="flex flex-col items-center -space-y-1">
+                <div class="header-controls">
+                    <button id="back-to-intro-btn" title="العودة للبداية" class="header-icon-btn">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.47 3.84a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-.69-.69V21a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1-.75-.75v-6a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v6a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V11.71l-.69.69a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" /></svg>
+                    </button>
+                </div>
+                <div class="flex-1 text-center px-2">
+                    <h1 class="text-xl md:text-2xl font-bold title-font">مخطوطة التجويد الذهبية</h1>
+                    <p class="mt-1 text-sm text-amber-900/80 hidden md:block">
+                        إن لم تفهم قاعدة ما، فهذا الرابط هو مرجعك لسماع شرحها بالتفصيل: 
+                        <a href="https://youtube.com/playlist?list=PLJi21Zen45zQ-p3e38-Wb94LhDKIZ7sac&si=_E8KBiY304HEkqw3" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-amber-700 transition-colors">
+                            اضغط هنا
+                        </a>
+                    </p>
+                </div>
+                <div class="header-controls">
+                    <div id="search-container">
+                        <button id="search-btn" title="بحث" class="header-icon-btn">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 5.293 14.293l4.414 4.414a1 1 0 0 0 1.414-1.414l-4.414-4.414A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12A6 6 0 0 1 10 4Z"/></svg>
+                        </button>
+                        <input type="search" id="search-bar" placeholder="ابحث عن باب..." class="p-2 rounded-md border-2 bg-white/80 border-amber-800/20 focus:border-amber-600 focus:ring-0 text-amber-900 placeholder-amber-900/50">
+                    </div>
+                    <button id="increase-font" title="تكبير الخط" class="header-icon-btn text-lg font-bold">A+</button>
+                    <button id="decrease-font" title="تصغير الخط" class="header-icon-btn text-sm font-bold">A-</button>
+                    <button id="contrast-toggle" title="وضع التباين" class="header-icon-btn">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.106a.75.75 0 0 1 0 1.06l-1.591 1.59a.75.75 0 1 1-1.06-1.061l1.59-1.591a.75.75 0 0 1 1.061 0ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5h2.25a.75.75 0 0 1 .75.75ZM17.894 17.894a.75.75 0 0 1-1.06 0l-1.59-1.591a.75.75 0 1 1 1.06-1.06l1.591 1.59a.75.75 0 0 1 0 1.061ZM12 18a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.894a.75.75 0 0 1 0-1.06l1.59-1.591a.75.75 0 1 1 1.061 1.06l-1.59 1.591a.75.75 0 0 1-1.061 0ZM6.106 7.167a.75.75 0 0 1 1.06 0l1.591 1.59a.75.75 0 0 1-1.06 1.061L6.106 8.227a.75.75 0 0 1 0-1.061ZM3 12a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Z" /></svg>
+                    </button>
+                    <div class="flex flex-col items-center -space-y-1">
                         <button id="creator-info-toggle" title="عن المُعِدّ" class="header-icon-btn">
-                           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                               <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0V9Zm-1.5-1.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V7.5Z" clip-rule="evenodd"></path>
-                           </svg>
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0V9Zm-1.5-1.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V7.5Z" clip-rule="evenodd"></path>
+                            </svg>
                         </button>
                         <span class="text-[10px]" style="color: var(--text-dark);">لمحة عن المُعِدّ</span>
                     </div>
-                 </div>
+                </div>
             </div>
         </header>
 
         <div id="creator-info-panel" class="creator-panel">
             <div class="p-4 md:p-6 max-w-4xl mx-auto">
-                 <div class="text-right text-base md:text-lg space-y-3" style="color: var(--text-dark);">
+                <div class="text-right text-base md:text-lg space-y-3" style="color: var(--text-dark);">
                     <p class="font-bold text-xl md:text-2xl title-font text-center mb-2">عمر بن عبدالحميد الإمام</p>
                     <p class="text-center text-sm -mt-2 mb-4">مصري الجنسية</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">الإجازة:</strong> مجاز بقراءة الإمام عاصم الكوفي براوييه شعبة وحفص من طريق الشاطبية.</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">العمل:</strong> معلم أساسي في مدرسة القرآن الكريم.</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> صاحب فكرة ومحتوى هذه المخطوطة التعليمية، سعى لجعل تعلم التجويد رحلة ميسرة وممتعة.</p>
-                 </div>
+                </div>
                 <div class="text-center">
-                     <a href="https://wa.me/201003328748" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-base bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105">
-                         <span>تواصل عبر واتساب</span>
-                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6,14.2l-1.5-0.8c-0.4-0.2-1-0.1-1.3,0.2L12.5,15c-1.5-0.8-2.8-2.1-3.5-3.5l1.1-1.3c0.3-0.3,0.4-0.9,0.2-1.3 l-0.8-1.5c-0.2-0.5-0.8-0.8-1.4-0.6L4.8,7.3C4.3,7.4,4,7.9,4,8.5c0,5.8,4.7,10.5,10.5,10.5c0.6,0,1.1-0.3,1.3-0.8l0.6-1.9 C17.4,15,17.1,14.4,16.6,14.2z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z"></svg>
-                     </a>
+                    <a href="https://wa.me/201003328748" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-base bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105">
+                        <span>تواصل عبر واتساب</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6,14.2l-1.5-0.8c-0.4-0.2-1-0.1-1.3,0.2L12.5,15c-1.5-0.8-2.8-2.1-3.5-3.5l1.1-1.3c0.3-0.3,0.4-0.9,0.2-1.3 l-0.8-1.5c-0.2-0.5-0.8-0.8-1.4-0.6L4.8,7.3C4.3,7.4,4,7.9,4,8.5c0,5.8,4.7,10.5,10.5,10.5c0.6,0,1.1-0.3,1.3-0.8l0.6-1.9 C17.4,15,17.1,14.4,16.6,14.2z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z"></svg>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="progress-container mx-4 md:mx-auto">
             <div id="main-progress-bar" class="progress-bar"></div>
-            <p id="main-progress-text" class="progress-text">0 / 9</p>
+            <p id="main-progress-text" class="progress-text">0 / 10</p>
         </div>
         <div id="main-content-body">
             <!-- Content will be injected here -->
@@ -566,19 +612,19 @@
     </div>
 
     <div id="chapter-content" class="hidden page-transition">
-        <button id="back-to-hub" class="fixed top-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm border border-white/20 text-gray-800 shadow-lg transition-transform hover:scale-110 hover:bg-white/70">
+        <button id="back-to-hub" title="العودة للفهرس" class="fixed top-4 left-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/50 backdrop-filter: blur(5px) border border-white/20 text-gray-800 shadow-lg transition-transform hover:scale-110 hover:bg-white/70">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
         </button>
-         <div class="progress-container mx-4 md:mx-auto mt-4">
+        <div class="progress-container mx-4 md:mx-auto mt-4">
             <div id="chapter-progress-bar" class="progress-bar"></div>
-            <p id="chapter-progress-text" class="progress-text">0 / 9</p>
+            <p id="chapter-progress-text" class="progress-text">0 / 10</p>
         </div>
         <div id="chapter-body"></div>
         <div id="chapter-nav" class="flex justify-between w-full max-w-5xl mx-auto p-4 md:p-8">
-            <button id="prev-chapter-btn" class="chapter-nav-btn"> الباب السابق &rarr; </button>
-            <button id="next-chapter-btn" class="chapter-nav-btn"> &larr; الباب التالي </button>
+            <button id="prev-chapter-btn" class="chapter-nav-btn"> &larr; الباب السابق </button>
+            <button id="next-chapter-btn" class="chapter-nav-btn"> الباب التالي &rarr; </button>
         </div>
     </div>
     
@@ -587,45 +633,45 @@
             <footer class="text-center py-6 mt-10 border-t-2" style="border-color: var(--border-light);">
                 <p class="mb-4">انشر هذا العلم وشارك الأجر</p>
                 <div class="flex justify-center gap-4">
-                    <a id="share-whatsapp" href="#" class="p-3 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors">
+                    <a id="share-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6,14.2l-1.5-0.8c-0.4-0.2-1-0.1-1.3,0.2L12.5,15c-1.5-0.8-2.8-2.1-3.5-3.5l1.1-1.3c0.3-0.3,0.4-0.9,0.2-1.3 l-0.8-1.5c-0.2-0.5-0.8-0.8-1.4-0.6L4.8,7.3C4.3,7.4,4,7.9,4,8.5c0,5.8,4.7,10.5,10.5,10.5c0.6,0,1.1-0.3,1.3-0.8l0.6-1.9 C17.4,15,17.1,14.4,16.6,14.2z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z"/></svg>
                     </a>
-                     <a id="share-facebook" href="#" class="p-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
-                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,12c0-5.52-4.48-10-10-10S2,6.48,2,12c0,4.84,3.44,8.87,8,9.8V15H8v-3h2V9.5C10,7.57,11.57,6,13.5,6H16v3h-1.5 C13.67,9,13,9.67,13,10.5V12h3l-0.5,3h-2.5v6.8C18.56,20.87,22,16.84,22,12z"/></svg>
+                    <a id="share-facebook" href="#" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,12c0-5.52-4.48-10-10-10S2,6.48,2,12c0,4.84,3.44,8.87,8,9.8V15H8v-3h2V9.5C10,7.57,11.57,6,13.5,6H16v3h-1.5 C13.67,9,13,9.67,13,10.5V12h3l-0.5,3h-2.5v6.8C18.56,20.87,22,16.84,22,12z"/></svg>
                     </a>
                 </div>
             </footer>
         </div>
         <div id="main-content-template">
             <div class="px-4 md:px-8 py-6 max-w-5xl mx-auto">
-                 <div class="rule-card">
-                     <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">ما هو علم <span class="glossary-term" data-term="التجويد">التجويد</span>؟</h2></div>
-                     <div class="rule-card-body">
-                         <div class="definition-grid text-lg">
-                              <div>
-                                 <h3 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">لغةً:</h3>
-                                 <p>التحسين والإتقان.</p>
-                              </div>
-                              <div>
-                                 <h3 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">اصطلاحًا:</h3>
-                                 <p>إخراج כל حرف من <span class="glossary-term" data-term="المخرج">مخرجه</span>، مع إعطائه حقه ومستحقه.</p>
-                              </div>
-                         </div>
-                         <div class="border-t border-amber-200/20 mt-6 pt-6">
-                             <h3 class="rule-title text-xl md:text-2xl">ما حكمه؟</h3>
-                             <div class="definition-grid text-lg">
-                                  <div>
-                                     <h4 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">العمل به (التلاوة):</h4>
-                                     <p>فرض عين على كل مسلم ومسلمة عند قراءة القرآن.</p>
-                                  </div>
-                                  <div>
-                                     <h4 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">العلم به (الدراسة):</h4>
-                                     <p>فرض كفاية، إذا قام به من يكفي سقط الإثم عن الباقين.</p>
-                                  </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                <div class="rule-card">
+                    <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">ما هو علم <span class="glossary-term" data-term="التجويد">التجويد</span>؟</h2></div>
+                    <div class="rule-card-body">
+                        <div class="definition-grid text-lg">
+                             <div>
+                                <h3 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">لغةً:</h3>
+                                <p>التحسين والإتقان.</p>
+                            </div>
+                             <div>
+                                <h3 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">اصطلاحًا:</h3>
+                                <p>إخراج كُلَّ حرف من <span class="glossary-term" data-term="المخرج">مخرجه</span>، مع إعطائه حقه ومستحقه.</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-amber-200/20 mt-6 pt-6">
+                            <h3 class="rule-title text-xl md:text-2xl">ما حكمه؟</h3>
+                            <div class="definition-grid text-lg">
+                                 <div>
+                                    <h4 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">العمل به (التلاوة):</h4>
+                                    <p>فرض عين على كل مسلم ومسلمة عند قراءة القرآن.</p>
+                                </div>
+                                 <div>
+                                    <h4 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">العلم به (الدراسة):</h4>
+                                    <p>فرض كفاية، إذا قام به من يكفي سقط الإثم عن الباقين.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="text-center pt-8">
                 <h2 class="rule-title text-3xl md:text-4xl">الفهرس</h2>
@@ -633,78 +679,86 @@
             <div id="main-hub" class="main-hub p-4 md:p-8 gap-4 md:gap-6">
                 <div class="hub-card p-4 md:p-6" data-target="noon-sakinah-section">
                     <div class="card-content">
-                       <div class="icon">ن</div>
-                       <h2 class="title-font text-xl mt-4">أحكام النون الساكنة والتنوين</h2>
-                       <p class="text-sm mt-2">تعلم قواعد الإظهار، الإدغام، الإقلاب، والإخفاء.</p>
+                        <div class="icon">ن</div>
+                        <h2 class="title-font text-xl mt-4">أحكام النون الساكنة والتنوين</h2>
+                        <p class="text-sm mt-2">تعلم قواعد الإظهار، الإدغام، الإقلاب، والإخفاء.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="meem-sakinah-section">
                    <div class="card-content">
-                       <div class="icon">مْ</div>
-                       <h2 class="title-font text-xl mt-4">أحكام الميم الساكنة</h2>
-                       <p class="text-sm mt-2">اكتشف قواعد الإخفاء والإدغام والإظهار الشفوي.</p>
+                        <div class="icon">مْ</div>
+                        <h2 class="title-font text-xl mt-4">أحكام الميم الساكنة</h2>
+                        <p class="text-sm mt-2">اكتشف قواعد الإخفاء والإدغام والإظهار الشفوي.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="madd-section">
                    <div class="card-content">
-                       <div class="icon">ـا</div>
-                       <h2 class="title-font text-xl mt-4">باب المدود</h2>
-                       <p class="text-sm mt-2">تعرف على أنواع المد الطبيعي والفرعي وأزمنتها.</p>
+                        <div class="icon">ـا</div>
+                        <h2 class="title-font text-xl mt-4">باب المدود</h2>
+                        <p class="text-sm mt-2">تعرف على أنواع المد الطبيعي والفرعي وأزمنتها.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="sifaat-section">
                    <div class="card-content">
-                       <div class="icon">ص</div>
-                       <h2 class="title-font text-xl mt-4">صفات الحروف</h2>
-                       <p class="text-sm mt-2">ادرس الصفات التي تميز كل حرف عن الآخر.</p>
+                        <div class="icon">ص</div>
+                        <h2 class="title-font text-xl mt-4">صفات الحروف</h2>
+                        <p class="text-sm mt-2">ادرس الصفات التي تميز كل حرف عن الآخر.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="makharij-section">
                     <div class="card-content">
-                       <div class="icon">م</div>
-                       <h2 class="title-font text-xl mt-4">مخارج الحروف</h2>
-                       <p class="text-sm mt-2">تعلم الموضع الدقيق لنطق كل حرف من حروف الهجاء.</p>
+                        <div class="icon">م</div>
+                        <h2 class="title-font text-xl mt-4">مخارج الحروف</h2>
+                        <p class="text-sm mt-2">تعلم الموضع الدقيق لنطق كل حرف من حروف الهجاء.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="waqf-section">
                     <div class="card-content">
-                       <div class="icon">ف</div>
-                       <h2 class="title-font text-xl mt-4">باب الوقف والابتداء</h2>
-                       <p class="text-sm mt-2">تعلم متى تقف وكيف تبدأ التلاوة بشكل صحيح.</p>
+                        <div class="icon">ف</div>
+                        <h2 class="title-font text-xl mt-4">باب الوقف والابتداء</h2>
+                        <p class="text-sm mt-2">تعلم متى تقف وكيف تبدأ التلاوة بشكل صحيح.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="relations-section">
                     <div class="card-content">
-                       <div class="icon">ل</div>
-                       <h2 class="title-font text-xl mt-4">علاقات الحروف</h2>
-                       <p class="text-sm mt-2">ادرس أحكام المثلين والمتقاربين والمتجانسين.</p>
+                        <div class="icon">ل</div>
+                        <h2 class="title-font text-xl mt-4">علاقات الحروف</h2>
+                        <p class="text-sm mt-2">ادرس أحكام المثلين والمتقاربين والمتجانسين.</p>
                    </div>
                </div>
                <div class="hub-card p-4 md:p-6" data-target="practice-section">
                     <div class="card-content">
-                       <div class="icon">📖</div>
-                       <h2 class="title-font text-xl mt-4">التطبيق العملي</h2>
-                       <p class="text-sm mt-2">استخرج الأحكام بنفسك من آيات قرآنية.</p>
+                        <div class="icon">📖</div>
+                        <h2 class="title-font text-xl mt-4">التطبيق العملي</h2>
+                        <p class="text-sm mt-2">استخرج الأحكام بنفسك من آيات قرآنية.</p>
                    </div>
                </div>
-                 <div class="hub-card p-4 md:p-6" data-target="quiz-section">
-                     <div class="card-content">
-                         <div class="icon">؟</div>
-                         <h2 class="title-font text-xl mt-4">الاختبار الشامل</h2>
-                         <p class="text-sm mt-2">اختبر معلوماتك في جميع أبواب التجويد بطريقة ممتعة.</p>
-                     </div>
-                 </div>
+                <div class="hub-card p-4 md:p-6" data-target="quiz-section">
+                    <div class="card-content">
+                        <div class="icon">؟</div>
+                        <h2 class="title-font text-xl mt-4">الاختبار الشامل</h2>
+                        <p class="text-sm mt-2">اختبر معلوماتك في جميع أبواب التجويد بطريقة ممتعة.</p>
+                    </div>
+                </div>
+                <div class="hub-card p-4 md:p-6" data-target="tuhfa-section">
+                    <div class="card-content">
+                        <div class="icon">📜</div>
+                        <h2 class="title-font text-xl mt-4">شرح تحفة الأطفال</h2>
+                        <p class="text-sm mt-2">استعرض متن وشرح منظومة الإمام الجمزوري.</p>
+                   </div>
+                </div>
             </div>
         </div>
-        <div id="noon-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام النون الساكنة والتنوين</h1> <p class="text-gray-400">هي نون خالية من الحركة، أو تنوين يلحق آخر الأسماء</p> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. <span class="glossary-term" data-term="الإظهار">الإظهار</span> الحلقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>البيان والوضوح.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج النون أو التنوين بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="hamza" data-parent="noon">ء</div> <div class="letter-node" data-letter="haa" data-parent="noon">هـ</div> <div class="letter-node" data-letter="ain" data-parent="noon">ع</div> <div class="letter-node" data-letter="ha" data-parent="noon">ح</div> <div class="letter-node" data-letter="ghain" data-parent="noon">غ</div> <div class="letter-node" data-letter="khaa" data-parent="noon">خ</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. <span class="glossary-term" data-term="الإدغام">الإدغام</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الإدخال والمزج.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال النون أو التنوين بحرف من حروف الإدغام ليصيرا حرفًا واحدًا مشددًا.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6) "يرملون":</h3> <h4 class="font-semibold mt-4 text-center">أ. بغنة (ينمو):</h4> <div class="letter-grid"> <div class="letter-node" data-letter="yaa" data-parent="noon">ي</div> <div class="letter-node" data-letter="noun" data-parent="noon">n</div> <div class="letter-node" data-letter="mim" data-parent="noon">م</div> <div class="letter-node" data-letter="waw" data-parent="noon">و</div> </div> <h4 class="font-semibold mt-4 text-center">ب. بلا غنة:</h4> <div class="letter-grid grid-cols-2 max-w-xs mx-auto"> <div class="letter-node" data-letter="lam" data-parent="noon">ل</div> <div class="letter-node" data-letter="raa" data-parent="noon">ر</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. <span class="glossary-term" data-term="الإقلاب">الإقلاب</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>تحويل الشيء عن وجهه.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>قلب النون أو التنوين ميمًا مخفاة بغنة عند ملاقاة الباء.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3> <div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"> <div class="letter-node" data-letter="baa" data-parent="noon">ب</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">4. <span class="glossary-term" data-term="الإخفاء">الإخفاء</span> الحقيقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الستر.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالنون أو التنوين بحالة بين الإظهار والإدغام، مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (15):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="sad" data-parent="noon">ص</div> <div class="letter-node" data-letter="thal" data-parent="noon">ذ</div> <div class="letter-node" data-letter="thaa" data-parent="noon">ث</div> <div class="letter-node" data-letter="kaf" data-parent="noon">ك</div> <div class="letter-node" data-letter="jim" data-parent="noon">ج</div> <div class="letter-node" data-letter="shin" data-parent="noon">ش</div> <div class="letter-node" data-letter="qaf" data-parent="noon">ق</div> <div class="letter-node" data-letter="sin" data-parent="noon">س</div> <div class="letter-node" data-letter="dal" data-parent="noon">د</div> <div class="letter-node" data-letter="tah" data-parent="noon">ط</div> <div class="letter-node" data-letter="zay" data-parent="noon">ز</div> <div class="letter-node" data-letter="faa" data-parent="noon">ف</div> <div class="letter-node" data-letter="taa" data-parent="noon">ت</div> <div class="letter-node" data-letter="dhad" data-parent="noon">ض</div> <div class="letter-node" data-letter="dhaa" data-parent="noon">ظ</div> </div> <div class="examples-container"></div> </div> </div> </div> </div> </div>
-        <div id="meem-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام الميم الساكنة</h1> <p class="text-gray-400">هي ميم خالية من الحركة تأتي قبل جميع الحروف ما عدا الألف.</p> </div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. الإخفاء الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالميم الساكنة بحالة بين الإظهار والإدغام مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>، عند ملاقاة حرف الباء.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="baa-meem" data-parent="meem">ب</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. الإدغام الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال الميم الساكنة في الميم المتحركة التي تليها، ليصيرا ميماً واحدة مشددة مع <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="mim-meem" data-parent="meem">م</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. الإظهار الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج الميم الساكنة من مخرجها بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>، عند ملاقاة باقي الحروف (26 حرفًا).</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">أمثلة مع حروف مختلفة:</h3><div class="examples-container text-right text-lg md:text-xl"><div class="example-item">"أَ<strong>مْ لَ</strong>هُمْ"</div><div class="example-item">"لَكُ<strong>مْ دِ</strong>ينُكُمْ"</div><div class="example-item">"وَهُ<strong>مْ فِ</strong>يهَا"</div></div></div></div></div> </div> </div>
-        <div id="madd-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">باب <span class="glossary-term" data-term="المد">المدود</span></h1> <p class="text-gray-400"><span class="glossary-term" data-term="المد">المد</span> لغةً: الزيادة. واصطلاحًا: إطالة الصوت بحرف من حروف المد.</p> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">المد الطبيعي (الأصلي)</h2></div> <div class="rule-card-body"> <p>هو المد الذي لا تقوم ذات الحرف إلا به، ولا يتوقف على سبب (همز أو سكون). ومقداره حركتان.</p> <p class="mt-2"><strong>حروفه:</strong> الألف الساكنة المفتوح ما قبلها، الواو الساكنة المضموم ما قبلها، الياء الساكنة المكسور ما قبلها.</p> <div class="examples-container mt-4 text-lg md:text-xl"> <div class="example-item">"قَ<strong>ا</strong>لَ"</div> <div class="example-item">"يَقُ<strong>و</strong>لُ"</div> <div class="example-item">"قِ<strong>ي</strong>لَ"</div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">المد الفرعي</h2></div> <div class="rule-card-body"> <p>هو المد الزائد عن المد الطبيعي، ويكون بسبب همز أو سكون.</p> <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">المد بسبب الهمز</h3><span class="toggle-icon">+</span></div> <div class="collapsible-content"> <div class="mt-4"> <h4>1. المد المتصل (واجب)</h4> <p>أن يأتي حرف المد وبعده همزة في نفس الكلمة. يمد 4 أو 5 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item">"السَّمَ<strong>اء</strong>"</div> <div class="example-item">"جِ<strong>يء</strong>"</div> <div class="example-item">"سُ<strong>وء</strong>"</div> </div> </div> <div class="mt-4"> <h4>2. المد المنفصل (جائز)</h4> <p>أن يأتي حرف المد في آخر الكلمة، والهمزة في أول الكلمة التالية. يمد 4 أو 5 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item">"يَ<strong>ا أ</strong>يُّهَا"</div> <div class="example-item">"قُ<strong>وا أ</strong>نفُسَكُمْ"</div> <div class="example-item">"فِ<strong>ي أ</strong>َنفُسِهِمْ"</div> </div> </div> <div class="mt-4"> <h4>3. مد البدل</h4> <p>هو كل همز ممدود. أصله همزتان، الأولى متحركة والثانية ساكنة، فأُبدلت الثانية حرف مد. يمد حركتين.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item">"<strong>آ</strong>مَنُوا" (أصلها أَأْمَنُوا)</div> <div class="example-item">"<strong>أُو</strong>تُوا" (أُؤْتُوا)</div> <div class="example-item">"<strong>إي</strong>مَانًا" (إِئْمَانًا)</div> </div> </div> </div> <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">المد بسبب السكون</h3><span class="toggle-icon">+</span></div> <div class="collapsible-content"> <div class="mt-4"> <h4>1. المد العارض للسكون</h4> <p>أن يأتي بعد حرف المد حرف ساكن سكونًا عارضًا بسبب الوقف. يمد 2 أو 4 أو 6 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item">"الْعَالَمِ<strong>ينْ</strong>"</div> <div class="example-item">"تَعْلَمُ<strong>ونْ</strong>"</div> <div class="example-item">"الْمَ<strong>آبْ</strong>"</div> </div> </div> <div class="mt-4"> <h4>2. مد اللين</h4> <p>أن تأتي واو أو ياء ساكنتان مفتوح ما قبلهما وبعدهما سكون عارض للوقف. يمد 2 أو 4 أو 6 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item">"خَ<strong>وْ</strong>ف"</div> <div class="example-item">"البَ<strong>يْ</strong>ت"</div> <div class="example-item">"قُرَ<strong>يْ</strong>ش"</div> </div> </div> <div class="mt-4"> <h4>3. المد اللازم</h4> <p>أن يأتي بعد حرف المد سكون أصلي (ثابت وصلاً ووقفاً). يمد 6 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item">"ال<strong>ضَّآ</strong>لِّين"</div> <div class="example-item">"<strong>الْآن</strong>"</div> <div class="example-item">"<strong>قآ</strong>ف"</div> <div class="example-item">"<strong>نآ</strong>"</div> </div> </div> </div> </div> </div> </div> </div>
+        <div id="noon-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام النون الساكنة والتنوين</h1> <p class="text-gray-400">هي نون خالية من الحركة، أو تنوين يلحق آخر الأسماء</p> <button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-noon-sakinah" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button></div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. <span class="glossary-term" data-term="الإظهار">الإظهار</span> الحلقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>البيان والوضوح.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج النون أو التنوين بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="hamza" data-parent="noon">ء</div> <div class="letter-node" data-letter="haa" data-parent="noon">هـ</div> <div class="letter-node" data-letter="ain" data-parent="noon">ع</div> <div class="letter-node" data-letter="ha" data-parent="noon">ح</div> <div class="letter-node" data-letter="ghain" data-parent="noon">غ</div> <div class="letter-node" data-letter="khaa" data-parent="noon">خ</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. <span class="glossary-term" data-term="الإدغام">الإدغام</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الإدخال والمزج.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال النون أو التنوين بحرف من حروف الإدغام ليصيرا حرفًا واحدًا مشددًا.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6) "يرملون":</h3> <h4 class="font-semibold mt-4 text-center">أ. بغنة (ينمو):</h4> <div class="letter-grid"> <div class="letter-node" data-letter="yaa" data-parent="noon">ي</div> <div class="letter-node" data-letter="noun" data-parent="noon">ن</div> <div class="letter-node" data-letter="mim" data-parent="noon">م</div> <div class="letter-node" data-letter="waw" data-parent="noon">و</div> </div> <h4 class="font-semibold mt-4 text-center">ب. بلا غنة:</h4> <div class="letter-grid grid-cols-2 max-w-xs mx-auto"> <div class="letter-node" data-letter="lam" data-parent="noon">ل</div> <div class="letter-node" data-letter="raa" data-parent="noon">ر</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. <span class="glossary-term" data-term="الإقلاب">الإقلاب</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>تحويل الشيء عن وجهه.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>قلب النون أو التنوين ميمًا مخفاة بغنة عند ملاقاة الباء.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3> <div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"> <div class="letter-node" data-letter="baa" data-parent="noon">ب</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">4. <span class="glossary-term" data-term="الإخفاء">الإخفاء</span> الحقيقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الستر.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالنون أو التنوين بحالة بين الإظهار والإدغام، مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (15):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="sad" data-parent="noon">ص</div> <div class="letter-node" data-letter="thal" data-parent="noon">ذ</div> <div class="letter-node" data-letter="thaa" data-parent="noon">ث</div> <div class="letter-node" data-letter="kaf" data-parent="noon">ك</div> <div class="letter-node" data-letter="jim" data-parent="noon">ج</div> <div class="letter-node" data-letter="shin" data-parent="noon">ش</div> <div class="letter-node" data-letter="qaf" data-parent="noon">ق</div> <div class="letter-node" data-letter="sin" data-parent="noon">س</div> <div class="letter-node" data-letter="dal" data-parent="noon">د</div> <div class="letter-node" data-letter="tah" data-parent="noon">ط</div> <div class="letter-node" data-letter="zay" data-parent="noon">ز</div> <div class="letter-node" data-letter="faa" data-parent="noon">ف</div> <div class="letter-node" data-letter="taa" data-parent="noon">ت</div> <div class="letter-node" data-letter="dhad" data-parent="noon">ض</div> <div class="letter-node" data-letter="dhaa" data-parent="noon">ظ</div> </div> <div class="examples-container"></div> </div> </div> </div> </div> </div>
+        <div id="meem-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام الميم الساكنة</h1> <p class="text-gray-400">هي ميم خالية من الحركة تأتي قبل جميع الحروف ما عدا الألف.</p><button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-meem-sakinah" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button> </div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. الإخفاء الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالميم الساكنة بحالة بين الإظهار والإدغام مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>، عند ملاقاة حرف الباء.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="baa-meem" data-parent="meem">ب</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. الإدغام الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال الميم الساكنة في الميم المتحركة التي تليها، ليصيرا ميماً واحدة مشددة مع <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="mim-meem" data-parent="meem">م</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. الإظهار الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج الميم الساكنة من مخرجها بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>، عند ملاقاة باقي الحروف (26 حرفًا).</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">أمثلة مع حروف مختلفة:</h3><div class="examples-container text-right text-lg md:text-xl"><div class="example-item">"أَ<strong>مْ لَ</strong>هُمْ"</div><div class="example-item">"لَكُ<strong>مْ دِ</strong>ينُكُمْ"</div><div class="example-item">"وَهُ<strong>مْ فِ</strong>يهَا"</div></div></div></div></div> </div> </div>
+        <div id="madd-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">باب <span class="glossary-term" data-term="المد">المدود</span></h1> <p class="text-gray-400"><span class="glossary-term" data-term="المد">المد</span> لغةً: الزيادة. واصطلاحًا: إطالة الصوت بحرف من حروف المد.</p><button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-madd" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">المد الطبيعي (الأصلي)</h2></div> <div class="rule-card-body"> <p>هو المد الذي لا تقوم ذات الحرف إلا به، ولا يتوقف على سبب (همز أو سكون). ومقداره حركتان.</p> <p class="mt-2"><strong>حروفه:</strong> الألف الساكنة المفتوح ما قبلها، الواو الساكنة المضموم ما قبلها، الياء الساكنة المكسور ما قبلها.</p> <div class="examples-container mt-4 text-lg md:text-xl"> <div class="example-item" data-surah="2" data-ayah="26">"قَ<strong>ا</strong>لَ"</div> <div class="example-item" data-surah="2" data-ayah="10">"يَقُ<strong>و</strong>لُ"</div> <div class="example-item" data-surah="2" data-ayah="11">"قِ<strong>ي</strong>لَ"</div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">المد الفرعي</h2></div> <div class="rule-card-body"> <p>هو المد الزائد عن المد الطبيعي، ويكون بسبب همز أو سكون.</p> <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">المد بسبب الهمز</h3><span class="toggle-icon">+</span></div> <div class="collapsible-content"> <div class="mt-4"> <h4>1. المد المتصل (واجب)</h4> <p>أن يأتي حرف المد وبعده همزة في نفس الكلمة. يمد 4 أو 5 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item" data-surah="2" data-ayah="19">"السَّمَ<strong>اء</strong>"</div> <div class="example-item" data-surah="89" data-ayah="22">"جِ<strong>يء</strong>"</div> <div class="example-item" data-surah="2" data-ayah="10">"سُ<strong>وء</strong>"</div> </div> </div> <div class="mt-4"> <h4>2. المد المنفصل (جائز)</h4> <p>أن يأتي حرف المد في آخر الكلمة، والهمزة في أول الكلمة التالية. يمد 4 أو 5 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item" data-surah="2" data-ayah="21">"يَ<strong>ا أ</strong>يُّهَا"</div> <div class="example-item" data-surah="66" data-ayah="6">"قُ<strong>وا أ</strong>نفُسَكُمْ"</div> <div class="example-item" data-surah="2" data-ayah="251">"فِ<strong>ي أ</strong>َنفُسِهِمْ"</div> </div> </div> <div class="mt-4"> <h4>3. مد البدل</h4> <p>هو كل همز ممدود. أصله همزتان، الأولى متحركة والثانية ساكنة، فأُبدلت الثانية حرف مد. يمد حركتين.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item" data-surah="2" data-ayah="13">"<strong>آ</strong>مَنُوا" (أصلها أَأْمَنُوا)</div> <div class="example-item" data-surah="2" data-ayah="253">"<strong>أُو</strong>تُوا" (أُؤْتُوا)</div> <div class="example-item" data-surah="2" data-ayah="109">"<strong>إي</strong>مَانًا" (إِئْمَانًا)</div> </div> </div> </div> <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">المد بسبب السكون</h3><span class="toggle-icon">+</span></div> <div class="collapsible-content"> <div class="mt-4"> <h4>1. المد العارض للسكون</h4> <p>أن يأتي بعد حرف المد حرف ساكن سكونًا عارضًا بسبب الوقف. يمد 2 أو 4 أو 6 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item" data-surah="1" data-ayah="2">"الْعَالَمِ<strong>ينْ</strong>"</div> <div class="example-item" data-surah="2" data-ayah="23">"تَعْلَمُ<strong>ونْ</strong>"</div> <div class="example-item" data-surah="13" data-ayah="29">"الْمَ<strong>آبْ</strong>"</div> </div> </div> <div class="mt-4"> <h4>2. مد اللين</h4> <p>أن تأتي واو أو ياء ساكنتان مفتوح ما قبلهما وبعدهما سكون عارض للوقف. يمد 2 أو 4 أو 6 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item" data-surah="106" data-ayah="4">"خَ<strong>وْ</strong>ف"</div> <div class="example-item" data-surah="106" data-ayah="3">"البَ<strong>يْ</strong>ت"</div> <div class="example-item" data-surah="106" data-ayah="1">"قُرَ<strong>يْ</strong>ش"</div> </div> </div> <div class="mt-4" id="madd-lazim-details"> <h4>3. المد اللازم</h4> <p>أن يأتي بعد حرف المد سكون أصلي (ثابت وصلاً ووقفاً). يمد 6 حركات.</p> <div class="examples-container text-lg md:text-xl"> <div class="example-item" data-surah="1" data-ayah="7">"ال<strong>ضَّآ</strong>لِّين"</div> <div class="example-item" data-surah="10" data-ayah="51">"<strong>الْآن</strong>"</div> <div class="example-item" data-surah="50" data-ayah="1">"<strong>قآ</strong>ف"</div> <div class="example-item" data-surah="68" data-ayah="1">"<strong>نآ</strong>"</div> </div> </div> </div> </div> </div> </div> </div>
         <div id="sifaat-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">صفات الحروف</h1> <p class="text-gray-400">الكيفية التي تخرج بها الحروف عند النطق بها لتمييزها عن بعضها.</p> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">صفات لها ضد</h2></div> <div class="rule-card-body"> <table class="styled-table text-sm md:text-base"><thead><tr><th>الصفة</th><th>ضدها</th><th>الحروف</th></tr></thead><tbody><tr><td>الهمس</td><td>الجهر</td><td>فحثه شخص سكت</td></tr><tr><td>الشدة</td><td>الرخاوة</td><td>أجد قط بكت</td></tr><tr><td>(التوسط)</td><td>-</td><td>لن عمر</td></tr><tr><td>الاستعلاء</td><td>الاستفال</td><td>خص ضغط قظ</td></tr><tr><td>الإطباق</td><td>الانفتاح</td><td>ص ض ط ظ</td></tr><tr><td>الإذلاق</td><td>الإصمات</td><td>فر من لب</td></tr></tbody></table> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">صفات لا ضد لها</h2></div> <div class="rule-card-body"> <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base"> <div><h4><strong>الصفير:</strong> صوت زائد يشبه صوت الطائر. (ص ز س)</h4></div> <div><h4><strong><span class="glossary-term" data-term="القلقلة">القلقلة</span>:</strong> اضطراب المخرج عند النطق بالحرف ساكناً. (قطب جد)</h4></div> <div><h4><strong>اللين:</strong> إخراج الحرف بسهولة. (الواو والياء الساكنتان المفتوح ما قبلهما)</h4></div> <div><h4><strong>الانحراف:</strong> ميل الحرف عن مخرجه. (ل ر)</h4></div> <div><h4><strong>التكرير:</strong> ارتعاد رأس اللسان عند النطق بالحرف. (ر)</h4></div> <div><h4><strong>التفشي:</strong> انتشار الهواء في الفم. (ش)</h4></div> <div><h4><strong>الاستطالة:</strong> امتداد الصوت من أول حافة اللسان لآخرها. (ض)</h4></div> </div> </div> </div> </div> </div>
         <div id="makharij-section" class="page-section hidden">
             <div class="mind-map-container p-4 md:p-8">
                 <div class="node text-center">
                     <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">📘 مَـخَارجُ الحُروف</h1>
                     <p style="color: var(--text-dark);">علم <span class="glossary-term" data-term="التجويد">التجويد</span></p>
+                    <button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-makharij" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button>
                 </div>
         
                 <!-- Definition and Letter Count -->
@@ -742,9 +796,9 @@
                                 <tbody>
                                     <tr><td>1</td><td>الجوف</td><td>3</td><td>حروف المد (ا، و، ي)</td></tr>
                                     <tr><td>2</td><td>الحلق</td><td>6</td><td>(أ، هـ، ع، ح، غ، خ)</td></tr>
-                                    <tr><td>3</td><td>اللسان</td><td>18</td><td>(ق، ك、 ج、 ش、 ي...)</td></tr>
-                                    <tr><td>4</td><td>الشفتان</td><td>4</td><td>(ف、 ب、 م、 و)</td></tr>
-                                    <tr><td>5</td><td>الخيشوم</td><td>1</td><td>الغنّة (ن、 م)</td></tr>
+                                    <tr><td>3</td><td>اللسان</td><td>18</td><td>(ق، ك، ج، ش، ي...)</td></tr>
+                                    <tr><td>4</td><td>الشفتان</td><td>4</td><td>(ف، ب، م، و)</td></tr>
+                                    <tr><td>5</td><td>الخيشوم</td><td>1</td><td>الغنّة (ن، م)</td></tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -756,7 +810,7 @@
                         </div>
                     </div>
                 </div>
-                
+        
                 <!-- Detailed Makharij as Collapsibles -->
                 <div class="rule-card">
                     <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">📍 أولًا: مخرج الجوف</h3><span class="toggle-icon">+</span></div>
@@ -778,9 +832,9 @@
                         <table class="styled-table mt-2 text-sm md:text-base">
                             <thead><tr><th>المخرج الفرعي</th><th>الحروف</th><th>مثال</th></tr></thead>
                             <tbody>
-                                <tr><td>أقصى الحلق</td><td>(ء、 هـ)</td><td><strong>أَ</strong>حَد、 <strong>هَ</strong>دَى</td></tr>
-                                <tr><td>وسط الحلق</td><td>(ع、 ح)</td><td><strong>عَ</strong>لِم、 <strong>حَ</strong>مِيد</td></tr>
-                                <tr><td>أدنى الحلق (الأقرب للفم)</td><td>(غ、 خ)</td><td><strong>غَ</strong>فُور、 <strong>خَ</strong>بِير</td></tr>
+                                <tr><td>أقصى الحلق</td><td>(ء، هـ)</td><td><strong>أَ</strong>حَد، <strong>هَ</strong>دَى</td></tr>
+                                <tr><td>وسط الحلق</td><td>(ع، ح)</td><td><strong>عَ</strong>لِم، <strong>حَ</strong>مِيد</td></tr>
+                                <tr><td>أدنى الحلق (الأقرب للفم)</td><td>(غ، خ)</td><td><strong>غَ</strong>فُور، <strong>خَ</strong>بِير</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -794,14 +848,14 @@
                                 <tbody>
                                     <tr><td>1. أقصى اللسان مع الحنك الأعلى</td><td>ق</td><td><strong>قَ</strong>الَ</td></tr>
                                     <tr><td>2. أسفل منه قليلًا</td><td>ك</td><td><strong>كَ</strong>تَبَ</td></tr>
-                                    <tr><td>3. وسط اللسان مع الحنك الأعلى</td><td>ج、 ش、 ي (غير المدية)</td><td><strong>جَ</strong>اء、 <strong>شَ</strong>مس、 <strong>يَ</strong>دٌ</td></tr>
+                                    <tr><td>3. وسط اللسان مع الحنك الأعلى</td><td>ج، ش، ي (غير المدية)</td><td><strong>جَ</strong>اء، <strong>شَ</strong>مس، <strong>يَ</strong>دٌ</td></tr>
                                     <tr><td>4. أحد حافتي اللسان مع الأضراس العليا</td><td>ض</td><td><strong>ضَ</strong>رَبَ</td></tr>
                                     <tr><td>5. أدنى حافة اللسان إلى طرفه</td><td>ل</td><td><strong>لَ</strong>بَن</td></tr>
                                     <tr><td>6. طرف اللسان مع لثة الثنايا العليا</td><td>ن</td><td><strong>نُ</strong>ور</td></tr>
                                     <tr><td>7. طرف اللسان (ظهر الطرف)</td><td>ر</td><td><strong>رَ</strong>حيم</td></tr>
-                                    <tr><td>8. طرف اللسان مع أصول الثنايا العليا</td><td>ط、 د、 ت</td><td><strong>طِ</strong>ين、 <strong>دَ</strong>رَسَ、 <strong>تَ</strong>ابَ</td></tr>
-                                    <tr><td>9. طرف اللسان مع ما بين الثنايا</td><td>ص、 ز、 س</td><td><strong>صَ</strong>بَرَ、 <strong>زَ</strong>ين、 <strong>سَ</strong>ارَ</td></tr>
-                                    <tr><td>10. طرف اللسان مع أطراف الثنايا العليا</td><td>ظ、 ذ、 ث</td><td><strong>ظَ</strong>لَمَ、 <strong>ذَ</strong>كَرَ、 <strong>ثَ</strong>وْب</td></tr>
+                                    <tr><td>8. طرف اللسان مع أصول الثنايا العليا</td><td>ط، د، ت</td><td><strong>طِ</strong>ين، <strong>دَ</strong>رَسَ، <strong>تَ</strong>ابَ</td></tr>
+                                    <tr><td>9. طرف اللسان مع ما بين الثنايا</td><td>ص، ز، س</td><td><strong>صَ</strong>بَرَ، <strong>زَ</strong>ين، <strong>سَ</strong>ارَ</td></tr>
+                                    <tr><td>10. طرف اللسان مع أطراف الثنايا العليا</td><td>ظ، ذ، ث</td><td><strong>ظَ</strong>لَمَ، <strong>ذَ</strong>كَرَ، <strong>ثَ</strong>وْب</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -814,7 +868,7 @@
                             <thead><tr><th>المخرج</th><th>الحروف</th><th>المثال</th></tr></thead>
                             <tbody>
                                 <tr><td>من بطن الشفة السفلى مع أطراف الثنايا العليا</td><td>ف</td><td><strong>فَ</strong>ضْل</td></tr>
-                                <tr><td>بانطباق الشفتين معًا</td><td>ب、 م</td><td><strong>بَ</strong>رَكَة、 <strong>مَ</strong>ال</td></tr>
+                                <tr><td>بانطباق الشفتين معًا</td><td>ب، م</td><td><strong>بَ</strong>رَكَة، <strong>مَ</strong>ال</td></tr>
                                 <tr><td>بانضمام الشفتين دون كزٍّ</td><td>و (غير المدية)</td><td><strong>وَ</strong>لَد</td></tr>
                             </tbody>
                         </table>
@@ -826,8 +880,8 @@
                         <table class="styled-table mt-2 text-sm md:text-base">
                             <thead><tr><th>الحرف</th><th>المثال</th></tr></thead>
                             <tbody>
-                                <tr><td>ن</td><td>إِ<strong>نَّ</strong>、 مِ<strong>نْ</strong></td></tr>
-                                <tr><td>م</td><td>ثُ<strong>مَّ</strong>、 عَ<strong>مَّ</strong></td></tr>
+                                <tr><td>ن</td><td>إِ<strong>نَّ</strong>، مِ<strong>نْ</strong></td></tr>
+                                <tr><td>م</td><td>ثُ<strong>مَّ</strong>، عَ<strong>مَّ</strong></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -836,7 +890,7 @@
             </div>
         </div>
         <div id="waqf-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">باب الوقف والابتداء</h1> <p class="text-gray-400">فن معرفة المواضع التي يحسن الوقف عليها وما يحسن الابتداء به.</p> </div><div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">أنواع الوقف الاختياري</h2></div><div class="rule-card-body space-y-4 text-base"><div><h4><strong>1. الوقف التام:</strong> هو الوقف على كلام تام المعنى، لا يتعلق بما بعده لفظًا ولا معنى. مثاله: الوقف على "نَسْتَعِينُ" في سورة الفاتحة.</h4></div><div><h4><strong>2. الوقف الكافي:</strong> هو الوقف على كلام تام المعنى، لكنه يتعلق بما بعده معنى لا لفظًا. مثاله: الوقف على "لَا رَيْبَ فِيهِ" في سورة البقرة.</h4></div><div><h4><strong>3. الوقف الحسن:</strong> هو الوقف على كلام تام المعنى، لكنه يتعلق بما بعده لفظًا ومعنى. يحسن الوقف عليه ولكن لا يحسن الابتداء بما بعده. مثاله: الوقف على "الْحَمْدُ لِلَّهِ" من قوله "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ".</h4></div><div><h4><strong>4. الوقف القبيح:</strong> هو الوقف على كلام لم يتم معناه، أو يوهم معنى فاسدًا. لا يجوز تعمده. مثاله: الوقف على "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَقْرَبُوا الصَّلَاةَ".</h4></div></div></div></div> </div>
-        <div id="relations-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">علاقات الحروف</h1> <p class="text-gray-400">الأحكام الناشئة عن التقاء الحروف ببعضها.</p> </div><div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">أنواع العلاقات</h2></div><div class="rule-card-body space-y-4 text-base"><div><h4><strong>1. المثلان:</strong> الحرفان اللذان اتحدا اسمًا ورسمًا ومخرجًا وصفة. حكم إدغام الأول في الثاني إن كان الأول ساكنًا (مثلين صغير). مثاله: "اضْرِب بِّعَصَاكَ".</h4></div><div><h4><strong>2. المتجانسان:</strong> الحرفان اللذان اتحدا مخرجًا واختلفا صفة. حكمه الإدغام في أغلب الحالات إن كان الأول ساكنًا. مثاله: "قَد تَّبَيَّnَ".</h4></div><div><h4><strong>3. المتقاربان:</strong> الحرفان اللذان تقاربا مخرجًا وصفة. حكمه الإدغام في حالات خاصة. مثاله: "قُل رَّبِّ".</h4></div><div><h4><strong>4. المتباعدان:</strong> الحرفان اللذان تباعدا مخرجًا واختلفا صفة. حكمه الإظهار دائمًا.</h4></div></div></div></div> </div>
+        <div id="relations-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">علاقات الحروف</h1> <p class="text-gray-400">الأحكام الناشئة عن التقاء الحروف ببعضها.</p><button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-relations" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button> </div><div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">أنواع العلاقات</h2></div><div class="rule-card-body space-y-4 text-base"><div><h4><strong>1. المثلان:</strong> الحرفان اللذان اتحدا اسمًا ورسمًا ومخرجًا وصفة. حكم إدغام الأول في الثاني إن كان الأول ساكنًا (مثلين صغير). مثاله: "اضْرِب بِّعَصَاكَ".</h4></div><div><h4><strong>2. المتجانسان:</strong> الحرفان اللذان اتحدا مخرجًا واختلفا صفة. حكمه الإدغام في أغلب الحالات إن كان الأول ساكنًا. مثاله: "قَد تَّبَيَّنَ".</h4></div><div><h4><strong>3. المتقاربان:</strong> الحرفان اللذان تقاربا مخرجًا وصفة. حكمه الإدغام في حالات خاصة. مثاله: "قُل رَّبِّ".</h4></div><div><h4><strong>4. المتباعدان:</strong> الحرفان اللذان تباعدا مخرجًا واختلفا صفة. حكمه الإظهار دائمًا.</h4></div></div></div></div> </div>
         <div id="practice-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">التطبيق العملي</h1> <p class="text-gray-400">استخرج الأحكام بنفسك من الآيات.</p> </div><div class="rule-card text-center"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">تدريب على سورة الإخلاص</h2></div><div class="rule-card-body"><div class="practice-verse text-2xl md:text-4xl leading-loose md:leading-loose">
             <div class="example-item" data-surah="112" data-ayah="1">
                 <span class="practice-word" data-info="قُلْ: القاف مفخمة واللام مظهرة.">قُلْ</span> 
@@ -858,6 +912,126 @@
             </div>
         </div><div id="practice-info" class="mt-4 p-4 rounded-md bg-amber-50 text-amber-900 border border-amber-200 hidden min-h-[50px]"></div></div></div></div> </div>
         <div id="quiz-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="rule-card text-center"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">الاختبار الشامل</h2></div><div class="rule-card-body"> <p class="mb-4">هل أنت مستعد لاختبار معلوماتك؟ أدر العجلة واحصل على سؤال عشوائي!</p> <div class="wheel-container"><div id="spinner"></div><div class="arrow"></div></div> <button id="spin-btn">أدر العجلة!</button> <div id="question-display" class="hidden mt-6"><h3 id="question-text" class="text-xl font-bold text-slate-800 mb-4 text-right"></h3><div id="options-container" class="space-y-2"></div><p id="feedback-text" class="mt-4 font-bold"></p></div> </div></div> </div> </div>
+        <div id="tuhfa-section" class="page-section hidden">
+            <div class="mind-map-container p-4 md:p-8">
+                <div class="node text-center">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">شرح متن تحفة الأطفال</h1>
+                    <p class="text-gray-400">للشيخ سليمان الجمزوري رحمه الله</p>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-intro">
+                    <div class="tuhfa-card-header">المقدمة</div>
+                    <div class="tuhfa-card-body">
+                        <div class="poem-verse">يَقُـولُ رَاجِــي رَحْمَـةِ الْغَفُــورِ ... دَوْمًــا سُلَيْمَــانُ هُــوَ الْجَمْــزُورِي</div>
+                        <div class="poem-verse">(الْحَمْــدُ لـلَّـهِ) مُصَلِّـيًا عَلَــى ... (مُحَمَّــدٍ) وَآلِــهِ وَمَــنْ تَــلاَ</div>
+                        <div class="poem-verse">وَبَعْــدُ: هَــذَا النَّظْــمُ لِلْمُرِيــدِ ... فِــي النُّــونِ والتَّنْوِيــنِ وَالْمُــدُودِ</div>
+                        <div class="poem-verse">سَمَّيْتُــهُ (بِتُحْفَــةِ الأَطْفَــالِ) ... عَـنْ شَيْخِنَــا الْمِيهِــىِّ ذِي الْكَمَــالِ</div>
+                        <div class="poem-verse">أَرْجُــو بِــهِ أَنْ يَنْفَــعَ الطُّــلاَّبَا ... وَالأَجْــرَ وَالْقَبُــولَ وَالثَّــوَابَا</div>
+                        <p class="mt-4">يبدأ الناظم بالحمد لله والصلاة على النبي، ثم يوضح أن هذا النظم للمبتدئين في علم التجويد، ويشمل أحكام النون والتنوين والمدود، وقد سماه "تحفة الأطفال" نسبةً لشيخه الميهي، راجيًا به النفع والأجر من الله.</p>
+                    </div>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-noon-sakinah">
+                    <div class="tuhfa-card-header">أحكام النون الساكنة والتنوين</div>
+                    <div class="tuhfa-card-body">
+                        <div class="poem-verse">لِلنُّــونِ إِنْ تَسْكُــنْ وَلِلتَّنْوِيــنِ ... أَرْبَــعُ أَحْكَــامٍ فَخُــذْ تَبْيِينِــي</div>
+                        <div class="poem-verse">فَـالأَوَّلُ الإظْهَــارُ قَبْــلَ أَحْــرُفِ ... لِلْحَلْــقِ سِــتٌّ رُتِّبَــتْ فَلْتَعْــرِفِ</div>
+                        <div class="poem-verse">هَمْــزٌ فَهَــاءٌ ثُــمَّ عَيْــنٌ حَــاءُ ... مُهْمَلَتَــانِ ثُــمَّ غَيْــنٌ خَــاءُ</div>
+                        <div class="ornament"></div>
+                        <div class="poem-verse">وَالثَّــانِ إِدْغَــامٌ بِسِــتَّةٍ أَتَــتْ ... فِــي (يَرْمَلُونَ) عِنْدَهُــمْ قَــدْ ثَبَتَــتْ</div>
+                        <div class="poem-verse">لَكِنَّهَــا قِسْــمَانِ قِسْــمٌ يُدْغَمَــا ... فِيــهِ بِغُنَّــةٍ (بِيَنْمُــو) عُلِمَــا</div>
+                        <div class="poem-verse">إِلاَّ إِذَا كَــانَا بِكِلْمَــةٍ فَــلاَ ... تُدْغِــمْ كَدُنْيَــا ثُــمَّ صِنْــوَانٍ تَــلاَ</div>
+                        <div class="poem-verse">وَالثَّــانِ إِدْغَــامٌ بِغَيْــرِ غُنَّــهْ ... فِــي الــلاَّمِ وَالــرَّا ثُــمَّ كَرِّرَنَّــهْ</div>
+                        <div class="ornament"></div>
+                        <div class="poem-verse">وَالثَّالِــثُ الإِقْــلاَبُ عِنْــدَ الْبَــاءِ ... مِيمًــا بِغُنَّــةٍ مَــعَ الإِخْفَــاءِ</div>
+                        <div class="ornament"></div>
+                        <div class="poem-verse">وَالرَّابِــعُ الإِخْفَــاءُ عِنْــدَ الْفَاضِــلِ ... مِــنَ الْحُــرُوفِ وَاجِــبٌ لِلْفَاضِــلِ</div>
+                        <div class="poem-verse">فِي خَمْسَةٍ مِنْ بَعْدِ عَشْرٍ رَمْزُهَا ... فِي كِلْمِ هَذَا الْبَيْتِ قَدْ ضَمَّنْتُهَا</div>
+                        <div class="poem-verse">صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا ... دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا</div>
+                        <p class="mt-4"><strong>الشرح:</strong> للنون الساكنة والتنوين أربعة أحكام رئيسية: الإظهار الحلقي (مع 6 حروف)، والإدغام بقسميه بغنة وبلا غنة (في حروف "يرملون")، والإقلاب (مع الباء)، والإخفاء الحقيقي (مع باقي الحروف الـ 15).</p>
+                        <div class="text-left"><button class="smart-nav-btn" data-target="noon-sakinah-section" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
+                    </div>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-meem-sakinah">
+                    <div class="tuhfa-card-header">أحكام الميم الساكنة</div>
+                    <div class="tuhfa-card-body">
+                         <div class="poem-verse">وَالْمِيــمُ إِنْ تَسْكُــنْ تَجِي قَبْــلَ الْهِجَا ... لاَ أَلِــفٍ لَيِّنَــةٍ لِــذِي الْحِجَــا</div>
+                         <div class="poem-verse">أَحْكَامُهَــا ثَلاَثَــةٌ لِمَــنْ ضَبَــطْ ... إِخْفَــاءٌ ادْغَــامٌ وَإِظْهَــارٌ فَقَــطْ</div>
+                         <div class="poem-verse">فَـالأَوَّلُ الإِخْفَــاءُ عِنْــدَ الْبَــاءِ ... وَسَمِّــهِ الشَّــفْوِيَّ لِلْقُــرَّاءِ</div>
+                         <div class="poem-verse">وَالثَّــانِ إِدْغَــامٌ بِمِثْلِهَــا أَتَــى ... وَسَــمِّ إدْغَامًــا صَغِيــرًا يَــا فَتَــى</div>
+                         <div class="poem-verse">وَالثَّالِــثُ الإِظْهَــارُ فِي الْبَقِيَّــهْ ... مِــنْ أَحْــرُفٍ وَسَمِّهَــا شَــفْوِيَّهْ</div>
+                         <div class="poem-verse">وَاحْــذَرْ لَــدَى وَاوٍ وَفَــا أَنْ تَخْتَفِي ... لِقُرْبِــهَا وَلاتِّحَــادِ فَاعْــرِفِ</div>
+                         <p class="mt-4"><strong>الشرح:</strong> للميم الساكنة ثلاثة أحكام: <strong>الإخفاء الشفوي</strong> إذا جاء بعدها حرف الباء، و<strong>الإدغام الشفوي</strong> إذا جاء بعدها ميم مثلها، و<strong>الإظهار الشفوي</strong> عند باقي الحروف، مع الحذر من إخفائها عند الواو والفاء لقرب المخرج.</p>
+                         <div class="text-left"><button class="smart-nav-btn" data-target="meem-sakinah-section" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
+                    </div>
+                </div>
+                
+                <div class="tuhfa-card" id="tuhfa-ghunnah">
+                    <div class="tuhfa-card-header">حكم الميم والنون المشددتين</div>
+                    <div class="tuhfa-card-body">
+                         <div class="poem-verse">وَغُــنَّ مِيمًــا ثُــمَّ نُونًــا شُــدِّدَا ... وَسَــمِّ كُلاًّ حَــرْفَ غُنَّــةٍ بَــدَا</div>
+                         <p class="mt-4"><strong>الشرح:</strong> يجب إظهار الغنة بمقدار حركتين عند النطق بالنون أو الميم المشددتين، ويُسمى كل منهما "حرف غنة مشدد". مثال: (إِنَّ)، (ثُمَّ).</p>
+                    </div>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-relations">
+                    <div class="tuhfa-card-header">في المثلين والمتقاربين والمتجانسين</div>
+                    <div class="tuhfa-card-body">
+                        <div class="poem-verse">إِنْ فِي الصِّفَاتِ وَالْمَخَارِجِ اتَّفَقْ ... حَرْفَــانِ فَالْمِثْــلاَنِ فِيهِمَــا أَحَــقْ</div>
+                        <div class="poem-verse">وَإِنْ يَكُونَــا مَخْرَجًــا تَقَارَبَــا ... وَفِــي الصِّفَــاتِ اخْتَلَفَــا يُلَقَّبَــا</div>
+                        <div class="poem-verse">مُتَقَارِبَيْــنِ أَوْ يَكُونَــا اتَّفَقَــا ... فِــي مَخْــرَجٍ دُونَ الصِّفَاتِ حُقِّقَا</div>
+                        <div class="poem-verse">بِالْمُتَجَانِسَــيْنِ ثُــمَّ إِنْ سَــكَنْ ... أَوَّلُ كُــلٍّ فَالصَّغِيــرَ سَــمِّيَنْ</div>
+                        <div class="poem-verse">أَوْ حُرِّكَ الْحَرْفَانِ فِي كُلٍّ فَقُلْ ... كُــلٌّ كَبِيــرٌ وافْهَمَنْــهُ بِالْمُثُــلْ</div>
+                        <p class="mt-4"><strong>الشرح:</strong> يوضح الناظم علاقات الحروف: <strong>المثلان</strong> (اتحدا مخرجًا وصفة)، <strong>المتقاربان</strong> (تقاربا مخرجًا أو صفة)، <strong>المتجانسان</strong> (اتحدا مخرجًا واختلفا صفة). وكل علاقة لها حكمها الخاص، خصوصًا إذا كان الحرف الأول ساكنًا (صغير).</p>
+                        <div class="text-left"><button class="smart-nav-btn" data-target="relations-section" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
+                    </div>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-madd">
+                    <div class="tuhfa-card-header">أقسام المد وأحكامه</div>
+                    <div class="tuhfa-card-body">
+                        <div class="poem-verse">وَالْمَــدُّ أَصْلِــيٌّ وَ فَرْعِــيٌّ لَــهُ ... وَسَــمِّ أَوَّلاً طَبِيعِيًّــا وَهُــو</div>
+                        <div class="poem-verse">مَــا لاَ تَوَقُّــفٌ لَــهُ عَلَــى سَــبَبْ ... وَلا بِدُونِــهِ الْحُــرُوفُ تُجْتَــلَبْ</div>
+                        <div class="poem-verse">وَالآخَــرُ الْفَرْعِــيُّ مَوْقُوفٌ عَلَــى ... سَــبَبْ كَهَمْــزٍ أَوْ سُــكُونٍ مُسْــجَلاَ</div>
+                        <div class="ornament"></div>
+                        <div class="poem-verse">لِلْمَــدِّ أَحْكَــامٌ ثَلاثَــةٌ تَــدُومْ ... وَهْــيَ الْوُجُــوبُ وَالْجَــوَازُ وَاللُّــزُومْ</div>
+                        <div class="poem-verse">فَوَاجِــبٌ إِنْ جَــاءَ هَمْــزٌ بَعْــدَ مَــدْ ... فِــي كِلْمَــةٍ وَذَا بِمُتَّصِــلْ يُعَــدْ</div>
+                        <div class="poem-verse">وَجَائِــزٌ مَــدٌّ وَقَصْــرٌ إِنْ فُصِــلْ ... كُــلٌّ بِكِلْمَــةٍ وَهَــذَا الْمُنْفَصِــلْ</div>
+                        <div class="poem-verse">وَمِثْــلُ ذَا إِنْ عَــرَضَ السُّــكُونُ ... وَقْفًــا كَتَعْلَمُــونَ نَسْــتَعِينُ</div>
+                        <div class="poem-verse">أَوْ قُــدِّمَ الْهَمْــزُ عَلَــى الْمَــدِّ وَذَا ... بَــدَلْ كَآمَنُــوا وَإِيمَانًــا خُــذَا</div>
+                        <div class="poem-verse">وَلاَزِمٌ إِنِ السُّــكُونُ أُصِّــلاَ ... وَصْــلاً وَوَقْفًــا بَعْــدَ مَــدٍّ طُــوِّلاَ</div>
+                        <p class="mt-4"><strong>الشرح:</strong> المد قسمان: أصلي (طبيعي) وفرعي (بسبب همز أو سكون). وأحكامه ثلاثة: الوجوب (للمد المتصل)، والجواز (للمد المنفصل والعارض للسكون والبدل)، واللزوم (للمد اللازم).</p>
+                        <div class="text-left"><button class="smart-nav-btn" data-target="madd-section" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
+                    </div>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-madd-lazim">
+                    <div class="tuhfa-card-header">أقسام المد اللازم</div>
+                    <div class="tuhfa-card-body">
+                         <div class="poem-verse">أَقْسَــامُ لاَزِمٍ لَدَيْهِــمْ أَرْبَعَــهْ ... وَتِلْــكَ كِلْمِــيٌّ وَحَرْفِــيٌّ مَعَــهْ</div>
+                         <div class="poem-verse">كِلاَهُمَــا مُخَفَّــفٌ مُثَقَّــلُ ... فَهَــذِهِ أَرْبَعَــةٌ تُفَصَّــلُ</div>
+                         <div class="poem-verse">فَــإِنْ بِكِلْمَــةٍ سُــكُونٌ اجْتَمَــعْ ... مَــعْ حَــرْفِ مَــدٍّ فَهْوَ كِلْمِيٌّ وَقَعْ</div>
+                         <div class="poem-verse">أَوْ فِــي ثُلاَثِــيِّ الْحُــرُوفِ وُجِــدَا ... وَالْمَــدُّ وَسْــطُهُ فَحَرْفِــيٌّ بَــدَا</div>
+                         <div class="poem-verse">كِلاَهُمَــا مُثَقَّــلٌ إِنْ أُدْغِمَــا ... مَخَفَّــفٌ كُــلٌّ إِذَا لَــمْ يُدْغَمَــا</div>
+                         <p class="mt-4"><strong>الشرح:</strong> المد اللازم أربعة أقسام: كلمي (مثقل ومخفف) وحرفي (مثقل ومخفف). يكون مثقلًا إذا جاء بعد حرف المد حرف مدغم (مشدد)، ومخففًا إذا جاء بعده حرف ساكن غير مدغم.</p>
+                         <div class="text-left"><button class="smart-nav-btn" data-target="madd-section" data-scroll-to="madd-lazim-details" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
+                    </div>
+                </div>
+
+                <div class="tuhfa-card" id="tuhfa-conclusion">
+                    <div class="tuhfa-card-header">الخاتمة</div>
+                    <div class="tuhfa-card-body">
+                        <div class="poem-verse">وَتَــمَّ ذَا النَّظْــمُ بِحَمْــدِ الـلَّـهِ ... عَلَــى تَمَامِــهِ بِــلاَ تَنَاهِــي</div>
+                        <div class="poem-verse">أَبْيَاتُــهُ نَــدٌّ بَــدَا لِذِي النُّهَــى ... تَارِيخُهَــا (بُشْــرَى لِمَــنْ يُتْقِنُهَــا)</div>
+                        <div class="poem-verse">ثُــمَّ الصَّــلاَةُ وَالسَّــلاَمُ أَبَــدَا ... عَلَــى خِتَــامِ الأَنْبِيَــاءِ أَحْمَــدَا</div>
+                        <div class="poem-verse">وَالآلِ وَالصَّحْــبِ وَكُــلِّ تَابِــعِ ... وَكُــلِّ قَــارِئٍ وَكُــلِّ سَــامِعِ</div>
+                        <p class="mt-4">يختتم الناظم منظومته بحمد الله، ويذكر أن عدد أبياتها 61، ثم يصلي ويسلم على النبي محمد ﷺ وآله وصحبه ومن تبعهم.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <div id="custom-toast"></div>
@@ -866,28 +1040,56 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            const chapterOrder = ['noon-sakinah-section', 'meem-sakinah-section', 'madd-section', 'sifaat-section', 'makharij-section', 'waqf-section', 'relations-section', 'practice-section', 'quiz-section'];
+            const chapterOrder = ['noon-sakinah-section', 'meem-sakinah-section', 'madd-section', 'sifaat-section', 'makharij-section', 'waqf-section', 'relations-section', 'practice-section', 'quiz-section', 'tuhfa-section'];
             let visitedChapters = JSON.parse(localStorage.getItem('tajweedProgress')) || [];
 
             const glossaryData = {
-                "التجويد": "لغةً: التحسين والإتقان. واصطلاحًا: إخراج כל حرف من مخرجه مع إعطائه حقه ومستحقه.",
+                "التجويد": "لغةً: التحسين والإتقان. واصطلاحًا: إخراج كل حرف من مخرجه مع إعطائه حقه ومستحقه.",
                 "المخرج": "هو الموضع الذي يخرج منه الحرف عند النطق به.",
                 "الغنة": "صوت رخيم يخرج من الخيشوم (أقصى الأنف)، لا عمل للسان فيه، وهي صفة لازمة لحرفي النون والميم.",
                 "الإظهار": "البيان والوضوح، وهو إخراج الحرف من مخرجه بغير غنة ظاهرة.",
                 "الإدغام": "إدخال حرف ساكن بحرف متحرك بحيث يصيران حرفًا واحدًا مشددًا.",
                 "الإقلاب": "قلب النون الساكنة أو التنوين ميمًا مخفاة بغنة عند ملاقاة الباء.",
                 "الإخفاء": "النطق بالحرف بحالة بين الإظهار والإدغام، مع بقاء الغنة.",
-                "القلقلة": "اضطراب المخرج عند النطق بالحرف ساكناً حتى يُسمع له نبرة قوية."
+                "القلقلة": "اضطراب المخرج عند النطق بالحرف ساكناً حتى يُسمع له نبرة قوية.",
+                "المد": "لغةً: الزيادة. واصطلاحًا: إطالة الصوت بحرف من حروف المد."
             };
             
             const examplesData = {
-                noon: {
-                    hamza: { title: 'أمثلة (ء)', noun: ['"مَنْ ءَامَنَ"', '"يَنْأَوْنَ"'], tanween: ['"كُلٌّ ءَامَنَ"', '"وجَنَّاتٍ أَلفَافًا"'] }, haa: { title: 'أمثلة (هـ)', noun: ['"أَنْهَارٌ"', '"إِنْ هُوَ"'], tanween: ['"جُرُفٍ هَارٍ"', '"سَلَامٌ هِيَ"'] }, ain: { title: 'أمثلة (ع)', noun: ['"أَنْعَمْتَ"', '"مِنْ عِلْمٍ"'], tanween: ['"سَمِيعٌ عَلِيمٌ"', '"حَقِيقٌ عَلَىٰ"'] }, ha: { title: 'أمثلة (ح)', noun: ['"وَانْحَرْ"', '"يَنْحِتُونَ"'], tanween: ['"عَزِيزٌ حَكِيمٌ"', '"عَلِيمٌ حَلِيمٌ"'] }, ghain: { title: 'أمثلة (غ)', noun: ['"فَسَيُنْغِضُونَ"', '"مِنْ غِلٍّ"'], tanween: ['"عَفُوًّا غَفُورًا"', '"قَوْلاً غَيْرَ"'] }, khaa: { title: 'أمثلة (خ)', noun: ['"وَالْمُنْخَنِقَةُ"', '"مِنْ خَيْرٍ"'], tanween: ['"عَلِيمٌ خَبِيرٌ"', '"يَوْمَئِذٍ خَاشِعَةٌ"'] }, yaa: { title: 'أمثلة (ي)', noun: ['"فَمَن يَّعْمَلْ"'], tanween: ['"خَيْرٌ يَّرَهُ"', '"وُجُوهٌ يَّوْمَئِذٍ"'] }, noun: { title: 'أمثلة (ن)', noun: ['"عَن نَّفْسٍ"'], tanween: ['"آمِنَةٌ نُّعَاسًا"', '"يَوْمَئِذٍ نَّاعِمَةٌ"'] }, mim: { title: 'أمثلة (م)', noun: ['"مِن مَّالٍ"'], tanween: ['"قَوْلاً مِّن"', '"خَيْرٌ مِّنْهُ"'] }, waw: { title: 'أمثلة (و)', noun: ['"مِن وَّالٍ"'], tanween: ['"غِشَاوَةٌ وَّلَهُمْ"', '"مَعْرُوفٌ وَّمَغْفِرَةٌ"'] }, lam: { title: 'أمثلة (ل)', noun: ['"مِن لَّدُنْهُ"'], tanween: ['"هُدًى لِّلْمُتَّقِينَ"', '"رَسُولٌ لَّكُمْ"'] }, raa: { title: 'أمثلة (ر)', noun: ['"مِن رَّبِّهِمْ"'], tanween: ['"غَفُورٌ رَّحِيمٌ"', '"عِيشَةٍ رَّاضِيَةٍ"'] }, baa: { title: 'أمثلة (ب)', noun: ['"أَنۢبِئْهُمْ"', '"مِنۢ بَعْدِ"'], tanween: ['"سَمِيعٌۢ بَصِيرٌ"', '"عَلِيمٌۢ بِذَاتِ"'] }, sad: { title: 'أمثلة (ص)', noun: ['"يَنصُرُكُمْ"', '"عَن صَلاتِهِمْ"'], tanween: ['"رِيحًا صَرْصَرًا"', '"عَمَلاً صَالِحًا"'] }, thal: { title: 'أمثلة (ذ)', noun: ['"مُنذِرٌ"', '"مِن ذَهَبٍ"'], tanween: ['"شَيءٍ ذَلِكَ"', '"ظِلاًّ ذِي"'] }, thaa: { title: 'أمثلة (ث)', noun: ['"مَنثُورًا"', '"مِن ثَمَرَةٍ"'], tanween: ['"خَيْرًا ثَوَابًا"', '"قَوْلاً ثَقِيلاً"'] }, kaf: { title: 'أمثلة (ك)', noun: ['"مِنكُم"', '"عَن كَعْبَةِ"'], tanween: ['"شَيْءٍ كَبِيرٌ"', '"يَوْمَئِذٍ كَثِيرَةً"'] }, jim: { title: 'أمثلة (ج)', noun: ['"يُنجِيكُمْ"', '"مِن جُوعٍ"'], tanween: ['"خَلْقٍ جَدِيدٍ"', '"فَصَبْرٌ جَمِيلٌ"'] }, shin: { title: 'أمثلة (ش)', noun: ['"يَنشُرْ"', '"مِن شَرِّ"'], tanween: ['"عَذَابٌ شَدِيدٌ"', '"جَنَّةٍ شَرَابًا"'] }, qaf: { title: 'أمثلة (ق)', noun: ['"يَنقَلِبُ"', '"مِن قَبْلُ"'], tanween: ['"عَلِيمٌ قَدِيرٌ"', '"سَمِيعٌ قَرِيبٌ"'] }, sin: { title: 'أمثلة (س)', noun: ['"الإِنسَانُ"', '"عَن سَبِيلِ"'], tanween: ['"رَجُلاً سَلَمًا"', '"خَمْسَةٌ سَادِسُهُمْ"'] }, dal: { title: 'أمثلة (د)', noun: ['"أَندَادًا"', '"مِن دُونِ"'], tanween: ['"قِنْوَانٌ دَانِيَةٌ"', '"كَأْسًا دِهَاقًا"'] }, tah: { title: 'أمثلة (ط)', noun: ['"يَنطِقُونَ"', '"مِن طِينٍ"'], tanween: ['"بَلْدَةٌ طَيِّبَةٌ"', '"حَلالاً طَيِّبًا"'] }, zay: { title: 'أمثلة (ز)', noun: ['"أَنزَلَ"', '"مِن زَوَالٍ"'], tanween: ['"نَفْسًا زَكِيَّةً"', '"يَوْمَئِذٍ زُرْقًا"'] }, faa: { title: 'أمثلة (ف)', noun: ['"يَنفَطِرُ"', '"مِن فَضْلِ"'], tanween: ['"خَالِدًا فِيهَا"', '"عَيْنًا فِيهَا"'] }, taa: { title: 'أمثلة (ت)', noun: ['"كُنتُم"', '"عَن تِلْكَ"'], tanween: ['"جَنَّاتٌ تَجْرِي"', '"حُورٌ تِلْكَ"'] }, dhad: { title: 'أمثلة (ض)', noun: ['"مَنضُودٍ"', '"مِن ضَعْفٍ"'], tanween: ['"قَوْمًا ضَالِّينَ"', '"وُجُوهٌ ضَاحِكَةٌ"'] }, dhaa: { title: 'أمثلة (ظ)', noun: ['"يَنظُرُونَ"', '"مِن ظَهِيرٍ"'], tanween: ['"ظِلاًّ ظَلِيلاً"', '"سَحَابٌ ظُلُمَاتٌ"'] }
-                },
-                meem: {
-                    'baa-meem': { title: 'أمثلة (ب)', examples: ['"تَرْمِيهِ<strong>مْ بِ</strong>حِجَارَةٍ"', '"يَعْتَصِ<strong>مْ بِ</strong>اللهِ"', '"وَهُ<strong>مْ بَ</strong>ارِزُونَ"'] },
-                    'mim-meem': { title: 'أمثلة (م)', examples: ['"وَلَكُ<strong>مْ مَّ</strong>ا كَسَبْتُمْ"', '"أَطْعَمَهُ<strong>مْ mِّ</strong>نْ جُوعٍ"', '"فِي قُلُوبِهِ<strong>مْ مَّ</strong>رَضٌ"'] }
-                }
+              noon: {
+                hamza: { title: 'أمثلة (ء)', noun: ['"مَنْ ءَامَنَ"'], tanween: ['"كُلٌّ ءَامَنَ"'] },
+                haa: { title: 'أمثلة (هـ)', noun: ['"أَنْهَارٌ"'], tanween: ['"جُرُفٍ هَارٍ"'] },
+                ain: { title: 'أمثلة (ع)', noun: ['"أَنْعَمْتَ"'], tanween: ['"سَمِيعٌ عَلِيمٌ"'] },
+                ha: { title: 'أمثلة (ح)', noun: ['"وَانْحَرْ"'], tanween: ['"عَزِيزٌ حَكِيمٌ"'] },
+                ghain: { title: 'أمثلة (غ)', noun: ['"فَسَيُنْغِضُونَ"'], tanween: ['"عَفُوًّا غَفُورًا"'] },
+                khaa: { title: 'أمثلة (خ)', noun: ['"وَالْمُنْخَنِقَةُ"'], tanween: ['"عَلِيمٌ خَبِيرٌ"'] },
+                yaa: { title: 'أمثلة (ي)', noun: ['"فَمَن يَّعْمَلْ"'], tanween: ['"خَيْرٌ يَّرَهُ"'] },
+                noun: { title: 'أمثلة (ن)', noun: ['"عَن نَّفْسٍ"'], tanween: ['"آمِنَةٌ نُّعَاسًا"'] },
+                mim: { title: 'أمثلة (م)', noun: ['"مِن مَّالٍ"'], tanween: ['"قَوْلاً مِّن"'] },
+                waw: { title: 'أمثلة (و)', noun: ['"مِن وَّالٍ"'], tanween: ['"غِشَاوَةٌ وَّلَهُمْ"'] },
+                lam: { title: 'أمثلة (ل)', noun: ['"مِن لَّدُنْهُ"'], tanween: ['"هُدًى لِّلْمُتَّقِينَ"'] },
+                raa: { title: 'أمثلة (ر)', noun: ['"مِن رَّبِّهِمْ"'], tanween: ['"غَفُورٌ رَّحِيمٌ"'] },
+                baa: { title: 'أمثلة (ب)', noun: ['"أَنۢبِئْهُمْ"'], tanween: ['"سَمِيعٌۢ بَصِيرٌ"'] },
+                sad: { title: 'أمثلة (ص)', noun: ['"يَنصُرُكُمْ"'], tanween: ['"رِيحًا صَرْصَرًا"'] },
+                thal: { title: 'أمثلة (ذ)', noun: ['"مُنذِرٌ"'], tanween: ['"ظِلاًّ ذِي"'] },
+                thaa: { title: 'أمثلة (ث)', noun: ['"مَنثُورًا"'], tanween: ['"قَوْلاً ثَقِيلاً"'] },
+                kaf: { title: 'أمثلة (ك)', noun: ['"مِنكُم"'], tanween: ['"شَيْءٍ كَبِيرٌ"'] },
+                jim: { title: 'أمثلة (ج)', noun: ['"يُنجِيكُمْ"'], tanween: ['"فَصَبْرٌ جَمِيلٌ"'] },
+                shin: { title: 'أمثلة (ش)', noun: ['"يَنشُرْ"'], tanween: ['"عَذَابٌ شَدِيدٌ"'] },
+                qaf: { title: 'أمثلة (ق)', noun: ['"يَنقَلِبُ"'], tanween: ['"عَلِيمٌ قَدِيرٌ"'] },
+                sin: { title: 'أمثلة (س)', noun: ['"الإِنسَانُ"'], tanween: ['"رَجُلاً سَلَمًا"'] },
+                dal: { title: 'أمثلة (د)', noun: ['"أَندَادًا"'], tanween: ['"قِنْوَانٌ دَانِيَةٌ"'] },
+                tah: { title: 'أمثلة (ط)', noun: ['"يَنطِقُونَ"'], tanween: ['"بَلْدَةٌ طَيِّبَةٌ"'] },
+                zay: { title: 'أمثلة (ز)', noun: ['"أَنزَلَ"'], tanween: ['"نَفْسًا زَكِيَّةً"'] },
+                faa: { title: 'أمثلة (ف)', noun: ['"يَنفَطِرُ"'], tanween: ['"خَالِدًا فِيهَا"'] },
+                taa: { title: 'أمثلة (ت)', noun: ['"كُنتُم"'], tanween: ['"جَنَّاتٌ تَجْرِي"'] },
+                dhad: { title: 'أمثلة (ض)', noun: ['"مَنضُودٍ"'], tanween: ['"قَوْمًا ضَالِّينَ"'] },
+                dhaa: { title: 'أمثلة (ظ)', noun: ['"يَنظُرُونَ"'], tanween: ['"ظِلاًّ ظَلِيلاً"'] }
+              },
+              meem: {
+                'baa-meem': { title: 'أمثلة (ب)', examples: ['"تَرْمِيهِمْ بِحِجَارَةٍ"', '"يَعْتَصِمْ بِاللَّهِ"'] },
+                'mim-meem': { title: 'أمثلة (م)', examples: ['"وَلَكُمْ مَا كَسَبْتُمْ"', '"فِي قُلُوبِهِمْ مَرَضٌ"'] }
+              }
             };
             
             const introPage = document.getElementById('intro-page');
@@ -912,7 +1114,6 @@
                     incoming.classList.remove('hidden');
                     void incoming.offsetWidth;
                     incoming.classList.remove('fade-out');
-                    window.scrollTo(0, 0);
                 }, 300);
             }
 
@@ -924,6 +1125,33 @@
                 setTimeout(() => { toast.classList.remove('show'); }, 3000);
             }
             
+             function playAudio(surah, ayah) {
+                const recitationId = 7; // Mishary Rashid Alafasy
+                const apiUrl = `https://api.quran.com/api/v4/recitations/${recitationId}/by_ayah/${surah}:${ayah}`;
+
+                showToast('جاري تشغيل الصوت...');
+                audioPlayer.pause();
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.audio_files && data.audio_files.length > 0) {
+                            const audioUrl = data.audio_files[0].audio_url;
+                            audioPlayer.src = "https://audio.qurancdn.com/" + audioUrl;
+                            audioPlayer.play().catch(e => {
+                                console.error("Audio play failed:", e);
+                                showToast("خطأ في تشغيل الصوت.");
+                            });
+                        } else {
+                            showToast("لم يتم العثور على ملف صوتي.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching audio:', error);
+                        showToast("فشل تحميل الصوت. تحقق من اتصالك بالإنترنت.");
+                    });
+            }
+
             function addAudioIconsToExamples(container) {
                 container.querySelectorAll('.example-item').forEach(item => {
                     if (item.querySelector('.audio-icon')) return; 
@@ -932,8 +1160,8 @@
                     if (surah && ayah) {
                         const icon = document.createElement('button');
                         icon.type = 'button';
-                        icon.innerHTML = `🔊`;
-                        icon.classList.add('audio-icon', 'text-xl');
+                        icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 12a7.5 7.5 0 0 0 15 0h-15ZM2.25 12a9.75 9.75 0 0 1 9.75-9.75v19.5A9.75 9.75 0 0 1 2.25 12Z" /></svg>`;
+                        icon.classList.add('audio-icon');
                         icon.dataset.surah = surah;
                         icon.dataset.ayah = ayah;
                         item.prepend(icon);
@@ -959,6 +1187,7 @@
                         if (nextChapterId === 'quiz-section') {
                             initializeQuiz(chapterBody.querySelector('#quiz-section'));
                         }
+                         window.scrollTo(0, 0);
                     }
                 }
             }
@@ -1054,6 +1283,8 @@
             document.addEventListener('click', function(e) {
                 const target = e.target;
                 
+                const navButton = target.closest('.hub-card, .smart-nav-btn');
+
                 if(target.closest('#start-btn')) {
                     switchView(introPage, mainContentArea);
                 } else if(target.closest('#back-to-intro-btn')) {
@@ -1061,31 +1292,60 @@
                     switchView(currentVisible, introPage);
                 } else if(target.closest('#back-to-hub')) {
                     switchView(chapterContent, mainContentArea);
-                } else if(target.closest('.hub-card')) {
-                    const hubCard = target.closest('.hub-card');
-                    const targetId = hubCard.dataset.target;
-                    if (!visitedChapters.includes(targetId)) {
+                } else if (navButton) {
+                    const targetId = navButton.dataset.target;
+                    const scrollToId = navButton.dataset.scrollTo;
+
+                    if (!visitedChapters.includes(targetId) && chapterOrder.includes(targetId)) {
                         visitedChapters.push(targetId);
                         localStorage.setItem('tajweedProgress', JSON.stringify(visitedChapters));
+                        updateProgressBar();
                     }
-                    updateProgressBar();
 
                     const targetSection = allContentHolder.querySelector(`#${targetId}`);
                     if (targetSection) {
-                        switchView(mainContentArea, chapterContent);
-                        chapterBody.innerHTML = '';
-                        chapterBody.appendChild(targetSection.cloneNode(true));
-                        chapterBody.querySelector('.page-section').classList.remove('hidden');
+                        const fromView = mainContentArea.classList.contains('hidden') ? chapterContent : mainContentArea;
                         
-                        const newChapterFooter = footerTemplate.cloneNode(true);
-                        chapterContent.appendChild(newChapterFooter);
-                        
-                        addAudioIconsToExamples(chapterBody);
-                        updateNavButtons();
-                        if(targetId === 'quiz-section'){
-                           initializeQuiz(chapterBody.querySelector('#quiz-section'));
+                        if (fromView !== chapterContent) {
+                            switchView(fromView, chapterContent);
                         }
+                        
+                        // Use a brief timeout to allow the old content to fade before replacing
+                        setTimeout(() => {
+                            chapterBody.innerHTML = '';
+                            chapterBody.appendChild(targetSection.cloneNode(true));
+                            chapterBody.querySelector('.page-section').classList.remove('hidden');
+
+                            const existingFooter = chapterContent.querySelector('footer');
+                            if (existingFooter) existingFooter.remove();
+                            chapterContent.appendChild(footerTemplate.cloneNode(true));
+
+                            addAudioIconsToExamples(chapterBody);
+                            updateNavButtons();
+                            if (targetId === 'quiz-section') {
+                                initializeQuiz(chapterBody.querySelector('#quiz-section'));
+                            }
+
+                            if (scrollToId) {
+                                setTimeout(() => {
+                                    const elementToScroll = chapterBody.querySelector(`#${scrollToId}`);
+                                    if (elementToScroll) {
+                                        elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                        elementToScroll.style.transition = 'background-color 0.5s';
+                                        elementToScroll.style.backgroundColor = 'rgba(197, 160, 93, 0.2)';
+                                        setTimeout(() => {
+                                            elementToScroll.style.backgroundColor = '';
+                                        }, 2000);
+                                    }
+                                }, 100); 
+                            } else if (!navButton.classList.contains('back-to-tuhfa')) {
+                                window.scrollTo(0, 0);
+                            }
+                        }, fromView === chapterContent ? 0 : 300);
                     }
+                } else if (target.closest('.audio-icon')) {
+                    const audioIcon = target.closest('.audio-icon');
+                    playAudio(audioIcon.dataset.surah, audioIcon.dataset.ayah);
                 } else if (target.closest('#creator-info-toggle')) {
                     document.getElementById('creator-info-panel').classList.toggle('open');
                     target.closest('#creator-info-toggle').classList.toggle('active');
@@ -1099,6 +1359,7 @@
                     body.classList.toggle('high-contrast');
                 } else if (target.closest('#search-btn')) {
                     document.getElementById('search-bar').classList.toggle('active');
+                    document.getElementById('search-bar').focus();
                 } else if (target.closest('#prev-chapter-btn')) {
                     navigateChapter(-1);
                 } else if (target.closest('#next-chapter-btn')) {
@@ -1111,6 +1372,50 @@
                         content.style.maxHeight = null;
                     } else {
                         content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                } else if (target.closest('.letter-node')) {
+                    const letterNode = target.closest('.letter-node');
+                    const letter = letterNode.dataset.letter;
+                    const parent = letterNode.dataset.parent;
+                    const examplesContainer = letterNode.closest('.rule-card-body').querySelector('.examples-container');
+                    
+                    if (!examplesContainer) return;
+
+                    if (letterNode.classList.contains('active')) {
+                        letterNode.classList.remove('active');
+                        examplesContainer.innerHTML = '';
+                        return;
+                    }
+
+                    letterNode.closest('.rule-card-body').querySelectorAll('.letter-node').forEach(n => n.classList.remove('active'));
+                    
+                    if (examplesData[parent] && examplesData[parent][letter]) {
+                        const data = examplesData[parent][letter];
+                        letterNode.classList.add('active');
+                        
+                        let examplesHtml = '';
+                        if (data.examples) { 
+                            examplesHtml = data.examples.map(ex => `<div class="example-item">${ex}</div>`).join(''); 
+                        } else if (data.noun && data.tanween) { 
+                            examplesHtml = `<div><p class="example-title">مع النون الساكنة:</p>${data.noun.map(ex => `<div class="example-item">${ex}</div>`).join('')}</div><div class="mt-4 pt-4 border-t border-amber-200/20"><p class="example-title">مع التنوين:</p>${data.tanween.map(ex => `<div class="example-item">${ex}</div>`).join('')}</div>`; 
+                        }
+                        
+                        if (examplesHtml) {
+                            examplesContainer.innerHTML = `<div class="example-panel"><h4 class="text-xl font-bold mb-4">${data.title}</h4>${examplesHtml}</div>`;
+                            addAudioIconsToExamples(examplesContainer);
+                        } else {
+                             examplesContainer.innerHTML = `<div class="example-panel"><p>لا توجد أمثلة متاحة لهذا الحرف حاليًا.</p></div>`;
+                        }
+                    } else {
+                        examplesContainer.innerHTML = `<div class="example-panel"><p>لا توجد أمثلة متاحة لهذا الحرف حاليًا.</p></div>`;
+                    }
+                } else if (target.closest('.practice-word')) {
+                    const word = target.closest('.practice-word');
+                    const info = word.dataset.info;
+                    const infoBox = document.getElementById('practice-info');
+                    if(info && infoBox) {
+                        infoBox.textContent = info;
+                        infoBox.classList.remove('hidden');
                     }
                 }
             });
@@ -1125,7 +1430,16 @@
                         tooltipBox.style.display = 'block';
                         const rect = termElement.getBoundingClientRect();
                         tooltipBox.style.top = `${rect.bottom + window.scrollY + 5}px`;
-                        tooltipBox.style.right = `${window.innerWidth - rect.right - window.scrollX}px`;
+                        // Adjust position to prevent overflow
+                        const rightPos = window.innerWidth - rect.right - window.scrollX;
+                        const leftPos = rect.left + window.scrollX;
+                        if (rightPos + tooltipBox.offsetWidth > window.innerWidth) {
+                            tooltipBox.style.right = 'auto';
+                            tooltipBox.style.left = `${leftPos}px`;
+                        } else {
+                            tooltipBox.style.left = 'auto';
+                            tooltipBox.style.right = `${rightPos}px`;
+                        }
                     }
                 }
             });
@@ -1135,75 +1449,35 @@
                     tooltipBox.style.display = 'none';
                 }
             });
-            
-            document.addEventListener("click", async (event) => {
-                const btn = event.target.closest(".audio-icon");
-                if (!btn) return;
 
-                event.stopPropagation();
-                const surah = btn.dataset.surah;
-                const ayah = btn.dataset.ayah;
-
-                if (!surah || !ayah) {
-                    showToast("⚠️ لم يتم تحديد رقم السورة أو الآية لهذا المثال.");
-                    return;
-                }
-
-                const apiUrl = `https://api.alquran.cloud/v1/ayah/${surah}:${ayah}/ar.alhusary`;
-
-                try {
-                    const res = await fetch(apiUrl);
-                    const data = await res.json();
-
-                    if (!data || !data.data || !data.data.audio) {
-                        showToast("⚠️ لم يتم العثور على ملف صوتي لهذه الآية.");
-                        return;
-                    }
-
-                    const audioUrl = data.data.audio;
-
-                    if (audioPlayer.src === audioUrl && !audioPlayer.paused) {
-                        audioPlayer.pause();
-                        audioPlayer.currentTime = 0;
+            // Search Functionality
+            const searchBar = document.getElementById('search-bar');
+            searchBar.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                const hubCards = document.querySelectorAll('#main-hub .hub-card');
+                hubCards.forEach(card => {
+                    const title = card.querySelector('h2').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
                     } else {
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
+                        card.style.display = 'none';
                     }
-                } catch (error) {
-                    console.error("Audio Error:", error);
-                    showToast("⚠️ تعذر تحميل التلاوة الآن، تحقق من الاتصال بالإنترنت.");
-                }
+                });
             });
-            
-            document.addEventListener('click', function(e) {
-                const letterNode = e.target.closest('.letter-node');
-                if (letterNode) {
-                    const letter = letterNode.dataset.letter;
-                    const parent = letterNode.dataset.parent;
-                    const examplesContainer = letterNode.closest('.rule-card').querySelector('.examples-container');
-                    
-                    if (!examplesContainer) return;
 
-                    if (letterNode.classList.contains('active')) {
-                        letterNode.classList.remove('active');
-                        examplesContainer.innerHTML = '';
-                        return;
+            // Share functionality
+            document.addEventListener('click', (e) => {
+                const shareWhatsapp = e.target.closest('#share-whatsapp');
+                const shareFacebook = e.target.closest('#share-facebook');
+                if (shareWhatsapp || shareFacebook) {
+                    const pageUrl = window.location.href;
+                    const shareText = "مخطوطة التجويد الذهبية - أداة تفاعلية لتعلم التجويد";
+                    if (shareWhatsapp) {
+                       shareWhatsapp.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + pageUrl)}`;
                     }
-
-                    letterNode.closest('.rule-card').querySelectorAll('.letter-node').forEach(n => n.classList.remove('active'));
-                    
-                    if (examplesData[parent] && examplesData[parent][letter]) {
-                        const data = examplesData[parent][letter];
-                        letterNode.classList.add('active');
-                        
-                        let examplesHtml = '';
-                        if (data.examples) { 
-                            examplesHtml = data.examples.map(ex => `<div class="example-item">${ex}</div>`).join(''); 
-                        } else { 
-                            examplesHtml = `<div><p class="example-title">مع النون الساكنة:</p>${data.noun.map(ex => `<div class="example-item">${ex}</div>`).join('')}</div><div class="mt-4 pt-4 border-t border-amber-200/20"><p class="example-title">مع التنوين:</p>${data.tanween.map(ex => `<div class="example-item">${ex}</div>`).join('')}</div>`; 
-                        }
-                        examplesContainer.innerHTML = `<div class="example-panel"><h4 class="text-xl font-bold mb-4">${data.title}</h4>${examplesHtml}</div>`;
-                        addAudioIconsToExamples(examplesContainer);
+                    if (shareFacebook) {
+                       shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
                     }
                 }
             });
@@ -1212,4 +1486,3 @@
     </script>
 </body>
 </html>
-
