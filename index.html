@@ -50,13 +50,12 @@
             height: 100%;
             z-index: -10;
             overflow: hidden;
-            background-color: #f5eeda; /* Fallback color */
-            background-image:
-                /* Subtle calligraphic pattern */
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cpath d='M 50 10 C 80 150, 150 80, 180 290' stroke='%23442a29' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.08'/%3E%3Cpath d='M 10 200 C 100 50, 180 150, 290 10' stroke='%23442a29' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.08'/%3E%3Cpath d='M 290 200 C 150 50, 80 250, 10 290' stroke='%23442a29' stroke-width='4' fill='none' stroke-linecap='round' opacity='0.08'/%3E%3C/svg%3E"),
-                /* Earthy gradient */
-                radial-gradient(circle at center, #f5eeda, #d7c8b8);
-            background-size: 300px, 100%;
+            background-color: #D2B48C; /* Tan color similar to the image */
+            background-image: 
+                /* Middle layer: Static vignette */
+                radial-gradient(circle at center, rgba(245, 222, 179, 0.5) 0%, rgba(210, 180, 140, 0.8) 100%),
+                /* Bottom layer: Geometric pattern */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%238c6d37' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm0-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm0-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm0-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 6h2v2H6V6zm2 2h2v2H8V8zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2H8v-2zm-2 2h2v2H6v-2zm-2 2h2v2H4v-2zm-2 2h2v2H2v-2zm10-8h2v2h-2V8zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2H8v-2zm10-8h2v2h-2V8zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm10-8h2v2h-2V8zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm10-8h2v2h-2V8zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .page-transition {
@@ -566,15 +565,12 @@
           margin: 20px 0;
         }
         .tajweed-image {
-          width: 70%;
-          max-width: 500px;
+          width: 100%;
+          max-width: 600px;
+          display: block;
+          margin: 15px auto;
           border-radius: 12px;
-          box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-          transition: transform 0.25s ease-in-out;
-          cursor: pointer;
-        }
-        .tajweed-image:hover {
-          transform: scale(1.03);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .caption {
           font-size: 1rem;
@@ -835,17 +831,31 @@
             </div>
         </div>
         <div id="noon-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام النون الساكنة والتنوين</h1> <p class="text-gray-400">هي نون خالية من الحركة، أو تنوين يلحق آخر الأسماء</p> <button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-noon-sakinah" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button></div>
-        <div class="illustration-placeholder">
-            <div class="illustration-placeholder-icon">🖼️</div>
-            <p class="illustration-placeholder-text">صورة توضيحية لمخارج الحروف وأمثلة على كل حكم</p>
+        <div class="image-container">
+            <div class="tooltip">
+                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/156c2bee6d26281f77e04f5eee6e44c25ac4bb17/hqdefault.jpg" alt="أحكام النون الساكنة والتنوين" class="tajweed-image"/>
+                <span class="tooltiptext">خريطة ذهنية لأحكام النون الساكنة والتنوين.</span>
+            </div>
+            <p class="caption">صورة توضيحية لأحكام النون الساكنة والتنوين الأربعة.</p>
         </div>
-        <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. <span class="glossary-term" data-term="الإظهار">الإظهار</span> الحلقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>البيان والوضوح.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج النون أو التنوين بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="hamza" data-parent="noon">ء</div> <div class="letter-node" data-letter="haa" data-parent="noon">هـ</div> <div class="letter-node" data-letter="ain" data-parent="noon">ع</div> <div class="letter-node" data-letter="ha" data-parent="noon">ح</div> <div class="letter-node" data-letter="ghain" data-parent="noon">غ</div> <div class="letter-node" data-letter="khaa" data-parent="noon">خ</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. <span class="glossary-term" data-term="الإدغام">الإدغام</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الإدخال والمزج.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال النون أو التنوين بحرف من حروف الإدغام ليصيرا حرفًا واحدًا مشددًا.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6) "يرملون":</h3> <h4 class="font-semibold mt-4 text-center">أ. بغنة (ينمو):</h4> <div class="letter-grid"> <div class="letter-node" data-letter="yaa" data-parent="noon">ي</div> <div class="letter-node" data-letter="noun" data-parent="noon">ن</div> <div class="letter-node" data-letter="mim" data-parent="noon">م</div> <div class="letter-node" data-letter="waw" data-parent="noon">و</div> </div> <h4 class="font-semibold mt-4 text-center">ب. بلا غنة:</h4> <div class="letter-grid grid-cols-2 max-w-xs mx-auto"> <div class="letter-node" data-letter="lam" data-parent="noon">ل</div> <div class="letter-node" data-letter="raa" data-parent="noon">ر</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. <span class="glossary-term" data-term="الإقلاب">الإقلاب</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>تحويل الشيء عن وجهه.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>قلب النون أو التنوين ميمًا مخفاة بغنة عند ملاقاة الباء.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3> <div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"> <div class="letter-node" data-letter="baa" data-parent="noon">ب</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">4. <span class="glossary-term" data-term="الإخفاء">الإخفاء</span> الحقيقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الستر.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالنون أو التنوين بحالة بين الإظهار والإدغام، مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (15):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="sad" data-parent="noon">ص</div> <div class="letter-node" data-letter="thal" data-parent="noon">ذ</div> <div class="letter-node" data-letter="thaa" data-parent="noon">ث</div> <div class="letter-node" data-letter="kaf" data-parent="noon">ك</div> <div class="letter-node" data-letter="jim" data-parent="noon">ج</div> <div class="letter-node" data-letter="shin" data-parent="noon">ش</div> <div class="letter-node" data-letter="qaf" data-parent="noon">ق</div> <div class="letter-node" data-letter="sin" data-parent="noon">س</div> <div class="letter-node" data-letter="dal" data-parent="noon">د</div> <div class="letter-node" data-letter="tah" data-parent="noon">ط</div> <div class="letter-node" data-letter="zay" data-parent="noon">ز</div> <div class="letter-node" data-letter="faa" data-parent="noon">ف</div> <div class="letter-node" data-letter="taa" data-parent="noon">ت</div> <div class="letter-node" data-letter="dhad" data-parent="noon">ض</div> <div class="letter-node" data-letter="dhaa" data-parent="noon">ظ</div> </div> <div class="examples-container"></div> </div> </div> </div> </div> </div>
-        <div id="meem-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام الميم الساكنة</h1> <p class="text-gray-400">هي ميم خالية من الحركة تأتي قبل جميع الحروف ما عدا الألف.</p><button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-meem-sakinah" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button> </div>
-        <div class="illustration-placeholder">
-            <div class="illustration-placeholder-icon">🖼️</div>
-            <p class="illustration-placeholder-text">صورة توضيحية لمخرج الميم وحالاتها</p>
+        <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. <span class="glossary-term" data-term="الإظهار">الإظهار</span> الحلقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>البيان والوضوح.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج النون أو التنوين بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="hamza" data-parent="noon">ء</div> <div class="letter-node" data-letter="haa" data-parent="noon">هـ</div> <div class="letter-node" data-letter="ain" data-parent="noon">ع</div> <div class="letter-node" data-letter="ha" data-parent="noon">ح</div> <div class="letter-node" data-letter="ghain" data-parent="noon">غ</div> <div class="letter-node" data-letter="khaa" data-parent="noon">خ</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. <span class="glossary-term" data-term="الإدغام">الإدغام</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الإدخال والمزج.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال النون أو التنوين بحرف من حروف الإدغام ليصيرا حرفًا واحدًا مشددًا.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (6) "يرملون":</h3> <h4 class="font-semibold mt-4 text-center">أ. بغنة (ينمو):</h4> <div class="letter-grid"> <div class="letter-node" data-letter="yaa" data-parent="noon">ي</div> <div class="letter-node" data-letter="noun" data-parent="noon">ن</div> <div class="letter-node" data-letter="mim" data-parent="noon">م</div> <div class="letter-node" data-letter="waw" data-parent="noon">و</div> </div> <h4 class="font-semibold mt-4 text-center">ب. بلا غنة:</h4> <div class="letter-grid grid-cols-2 max-w-xs mx-auto"> <div class="letter-node" data-letter="lam" data-parent="noon">ل</div> <div class="letter-node" data-letter="raa" data-parent="noon">ر</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. <span class="glossary-term" data-term="الإقلاب">الإقلاب</span></h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>تحويل الشيء عن وجهه.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>قلب النون أو التنوين ميمًا مخفاة بغنة عند ملاقاة الباء.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3> <div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"> <div class="letter-node" data-letter="baa" data-parent="noon">ب</div> </div> <div class="examples-container"></div> </div> </div> </div> <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">4. <span class="glossary-term" data-term="الإخفاء">الإخفاء</span> الحقيقي</h2></div> <div class="rule-card-body"> <div class="definition-grid"> <div><h3 class="font-bold text-lg mb-2">لغةً:</h3><p>الستر.</p></div> <div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالنون أو التنوين بحالة بين الإظهار والإدغام، مع بقاء <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div> </div> <div class="mt-4 pt-4 border-t border-amber-200/20"> <h3 class="font-bold text-lg mb-2 text-center">حروفه (15):</h3> <div class="letter-grid"> <div class="letter-node" data-letter="sad" data-parent="noon">ص</div> <div class="letter-node" data-letter="thal" data-parent="noon">ذ</div> <div class="letter-node" data-letter="thaa" data-parent="noon">ث</div> <div class="letter-node" data-letter="kaf" data-parent="noon">ك</div> <div class="letter-node" data-letter="jim" data-parent="noon">ج</div> <div class="letter-node" data-letter="shin" data-parent="noon">ش</div> <div class="letter-node" data-letter="qaf" data-parent="noon">ق</div> <div class="letter-node" data-letter="sin" data-parent="noon">س</div> <div class="letter-node" data-letter="dal" data-parent="noon">د</div> <div class="letter-node" data-letter="tah" data-parent="noon">ط</div> <div class="letter-node" data-letter="zay" data-parent="noon">ز</div> <div class="letter-node" data-letter="faa" data-parent="noon">ف</div> <div class="letter-node" data-letter="taa" data-parent="noon">ت</div> <div class="letter-node" data-letter="dhad" data-parent="noon">ض</div> <div class="letter-node" data-letter="dhaa" data-parent="noon">ظ</div> </div> <div class="examples-container"></div> </div> </div> </div> </div> </div>
+        <div id="meem-sakinah-section" class="page-section hidden">
+            <div class="mind-map-container p-4 md:p-8">
+                <div class="node text-center">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام الميم الساكنة</h1>
+                    <p class="text-gray-400">هي ميم خالية من الحركة تأتي قبل جميع الحروف ما عدا الألف.</p>
+                    <button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-meem-sakinah" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button>
+                </div>
+                <div class="image-container">
+                    <div class="tooltip">
+                        <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/ac168673a9fb49400ac9b36c53dd982c99b325b0/makhraj_al_meem.jpg" alt="مخرج الميم" class="tajweed-image"/>
+                        <span class="tooltiptext">مخرج الميم من الشفتين.</span>
+                    </div>
+                    <p class="caption">صورة توضيحية لمخرج الميم.</p>
+                </div>
+                <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. الإخفاء الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالميم الساكنة بحالة بين الإظهار والإدغام مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>، عند ملاقاة حرف الباء.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="baa-meem" data-parent="meem">ب</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. الإدغام الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال الميم الساكنة في الميم المتحركة التي تليها، ليصيرا ميماً واحدة مشددة مع <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="mim-meem" data-parent="meem">م</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. الإظهار الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج الميم الساكنة من مخرجها بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>، عند ملاقاة باقي الحروف (26 حرفًا).</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">أمثلة مع حروف مختلفة:</h3><div class="examples-container text-right text-lg md:text-xl"><div class="example-item">"أَ<strong>مْ لَ</strong>هُمْ"</div><div class="example-item">"لَكُ<strong>مْ دِ</strong>ينُكُمْ"</div><div class="example-item">"وَهُ<strong>مْ فِ</strong>يهَا"</div></div></div></div></div>
+            </div>
         </div>
-        <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">1. الإخفاء الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>النطق بالميم الساكنة بحالة بين الإظهار والإدغام مع بقاء <span class="glossary-term" data-term="الغنة">الغنة</span>، عند ملاقاة حرف الباء.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="baa-meem" data-parent="meem">ب</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">2. الإدغام الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إدخال الميم الساكنة في الميم المتحركة التي تليها، ليصيرا ميماً واحدة مشددة مع <span class="glossary-term" data-term="الغنة">غنة</span>.</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">حرفه الوحيد:</h3><div class="letter-grid grid-cols-1 max-w-[80px] mx-auto"><div class="letter-node" data-letter="mim-meem" data-parent="meem">م</div></div><div class="examples-container"></div></div></div></div> <div class="rule-card"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">3. الإظهار الشفوي</h2></div><div class="rule-card-body"><div class="definition-grid"><div><h3 class="font-bold text-lg mb-2">اصطلاحًا:</h3><p>إخراج الميم الساكنة من مخرجها بوضوح تام بغير <span class="glossary-term" data-term="الغنة">غنة</span>، عند ملاقاة باقي الحروف (26 حرفًا).</p></div></div><div class="mt-4 pt-4 border-t border-amber-200/20"><h3 class="font-bold text-lg mb-2 text-center">أمثلة مع حروف مختلفة:</h3><div class="examples-container text-right text-lg md:text-xl"><div class="example-item">"أَ<strong>مْ لَ</strong>هُمْ"</div><div class="example-item">"لَكُ<strong>مْ دِ</strong>ينُكُمْ"</div><div class="example-item">"وَهُ<strong>مْ فِ</strong>يهَا"</div></div></div></div></div> </div> </div>
         <div id="madd-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">باب <span class="glossary-term" data-term="المد">المدود</span></h1> <p class="text-gray-400"><span class="glossary-term" data-term="المد">المد</span> لغةً: الزيادة. واصطلاحًا: إطالة الصوت بحرف من حروف المد.</p><button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-madd" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button> </div>
         <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">المد الطبيعي (الأصلي)</h2></div> <div class="rule-card-body"> <p>هو المد الذي لا تقوم ذات الحرف إلا به، ولا يتوقف على سبب (همز أو سكون). ومقداره حركتان.</p>
         <div class="image-container">
@@ -899,7 +909,7 @@
         <div id="sifaat-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">صفات الحروف</h1> <p class="text-gray-400">الكيفية التي تخرج بها الحروف عند النطق بها لتمييزها عن بعضها.</p> </div>
         <div class="image-container">
             <div class="tooltip">
-                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/sifat-main.jpg" alt="صفات الحروف الرئيسية" class="tajweed-image"/>
+                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/9678472767f20b26f3562496f06c4d532d56e4f8/sifat-main.jpg" alt="الصفات الرئيسية للحروف" class="tajweed-image"/>
                 <span class="tooltiptext">تنقسم صفات الحروف إلى صفات لها ضد وصفات لا ضد لها.</span>
             </div>
             <p class="caption">تقسيم صفات الحروف.</p>
@@ -907,28 +917,28 @@
         <div class="rule-card"> <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">صفات لها ضد</h2></div> <div class="rule-card-body"> <table class="styled-table text-sm md:text-base"><thead><tr><th>الصفة</th><th>ضدها</th><th>الحروف</th></tr></thead><tbody><tr><td>الهمس</td><td>الجهر</td><td>فحثه شخص سكت</td></tr><tr><td>الشدة</td><td>الرخاوة</td><td>أجد قط بكت</td></tr><tr><td>(التوسط)</td><td>-</td><td>لن عمر</td></tr><tr><td>الاستعلاء</td><td>الاستفال</td><td>خص ضغط قظ</td></tr><tr><td>الإطباق</td><td>الانفتاح</td><td>ص ض ط ظ</td></tr><tr><td>الإذلاق</td><td>الإصمات</td><td>فر من لب</td></tr></tbody></table>
         <div class="image-container">
             <div class="tooltip">
-                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/hams-jahr.jpg" alt="الهمس والجهر" class="tajweed-image"/>
+                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/29197e0fc79d197b1436b368a0ef797765950b5f/hams-jahr.jpg" alt="صفات الحروف: الهَمْس والجَهْر" class="tajweed-image"/>
                 <span class="tooltiptext">الهمس (جريان النفس) ضد الجهر (انحباس النفس).</span>
             </div>
             <p class="caption">الفرق بين الهمس والجهر.</p>
         </div>
         <div class="image-container">
             <div class="tooltip">
-                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/shiddah-rikhawah-tawassut.jpg" alt="الشدة والرخاوة والتوسط" class="tajweed-image"/>
+                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/3e19e1cd3eff2862ce560c699f14004433917810/shiddah-rikhawah-tawassut.jpg" alt="الصفات: الشدة، الرخاوة، والتوسط" class="tajweed-image"/>
                 <span class="tooltiptext">الشدة (انحباس الصوت) والرخاوة (جريان الصوت) وبينهما التوسط.</span>
             </div>
             <p class="caption">الفرق بين الشدة والرخاوة والتوسط.</p>
         </div>
         <div class="image-container">
             <div class="tooltip">
-                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/isti‘laa-istifal.jpg" alt="الاستعلاء والاستفال" class="tajweed-image"/>
+                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/ea4d96c561cfdb8f9ffacb927ac440ac6ba8a1e0/sifat_al_isti%E2%80%98laa.jpg.jpg" alt="صفات الاستعلاء والاستفال" class="tajweed-image"/>
                 <span class="tooltiptext">الاستعلاء (ارتفاع اللسان) ضد الاستفال (انخفاض اللسان).</span>
             </div>
             <p class="caption">الفرق بين الاستعلاء والاستفال.</p>
         </div>
         <div class="image-container">
             <div class="tooltip">
-                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/itbaaq-infitah.jpg" alt="الإطباق والانفتاح" class="tajweed-image"/>
+                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/6b22f90363a5cb892b32c0b4aa3739e74968551f/itbaaq-infitah.jpg" alt="الإطباق والانفتاح" class="tajweed-image"/>
                 <span class="tooltiptext">الإطباق (التصاق اللسان بالحنك) ضد الانفتاح (افتراق اللسان).</span>
             </div>
             <p class="caption">الفرق بين الإطباق والانفتاح.</p>
@@ -948,7 +958,13 @@
                     <p style="color: var(--text-dark);">علم <span class="glossary-term" data-term="التجويد">التجويد</span></p>
                     <button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-makharij" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button>
                 </div>
-        
+                <div class="image-container">
+                    <div class="tooltip">
+                        <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/ea4d96c561cfdb8f9ffacb927ac440ac6ba8a1e0/main_makharej_al_huroof.jpg.jpg" alt="مخارج الحروف" class="tajweed-image"/>
+                        <span class="tooltiptext">صورة شاملة لمخارج الحروف العربية.</span>
+                    </div>
+                    <p class="caption">المخارج الرئيسية للحروف العربية.</p>
+                </div>
                 <!-- Definition and Letter Count -->
                 <div class="rule-card">
                     <div class="rule-card-body">
@@ -1012,12 +1028,8 @@
                     <div class="collapsible-content">
                         <p class="pt-4">هو الفراغ داخل الفم والحلق، ويخرج منه حروف المد الثلاثة الهوائية:</p>
                         <div class="image-container">
-                          <div class="tooltip">
-                            <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/al-jawf.jpg" 
-                                 alt="مخرج الجوف" class="tajweed-image"/>
-                            <span class="tooltiptext">مخرج الجوف: أول المخارج العامة، تخرج منه حروف المد الثلاثة.</span>
-                          </div>
-                          <p class="caption">يوضح الصورة مخرج الجوف وهو أول المخارج العامة ويخرج منه حروف المد الثلاثة.</p>
+                            <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/main/makhraj_al_jawf.jpg.jpg" alt="مخرج الجوف" class="tajweed-image"/>
+                            <p class="caption">يوضح الصورة مخرج الجوف – تجويف الحلق والجوف، أول مخرج في أحكام المخارج.</p>
                         </div>
                         <table class="styled-table mt-2 text-sm md:text-base">
                             <thead><tr><th>الحرف</th><th>المثال</th><th>ملاحظات</th></tr></thead>
@@ -1032,19 +1044,18 @@
                     <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">📍 ثانيًا: مخرج الحلق</h3><span class="toggle-icon">+</span></div>
                     <div class="collapsible-content">
                         <p class="pt-4">يحتوي على ثلاثة مخارج فرعية يخرج منها ستة أحرف:</p>
-                         <div class="image-container">
-                            <div class="tooltip">
-                                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/al-halq.jpg" alt="مخرج الحلق" class="tajweed-image"/>
-                                <span class="tooltiptext">مخرج الحلق بأقسامه الثلاثة: أقصى، وسط، وأدنى الحلق.</span>
-                            </div>
-                            <p class="caption">أقسام مخرج الحلق الثلاثة.</p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/main/makhraj_al_halq.jpg.jpg"
+                                 alt="مخرج الحلق"
+                                 class="tajweed-image">
+                           <p class="caption">أقسام مخرج الحلق الثلاثة.</p>
                         </div>
                         <table class="styled-table mt-2 text-sm md:text-base">
                             <thead><tr><th>المخرج الفرعي</th><th>الحروف</th><th>مثال</th></tr></thead>
                             <tbody>
                                 <tr><td>أقصى الحلق</td><td>(ء، هـ)</td><td><strong>أَ</strong>حَد، <strong>هَ</strong>دَى</td></tr>
                                 <tr><td>وسط الحلق</td><td>(ع، ح)</td><td><strong>عَ</strong>لِم، <strong>حَ</strong>مِيد</td></tr>
-                                <tr><td>أدنى الحلق (الأقرب للفم)</td><td>(غ، خ)</td><td><strong>غَ</strong>فُور، <strong>خَ</strong>بِير</td></tr>
+                                <tr><td>أدنى الحلق (الأقرب للفم)</td><td>(غ، خ)</td><td><strong>غَ</strong>فُور، <strong>خَ</strong>bِير</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -1054,7 +1065,7 @@
                         <p class="pt-4">هو أكبر المخارج وأدقها، ويخرج منه 18 حرفًا من عشرة مخارج فرعية:</p>
                         <div class="image-container">
                             <div class="tooltip">
-                                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/al-lisan.jpg" alt="مخرج اللسان" class="tajweed-image"/>
+                                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/ea4d96c561cfdb8f9ffacb927ac440ac6ba8a1e0/makhraj_al_lisan.jpg.jpg" alt="مخرج اللسان" class="tajweed-image"/>
                                 <span class="tooltiptext">مخرج اللسان ومواضع خروج الحروف المختلفة منه.</span>
                             </div>
                             <p class="caption">مخارج اللسان التفصيلية.</p>
@@ -1067,11 +1078,11 @@
                                     <tr><td>2. أسفل منه قليلًا</td><td>ك</td><td><strong>كَ</strong>تَبَ</td></tr>
                                     <tr><td>3. وسط اللسان مع الحنك الأعلى</td><td>ج، ش، ي (غير المدية)</td><td><strong>جَ</strong>اء، <strong>شَ</strong>مس، <strong>يَ</strong>دٌ</td></tr>
                                     <tr><td>4. أحد حافتي اللسان مع الأضراس العليا</td><td>ض</td><td><strong>ضَ</strong>رَبَ</td></tr>
-                                    <tr><td>5. أدنى حافة اللسان إلى طرفه</td><td>ل</td><td><strong>لَ</strong>بَن</td></tr>
+                                    <tr><td>5. أدنى حافة اللسان إلى طرفه</td><td>ل</td><td><strong>لَ</strong>bَن</td></tr>
                                     <tr><td>6. طرف اللسان مع لثة الثنايا العليا</td><td>ن</td><td><strong>نُ</strong>ور</td></tr>
                                     <tr><td>7. طرف اللسان (ظهر الطرف)</td><td>ر</td><td><strong>رَ</strong>حيم</td></tr>
                                     <tr><td>8. طرف اللسان مع أصول الثنايا العليا</td><td>ط، د، ت</td><td><strong>طِ</strong>ين، <strong>دَ</strong>رَسَ، <strong>تَ</strong>ابَ</td></tr>
-                                    <tr><td>9. طرف اللسان مع ما بين الثنايا</td><td>ص، ز، س</td><td><strong>صَ</strong>بَرَ، <strong>زَ</strong>ين، <strong>سَ</strong>ارَ</td></tr>
+                                    <tr><td>9. طرف اللسان مع ما بين الثنايا</td><td>ص، ز، س</td><td><strong>صَ</strong>bَرَ، <strong>زَ</strong>ين، <strong>سَ</strong>ارَ</td></tr>
                                     <tr><td>10. طرف اللسان مع أطراف الثنايا العليا</td><td>ظ، ذ، ث</td><td><strong>ظَ</strong>لَمَ، <strong>ذَ</strong>كَرَ، <strong>ثَ</strong>وْب</td></tr>
                                 </tbody>
                             </table>
@@ -1083,7 +1094,7 @@
                          <p class="pt-4">يخرج منه أربعة أحرف:</p>
                         <div class="image-container">
                             <div class="tooltip">
-                                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/al-shafatayn.jpg" alt="مخرج الشفتين" class="tajweed-image"/>
+                                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/5efc5b028709de4631b39e0a7a6055c4ddfee128/al-shafatayn.jpg.jpg" alt="مخارج الشفتين" class="tajweed-image"/>
                                 <span class="tooltiptext">مخرج الشفتين لخروج حروف الفاء، الواو، الباء، والميم.</span>
                             </div>
                             <p class="caption">مخرج الشفتين.</p>
@@ -1098,12 +1109,12 @@
                         </table>
                     </div>
         
-                    <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">📍 خامسًا: مخرج الخيشوم</h3><span class="toggle-icon">+</span></div>
+                     <div class="collapsible-header"><h3 class="text-xl font-bold title-font" style="color: var(--text-dark);">📍 خامسًا: مخرج الخيشوم</h3><span class="toggle-icon">+</span></div>
                     <div class="collapsible-content">
                          <p class="pt-4">هو الخُرْم الداخلي في الأنف، ويخرج منه صوت <span class="glossary-term" data-term="الغنة">الغُنّة</span> الملازم لحرفي النون والميم إذا أُدغما أو أُخفيا.</p>
                         <div class="image-container">
                             <div class="tooltip">
-                                <img src="https://raw.githubusercontent.com/omaral-imam124-blip/tajweed-manuscript4/main/assets/images/al-khaishoom.jpg" alt="مخرج الخيشوم" class="tajweed-image"/>
+                                <img src="https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/refs/heads/main/makhraj_al_khayshoom.jpg.jpg" alt="مخرج الخيشوم" class="tajweed-image"/>
                                 <span class="tooltiptext">مخرج الخيشوم الذي تخرج منه الغنة.</span>
                             </div>
                             <p class="caption">مخرج الخيشوم.</p>
@@ -1265,7 +1276,7 @@
                          <div class="poem-verse">وَالْمِيــمُ إِنْ تَسْكُــنْ تَجِي قَبْــلَ الْهِجَا ... لاَ أَلِــفٍ لَيِّنَــةٍ لِــذِي الْحِجَــا</div>
                          <div class="poem-verse">أَحْكَامُهَــا ثَلاَثَــةٌ لِمَــنْ ضَبَــطْ ... إِخْفَــاءٌ ادْغَــامٌ وَإِظْهَــارٌ فَقَــطْ</div>
                          <div class="poem-verse">فَـالأَوَّلُ الإِخْفَــاءُ عِنْــدَ الْبَــاءِ ... وَسَمِّــهِ الشَّــفْوِيَّ لِلْقُــرَّاءِ</div>
-                         <div class="poem-verse">وَالثَّــانِ إِدْغَــامٌ بِمِثْلِهَــا أَتَــى ... وَسَــمِّ إدْغَامًــا صَغِيــرًا يَــا فَتَــى</div>
+                         <div class="poem-verse">وَالثَّــانِ إِدْغَــامٌ bِمِثْلِهَــا أَتَــى ... وَسَــمِّ إدْغَامًــا صَغِيــرًا يَــا فَتَــى</div>
                          <div class="poem-verse">وَالثَّالِــثُ الإِظْهَــارُ فِي الْبَقِيَّــهْ ... مِــنْ أَحْــرُفٍ وَسَمِّهَــا شَــفْوِيَّهْ</div>
                          <div class="poem-verse">وَاحْــذَرْ لَــدَى وَاوٍ وَفَــا أَنْ تَخْتَفِي ... لِقُرْبِــهَا وَلاتِّحَــادِ فَاعْــرِفِ</div>
                          <p class="mt-4"><strong>الشرح:</strong> للميم الساكنة ثلاثة أحكام: <strong>الإخفاء الشفوي</strong> إذا جاء بعدها حرف الباء، و<strong>الإدغام الشفوي</strong> إذا جاء بعدها ميم مثلها، و<strong>الإظهار الشفوي</strong> عند باقي الحروف، مع الحذر من إخفائها عند الواو والفاء لقرب المخرج.</p>
@@ -1299,14 +1310,14 @@
                     <div class="tuhfa-card-body">
                         <div class="poem-verse">وَالْمَــدُّ أَصْلِــيٌّ وَ فَرْعِــيٌّ لَــهُ ... وَسَــمِّ أَوَّلاً طَبِيعِيًّــا وَهُــو</div>
                         <div class="poem-verse">مَــا لاَ تَوَقُّــفٌ لَــهُ عَلَــى سَــبَبْ ... وَلا بِدُونِــهِ الْحُــرُوفُ تُجْتَــلَبْ</div>
-                        <div class="poem-verse">وَالآخَــرُ الْفَرْعِــيُّ مَوْقُوفٌ عَلَــى ... سَــبَبْ كَهَمْــزٍ أَوْ سُــكُونٍ مُسْــجَلاَ</div>
+                        <div class="poem-verse">وَالآخَــرُ الْFَرْعِــيُّ مَوْقُوفٌ عَلَــى ... سَــبَبْ كَهَمْــزٍ أَوْ سُــكُونٍ مُسْــجَلاَ</div>
                         <div class="ornament"></div>
                         <div class="poem-verse">لِلْمَــدِّ أَحْكَــامٌ ثَلاثَــةٌ تَــدُومْ ... وَهْــيَ الْوُجُــوبُ وَالْجَــوَازُ وَاللُّــزُومْ</div>
-                        <div class="poem-verse">فَوَاجِــبٌ إِنْ جَــاءَ هَمْــزٌ بَعْــدَ مَــدْ ... فِــي كِلْمَــةٍ وَذَا بِمُتَّصِــلْ يُعَــدْ</div>
+                        <div class="poem-verse">فَوَاجِــبٌ إِنْ جَــاءَ هَمْــزٌ bَعْــدَ مَــدْ ... فِــي كِلْمَــةٍ وَذَا بِمُتَّصِــلْ يُعَــدْ</div>
                         <div class="poem-verse">وَجَائِــزٌ مَــدٌّ وَقَصْــرٌ إِنْ فُصِــلْ ... كُــلٌّ بِكِلْمَــةٍ وَهَــذَا الْمُنْفَصِــلْ</div>
                         <div class="poem-verse">وَمِثْــلُ ذَا إِنْ عَــرَضَ السُّــكُونُ ... وَقْفًــا كَتَعْلَمُــونَ نَسْــتَعِينُ</div>
-                        <div class="poem-verse">أَوْ قُــدِّمَ الْهَمْــزُ عَلَــى الْمَــدِّ وَذَا ... بَــدَلْ كَآمَنُــوا وَإِيمَانًــا خُــذَا</div>
-                        <div class="poem-verse">وَلاَزِمٌ إِنِ السُّــكُونُ أُصِّــلاَ ... وَصْــلاً وَوَقْفًــا بَعْــدَ مَــدٍّ طُــوِّلاَ</div>
+                        <div class="poem-verse">أَوْ قُــدِّمَ الْهَمْــزُ عَلَــى الْمَــدِّ وَذَا ... bَــدَلْ كَآمَنُــوا وَإِيمَانًــا خُــذَا</div>
+                        <div class="poem-verse">وَلاَزِمٌ إِنِ السُّــكُونُ أُصِّــلاَ ... وَصْــلاً وَوَقْفًــا bَعْــدَ مَــدٍّ طُــوِّلاَ</div>
                         <p class="mt-4"><strong>الشرح:</strong> المد قسمان: أصلي (طبيعي) وفرعي (بسبب همز أو سكون). وأحكامه ثلاثة: الوجوب (للمد المتصل)، والجواز (للمد المنفصل والعارض للسكون والبدل)، واللزوم (للمد اللازم).</p>
                         <div class="text-left"><button class="smart-nav-btn" data-target="madd-section" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
                     </div>
@@ -1318,7 +1329,7 @@
                          <div class="poem-verse">أَقْسَــامُ لاَزِمٍ لَدَيْهِــمْ أَرْبَعَــهْ ... وَتِلْــكَ كِلْمِــيٌّ وَحَرْفِــيٌّ مَعَــهْ</div>
                          <div class="poem-verse">كِلاَهُمَــا مُخَفَّــفٌ مُثَقَّــلُ ... فَهَــذِهِ أَرْبَعَــةٌ تُفَصَّــلُ</div>
                          <div class="poem-verse">فَــإِنْ بِكِلْمَــةٍ سُــكُونٌ اجْتَمَــعْ ... مَــعْ حَــرْفِ مَــدٍّ فَهْوَ كِلْمِيٌّ وَقَعْ</div>
-                         <div class="poem-verse">أَوْ فِــي ثُلاَثِــيِّ الْحُــرُوفِ وُجِــدَا ... وَالْمَــدُّ وَسْــطُهُ فَحَرْفِــيٌّ بَــدَا</div>
+                         <div class="poem-verse">أَوْ فِــي ثُلاَثِــيِّ الْحُــرُوفِ وُجِــدَا ... وَالْمَــدُّ وَسْــطُهُ فَحَرْفِــيٌّ bَــدَا</div>
                          <div class="poem-verse">كِلاَهُمَــا مُثَقَّــلٌ إِنْ أُدْغِمَــا ... مَخَفَّــفٌ كُــلٌّ إِذَا لَــمْ يُدْغَمَــا</div>
                          <p class="mt-4"><strong>الشرح:</strong> المد اللازم أربعة أقسام: كلمي (مثقل ومخفف) وحرفي (مثقل ومخفف). يكون مثقلًا إذا جاء بعد حرف المد حرف مدغم (مشدد)، ومخففًا إذا جاء بعده حرف ساكن غير مدغم.</p>
                          <div class="text-left"><button class="smart-nav-btn" data-target="madd-section" data-scroll-to="madd-lazim-details" title="اذهب للشرح التفاعلي لهذا الباب"><span>التفاصيل التفاعلية</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button></div>
@@ -1329,7 +1340,7 @@
                     <div class="tuhfa-card-header">الخاتمة</div>
                     <div class="tuhfa-card-body">
                         <div class="poem-verse">وَتَــمَّ ذَا النَّظْــمُ بِحَمْــدِ الـلَّـهِ ... عَلَــى تَمَامِــهِ بِــلاَ تَنَاهِــي</div>
-                        <div class="poem-verse">أَبْيَاتُــهُ نَــدٌّ بَــدَا لِذِي النُّهَــى ... تَارِيخُهَــا (بُشْــرَى لِمَــنْ يُتْقِنُهَــا)</div>
+                        <div class="poem-verse">أَبْيَاتُــهُ نَــدٌّ bَــدَا لِذِي النُّهَــى ... تَارِيخُهَــا (بُشْــرَى لِمَــنْ يُتْقِنُهَــا)</div>
                         <div class="poem-verse">ثُــمَّ الصَّــلاَةُ وَالسَّــلاَمُ أَبَــدَا ... عَلَــى خِتَــامِ الأَنْبِيَــاءِ أَحْمَــدَا</div>
                         <div class="poem-verse">وَالآلِ وَالصَّحْــبِ وَكُــلِّ تَابِــعِ ... وَكُــلِّ قَــارِئٍ وَكُــلِّ سَــامِعِ</div>
                         <p class="mt-4">يختتم الناظم منظومته بحمد الله، ويذكر أن عدد أبياتها 61، ثم يصلي ويسلم على النبي محمد ﷺ وآله وصحبه ومن تبعهم.</p>
@@ -1375,7 +1386,7 @@
                 waw: { title: 'أمثلة (و)', noun: ['"مِن وَّالٍ"'], tanween: ['"غِشَاوَةٌ وَّلَهُمْ"'] },
                 lam: { title: 'أمثلة (ل)', noun: ['"مِن لَّدُنْهُ"'], tanween: ['"هُدًى لِّلْمُتَّقِينَ"'] },
                 raa: { title: 'أمثلة (ر)', noun: ['"مِن رَّبِّهِمْ"'], tanween: ['"غَفُورٌ رَّحِيمٌ"'] },
-                baa: { title: 'أمثلة (ب)', noun: ['"أَنۢبِئْهُمْ"'], tanween: ['"سَمِيعٌۢ بَصِيرٌ"'] },
+                baa: { title: 'أمثلة (ب)', noun: ['"أَنۢبِئْهُمْ"'], tanween: ['"سَمِيعٌۢ bَصِيرٌ"'] },
                 sad: { title: 'أمثلة (ص)', noun: ['"يَنصُرُكُمْ"'], tanween: ['"رِيحًا صَرْصَرًا"'] },
                 thal: { title: 'أمثلة (ذ)', noun: ['"مُنذِرٌ"'], tanween: ['"ظِلاًّ ذِي"'] },
                 thaa: { title: 'أمثلة (ث)', noun: ['"مَنثُورًا"'], tanween: ['"قَوْلاً ثَقِيلاً"'] },
@@ -1528,7 +1539,7 @@
                 let currentRotation = 0;
                 let currentQuestion = {};
                 const quizQuestions = [
-                     { q: "ما حكم الميم في قوله تعالى 'لَكُمْ دِينُكُمْ'؟", o: ["إظهار شفوي", "إدغام شفوي", "إخفاء شفوي"], a: "إظهار شفوي" }, { q: "ما حكم الميم في قوله تعالى 'تَرْمِيهِمْ بِحِجَارَةٍ'؟", o: ["إخفاء شفوي", "إظهار شفوي", "إدغام"], a: "إخفاء شفوي" }, { q: "ما حكم النون في قوله تعالى 'مِنْ خَيْرٍ'؟", o: ["إظهار حلقي", "إدغام بغنة", "إخفاء"], a: "إظهار حلقي" }, { q: "ما حكم التنوين في قوله تعالى 'غَفُورٌ رَّحِيمٌ'؟", o: ["إدغام بغنة", "إدغام بلا غنة", "إقلاب"], a: "إدغام بلا غنة" }, { q: "أي من الكلمات التالية بها حكم الإقلاب؟", o: ["أَنْعَمْتَ", "مِنْ بَعْدِ", "مَنْ يَعْمَل"], a: "مِنْ بَعْدِ" }, { q: "ما حكم النون في قوله تعالى 'كُنْتُمْ'؟", o: ["إظهار", "إدغام", "إخفاء حقيقي"], a: "إخفاء حقيقي" }, { q: "ما نوع المد في كلمة 'السَّمَاء' عند الوقف عليها؟", o: ["مد متصل", "مد منفصل", "مد عارض للسكون"], a: "مد متصل" }, { q: "حروف القلقلة مجموعة في عبارة:", o: ["خص ضغط قظ", "قطب جد", "يرملون"], a: "قطب جد" }, { q: "من أين مخرج حرفي 'الهمزة' و 'الهاء'؟", o: ["أدنى الحلق", "وسط الحلق", "أقصى الحلق"], a: "أقصى الحلق" },
+                     { q: "ما حكم الميم في قوله تعالى 'لَكُمْ دِينُكُمْ'؟", o: ["إظهار شفوي", "إدغام شفوي", "إخفاء شفوي"], a: "إظهار شفوي" }, { q: "ما حكم الميم في قوله تعالى 'تَرْمِيهِمْ بِحِجَارَةٍ'؟", o: ["إخفاء شفوي", "إظهار شفوي", "إدغام"], a: "إخفاء شفوي" }, { q: "ما حكم النون في قوله تعالى 'مِنْ خَيْرٍ'؟", o: ["إظهار حلقي", "إدغام بغنة", "إخفاء"], a: "إظهار حلقي" }, { q: "ما حكم التنوين في قوله تعالى 'غَفُورٌ رَّحِيمٌ'؟", o: ["إدغام بغنة", "إدغام بلا غنة", "إقلاب"], a: "إدغام بلا غنة" }, { q: "أي من الكلمات التالية بها حكم الإقلاب؟", o: ["أَنْعَمْتَ", "مِنْ bَعْدِ", "مَنْ يَعْمَل"], a: "مِنْ bَعْدِ" }, { q: "ما حكم النون في قوله تعالى 'كُنْتُمْ'؟", o: ["إظهار", "إدغام", "إخفاء حقيقي"], a: "إخفاء حقيقي" }, { q: "ما نوع المد في كلمة 'السَّمَاء' عند الوقف عليها؟", o: ["مد متصل", "مد منفصل", "مد عارض للسكون"], a: "مد متصل" }, { q: "حروف القلقلة مجموعة في عبارة:", o: ["خص ضغط قظ", "قطب جد", "يرملون"], a: "قطب جد" }, { q: "من أين مخرج حرفي 'الهمزة' و 'الهاء'؟", o: ["أدنى الحلق", "وسط الحلق", "أقصى الحلق"], a: "أقصى الحلق" },
                 ];
                 function showQuestion() {
                     currentQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
