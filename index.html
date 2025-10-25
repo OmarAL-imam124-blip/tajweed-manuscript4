@@ -2,28 +2,28 @@
 <html lang="ar" dir="rtl">
 <head>
     <style>
- /* 🌾 خلفية الموقع بالكامل */
 body {
-  background-image: url('https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/main/assets/images/old-paper-bg.jpg');
-  background-size: cover;           /* تغطي الشاشة بالكامل */
-  background-position: center;      /* توسيط الصورة */
-  background-attachment: fixed;     /* تجعل الخلفية ثابتة أثناء التمرير */
-  background-repeat: no-repeat;     /* تمنع تكرار الصورة */
-  color: #2b1a05;                   /* لون نص دافئ مناسب للخلفية */
+    background-image: url('https://github.com/OmarAL-imam124-blip/tajweed-manuscript4/blob/cca944a38e85db765f93e7d827953d0cb6abb9e9/new-paper-bg.jpg.jpg?raw=true');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    animation: moveBackground 60s linear infinite;
 }
 
-/* 🔹 لمسة شفافية خفيفة على البطاقات والنصوص */
-.page-section, .rule-card, .hub-card, .mind-map-container {
-  background: rgba(255, 250, 240, 0.85);  /* خلفية فاتحة شبه شفافة */
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+@keyframes moveBackground {
+    0% { background-position: center top; }
+    50% { background-position: center bottom; }
+    100% { background-position: center top; }
 }
 
-/* 🔸 عناوين وأزرار بلون دافئ */
-h1, h2, h3, .rule-title {
-  color: #4b2e05;
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        animation: none;
+    }
 }
+
 
 button, .smart-nav-btn {
   background-color: #c19a6b;
@@ -34,48 +34,6 @@ button, .smart-nav-btn {
 }
 button:hover, .smart-nav-btn:hover {
   background-color: #b5895a;
-}
-/* --- خلفية إسلامية مستوحاة من الورقة القديمة --- */
-body {
-  position: relative;
-  z-index: 0;
-  background-color: var(--bg-manuscript);
-  color: var(--text-dark);
-  font-family: 'Noto Naskh Arabic', serif;
-  overflow-x: hidden;
-}
-
-/* --- خلفية إسلامية غامقة مستوحاة من الورقة القديمة --- */
-body {
-  position: relative;
-  z-index: 0;
-  background-color: var(--bg-manuscript);
-  color: var(--text-dark);
-  font-family: 'Noto Naskh Arabic', serif;
-  overflow-x: hidden;
-}
-
-/* 🌟 خلفية مستوحاة من المخطوطة الذهبية */
-body {
-  background: linear-gradient(to bottom right, #f7efe2, #f1e1c6);
-  color: #4e3b2a;
-  font-family: 'Noto Naskh Arabic', serif;
-  overflow-x: hidden;
-}
-
-/* زخارف خفيفة في الخلفية */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(circle at top left, rgba(240, 215, 180, 0.25), transparent 70%),
-    radial-gradient(circle at bottom right, rgba(230, 200, 150, 0.25), transparent 70%);
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 /* الأيقونات */
@@ -130,14 +88,6 @@ body::before {
   background: linear-gradient(145deg, #b68b55, #a0743f);
 }
 
-}
-
-}
-
-}
-
-}
-
 
 </style>
 
@@ -189,22 +139,33 @@ body::before {
             font-family: 'Amiri', serif;
         }
 
-        /* --- الخلفية الجديدة المستوحاة من التلال الناعمة --- */
-        #islamic-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            overflow: hidden;
-            background-color: var(--bg-manuscript); /* لون البيج الأساسي */
-            /* --- تم استبدال التلال بتموجات SVG ثابتة --- */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 150' preserveAspectRatio='none'%3E%3Cpath fill='%23f8f3eb' fill-opacity='0.8' d='M0,150 L1440,150 L1440,80 C1200,110 960,100 720,80 C480,60 240,70 0,100 Z'/%3E%3Cpath fill='%23e8d6b5' fill-opacity='0.8' d='M0,150 L1440,150 L1440,100 C1100,130 800,120 720,100 C600,80 300,90 0,120 Z'/%3E%3Cpath fill='%23d4b996' fill-opacity='0.8' d='M0,150 L1440,150 L1440,120 C1200,140 900,130 720,120 C500,110 240,130 0,140 Z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: bottom center;
-            background-size: 100% 150px; /* تحديد عرض كامل وارتفاع ثابت للتموجات */
-        }
+        body {
+    background-image: url('https://raw.githubusercontent.com/OmarAL-imam124-blip/tajweed-manuscript4/cca944a38e85db765f93e7d827953d0cb6abb9e9/new-paper-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    animation: moveBackground 60s linear infinite;
+    color: #4e3b2a;
+    font-family: 'Noto Naskh Arabic', serif;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+@keyframes moveBackground {
+    0% { background-position: center top; }
+    50% { background-position: center bottom; }
+    100% { background-position: center top; }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        animation: none;
+    }
+}
+
 
         .page-transition {
             transition: opacity 0.4s ease-out, transform 0.4s ease-out;
@@ -824,7 +785,17 @@ body::before {
     </style>
 </head>
 <body>
-    <div id="islamic-background"></div>
+    <style>
+    /* ===== الخلفية الثابتة للصفحة ===== */
+    body {
+        background-image: url('https://github.com/OmarAL-imam124-blip/tajweed-manuscript4/blob/cca944a38e85db765f93e7d827953d0cb6abb9e9/new-paper-bg.jpg.jpg?raw=true');
+        background-size: cover;           /* تغطي كامل الصفحة */
+        background-repeat: no-repeat;     /* عدم التكرار */
+        background-attachment: fixed;     /* تبقى ثابتة أثناء التمرير */
+        background-position: center center; /* تمركز الصورة */
+    }
+</style>
+
     
     <div id="intro-page" class="flex flex-col items-center justify-center min-h-screen text-center p-6 relative page-transition">
         <div class="max-w-3xl">
@@ -860,6 +831,15 @@ body::before {
                 </div>
                 <div class="header-controls">
                     <div id="search-container">
+                        <div class="flex flex-col items-center -space-y-1">
+  <button id="index-toggle" title="الفهرس والشكر" class="header-icon-btn">
+    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5A1 1 0 0 1 4 6Zm0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z"/>
+    </svg>
+  </button>
+ 
+</div>
+
                         <button id="search-btn" title="بحث" class="header-icon-btn">
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 5.293 14.293l4.414 4.414a1 1 0 0 0 1.414-1.414l-4.414-4.414A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12A6 6 0 0 1 10 4Z"/></svg>
                         </button>
@@ -872,19 +852,57 @@ body::before {
                     </button>
                     <div class="flex flex-col items-center -space-y-1">
                         <button id="creator-info-toggle" title="عن المُعِدّ" class="header-icon-btn">
+                            
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0V9Zm-1.5-1.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V7.5Z" clip-rule="evenodd"></path>
                             </svg>
                         </button>
                         <span class="text-[10px]" style="color: var(--text-dark);">لمحة عن المُعِدّ</span>
                     </div>
+                    <div class="flex flex-col items-center -space-y-1">
+    <button id="index-toggle" title="الفهرس" class="header-icon-btn">
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.5 3.75A.75.75 0 0 1 5.25 3h13.5a.75.75 0 0 1 .75.75v16.5a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V3.75ZM6 4.5v15h12v-15H6Zm1.5 2.25h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1 0-1.5ZM7.5 9.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1 0-1.5ZM7.5 13.5h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd"/>
+        </svg>
+    </button>
+    <span class="text-[10px]" style="color: var(--text-dark);">الفهرس</span>
+</div>
+
                 </div>
             </div>
         </header>
 
         <div id="creator-info-panel" class="creator-panel">
+            <div id="index-panel" class="creator-panel">
+  <div class="p-4 md:p-6 max-w-4xl mx-auto">
+    <h2 class="text-center text-2xl font-bold mb-4" style="color: var(--color-gold-dark);">الفهرس والشكر</h2>
+    <div class="space-y-4 text-right" style="color: var(--text-dark);">
+      <section id="index-section">
+        <h3 class="font-semibold text-xl mb-2">📖 فهرس المخطوطة</h3>
+        <ul class="list-disc list-inside space-y-1 text-base">
+          <li>مقدمة المخطوطة</li>
+          <li>باب مخارج الحروف</li>
+          <li>باب الصفات</li>
+          <li>باب المدود</li>
+          <li>باب النون الساكنة والتنوين</li>
+          <li>باب الميم الساكنة</li>
+          <li>باب اللامات</li>
+          <li>باب الهمز</li>
+          <li>باب الوقف والابتداء</li>
+          <li>الخاتمة</li>
+        </ul>
+      </section>
+
+      <section id="thanks-section" class="pt-4 border-t border-amber-900/30">
+        <h3 class="font-semibold text-xl mb-2">🤍 شكر خاص</h3>
+        <p>يُخصص هذا الجزء لتسجيل أسماء المشايخ الفضلاء الذين راجعوا هذه المخطوطة المباركة بعد اكتمالها بإذن الله تعالى.</p>
+      </section>
+    </div>
+  </div>
+</div>
+
             <div class="p-4 md:p-6 max-w-4xl mx-auto">
-                <div class="text-right text-base md:text-lg space-y-3" style="color: var(--text-dark);">
+<div                 class="text-right text-base md:text-lg space-y-3" style="color: var(--text-dark);">
                     <p class="font-bold text-xl md:text-2xl title-font text-center mb-2">عمر بن عبدالحميد الإمام</p>
                     <p class="text-center text-sm -mt-2 mb-4">مصري الجنسية</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">الإجازة:</strong> مجاز بقراءة الإمام عاصم الكوفي براوييه شعبة وحفص من طريق الشاطبية.</p>
@@ -1638,7 +1656,7 @@ body::before {
                 <span class="practice-word" data-info="كُفوًا أَحَدٌ: تنوين بعده همزة (إظهار حلقي).">كُفوًا أَحَدٌ</span> (٤)
             </div>
         </div><div id="practice-info" class="mt-4 p-4 rounded-md bg-amber-50 text-amber-900 border border-amber-200 hidden min-h-[50px]"></div></div></div></div> </div>
-        <div id="quiz-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="rule-card text-center"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">الاختبار الشامل</h2></div><div class="rule-card-body"> <p class="mb-4">هل أنت مستعد لاختبار معلوماتك؟ أدر العجلة واحصل على سؤال عشوائي!</p> <div class="wheel-container"><div id="spinner"></div><div class="arrow"></div></div> <button id="spin-btn">أدر العjلة!</button> <div id="question-display" class="hidden mt-6"><h3 id="question-text" class="text-xl font-bold text-slate-800 mb-4 text-right"></h3><div id="options-container" class="space-y-2"></div><p id="feedback-text" class="mt-4 font-bold"></p></div> </div></div> </div> </div>
+        <div id="quiz-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="rule-card text-center"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">الاختبار الشامل</h2></div><div class="rule-card-body"> <p class="mb-4">هل أنت مستعد لاختبار معلوماتك؟ أدر العجلة واحصل على سؤال عشوائي!</p> <div class="wheel-container"><div id="spinner"></div><div class="arrow"></div></div> <button id="spin-btn">أدر العجلة!</button> <div id="question-display" class="hidden mt-6"><h3 id="question-text" class="text-xl font-bold text-slate-800 mb-4 text-right"></h3><div id="options-container" class="space-y-2"></div><p id="feedback-text" class="mt-4 font-bold"></p></div> </div></div> </div> </div>
         <div id="tuhfa-section" class="page-section hidden">
             <!-- 🎶 منظومة تحفة الأطفال والغلمان في تجويد القرآن بصوت الشيخ سعد الغامدي -->
 <div class="tuhfa-video-section my-6 text-center">
