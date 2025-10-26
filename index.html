@@ -66,6 +66,31 @@ button:hover, .smart-nav-btn:hover {
   border-bottom: 1px solid #e8d7b5;
   box-shadow: 0 2px 8px rgba(180, 130, 60, 0.1);
   backdrop-filter: blur(5px);
+  .about-preview {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-preview h2 { color: #4e3b2a; margin-bottom: 10px; }
+.about-preview p { color: #5a4632; line-height: 1.5; }
+.about-preview a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #c19a6b;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.about-preview a:hover { background-color: #b5895a; }
+
 }
 
 /* العنوان الرئيسي */
@@ -814,6 +839,13 @@ button:hover, .smart-nav-btn:hover {
     
     <div id="main-content-area" class="hidden page-transition">
         <header id="main-header" class="p-2 md:p-3">
+            <!-- لمحة عن المعد -->
+<div class="about-preview" id="about-preview" style="display: none;">
+    <h2>لمحة عن المعد</h2>
+    <p>هذا نص مختصر يوضح الفكرة الأساسية عن المعد بطريقة جذابة للزائر.</p>
+    <a href="#full-details">اقرأ المزيد</a>
+</div>
+
             <div class="header-content">
                 <div class="header-controls">
                     <button id="back-to-intro-btn" title="العودة للبداية" class="header-icon-btn">
@@ -831,7 +863,8 @@ button:hover, .smart-nav-btn:hover {
                 </div>
                 <div class="header-controls">
                     <div id="search-container">
- 
+                        <div class="flex flex-col items-center -space-y-1">
+
   </button>
  
 </div>
@@ -856,9 +889,7 @@ button:hover, .smart-nav-btn:hover {
                         <span class="text-[10px]" style="color: var(--text-dark);">لمحة عن المُعِدّ</span>
                     </div>
                     <div class="flex flex-col items-center -space-y-1">
-    </button>
-    <span class="text-[10px]" style="color: var(--text-dark);">الفهرس</span>
-</div>
+   
 
                 </div>
             </div>
@@ -1777,9 +1808,9 @@ button:hover, .smart-nav-btn:hover {
                 <div class="tuhfa-card" id="tuhfa-conclusion">
                     <div class="tuhfa-card-header">الخاتمة</div>
                     <div class="tuhfa-card-body">
-                        <div class="poem-verse">وَتَــَّمَّ ذَا النَّظْــمُ بِحَمْـد الـلَّـهِ ... عَلَــى تمَامِـهِ بِـلاَ تَنَاهِــي</div>
-                        <div class="poem-verse">أأَببيَاتُــهُ نَــدٌّ بـَـدَا لِذِي النُّهَــى ... تَارِيخُهَــا (بشْــرى لِمَــْنْ يُتْقِنُهَــا)</div>
-                        <div class="poem-verse">ثُــم الصَّـلاةُ وَالسَّـلامُ أَبــدا ... عَلَــى خِتَــامِ الأَنبيَــاءِ أَحَْمَــدا</div>
+                        <div class="poem-verse">وَتَــَّمَّ ذَا النَّظْــم بِحَمْـد الـلَّـهِ ... عَلَــى تمَامِـهِ بِـلاَ تَنَاهِــي</div>
+                        <div class="poem-verse">أأَببيَاتُــهُ نَــدٌّ بــدا لِذِي النُّهَــى ... تَارِيخُهَــا (بشْــرى لِمَــْنْ يُتْقِنُهَــا)</div>
+                        <div class="poem-verse">ثُــم الصَّـلاةُ وَالسَّـلامُ أَبــدا ... عَلَــى خِتَــامِ الأَنديَــاءِ أَحَْمَــدا</div>
                         <div class="poem-verse">وَالآلِ وَالصَّـحْبِ وَكُــلِّ تَابِــعِ ... وَكُــلِّ قَــارِئٍ وَكُــلِّ ســامِعِ</div>
                         <p class="mt-4">يختتم الناظم منظومته بحمد الله، ويذكر أن عدد أبياتها 61، ثم يصلي ويسلم على النبي محمد ﷺ وآله وصحبه ومن تبعهم.</p>
                     </div>
@@ -2241,7 +2272,20 @@ button:hover, .smart-nav-btn:hover {
 
         });
     </script>
-    <!-- Footer حقوق النشر -->
+    <script>
+    const aboutIcon = document.getElementById('about-icon'); // ID أيقونة اللمحة
+    const aboutPreview = document.getElementById('about-preview');
+
+    aboutIcon.addEventListener('click', function() {
+        if (aboutPreview.style.display === 'none' || aboutPreview.style.display === '') {
+            aboutPreview.style.display = 'block';
+            aboutPreview.scrollIntoView({behavior: 'smooth'});
+        } else {
+            aboutPreview.style.display = 'none';
+        }
+    });
+</script>
+<!-- Footer حقوق النشر -->
 <footer style="text-align: center; padding: 15px 0; color: #5a4632; font-size: 14px; background-color: rgba(255,255,255,0.8);">
     &copy; 2025 حقوق النشر محفوظة لـ عمر بن عبدالحميد الإمام
 </footer>
