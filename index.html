@@ -11,6 +11,12 @@ body {
 
 }
 
+@keyframes moveBackground {
+    0% { background-position: center top; }
+    50% { background-position: center bottom; }
+    100% { background-position: center top; }
+}
+
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
@@ -106,6 +112,73 @@ button:hover, .smart-nav-btn:hover {
   transform: scale(1.07);
   background: linear-gradient(145deg, #b68b55, #a0743f);
 }
+<style>
+  /* الوضع الليلي الأنيق */
+  body.dark-mode {
+    background-color: #0d0c0b; /* أسود مخملي */
+    color: #e6d5b8; /* بيج ذهبي للنصوص */
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* التابات والكروت */
+  body.dark-mode .hub-card,
+  body.dark-mode .page-section,
+  body.dark-mode .about-preview {
+    background-color: #1a1816; /* أسود رمادي ناعم */
+    border: 1px solid #4b3b26; /* حدود بلون ذهبي باهت */
+    box-shadow: 0 6px 20px rgba(255, 215, 128, 0.1);
+  }
+
+  /* العناوين */
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4 {
+    color: #d4af37; /* ذهبي معتق */
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.15);
+  }
+
+  /* الشريط العلوي والفوتر */
+  body.dark-mode header,
+  body.dark-mode footer {
+    background-color: #141210;
+    border-bottom: 1px solid #4b3b26;
+  }
+
+  /* الأزرار */
+  body.dark-mode button,
+  body.dark-mode .smart-nav-btn,
+  body.dark-mode #start-btn {
+    background: linear-gradient(145deg, #d4af37, #8b6b22);
+    color: #000;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  body.dark-mode button:hover,
+  body.dark-mode .smart-nav-btn:hover,
+  body.dark-mode #start-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #e5c963, #b68b2a);
+  }
+
+  /* روابط الفيديوهات */
+  body.dark-mode a {
+    color: #d4af37;
+  }
+
+  body.dark-mode a:hover {
+    color: #f0d98a;
+  }
+
+  /* الفيديوهات */
+  body.dark-mode .video-container {
+    background-color: #000;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+  }
+</style>
 
 
 </style>
@@ -164,11 +237,18 @@ button:hover, .smart-nav-btn:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
+
     color: #4e3b2a;
     font-family: 'Noto Naskh Arabic', serif;
     overflow-x: hidden;
     position: relative;
     z-index: 0;
+}
+
+@keyframes moveBackground {
+    0% { background-position: center top; }
+    50% { background-position: center bottom; }
+    100% { background-position: center top; }
 }
 
 @media (max-width: 768px) {
@@ -758,26 +838,58 @@ button:hover, .smart-nav-btn:hover {
           opacity: 1;
         }
         
-        /* --- ستايل الفيديوهات المضافة --- */
-        .video-container {
-          position: relative;
-          padding-bottom: 56.25%;
-          height: 0;
-          overflow: hidden;
-          max-width: 100%;
-          background: #000;
-          margin-bottom: 1.5rem;
-          border-radius: 1.5rem; /* حواف دائرية متناسقة */
-          box-shadow: 0 5px 15px rgba(111, 78, 55, 0.1); /* ظل ناعم */
-        }
-        .video-container iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border: 0; /* إزالة الحدود */
-        }
+      /* --- 🎥 تنسيق موحد وجميل لجميع الفيديوهات في الموقع --- */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* نسبة العرض إلى الارتفاع 16:9 */
+  height: 0;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f9fafb, #f3f4f6);
+  border-radius: 1.5rem; /* حواف دائرية ناعمة */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* ظل ناعم وواقعي */
+  margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 900px; /* تحديد أقصى عرض للفيديو */
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 1.5rem;
+}
+
+/* --- 🎬 عنوان الفيديو --- */
+.video-title {
+  font-family: 'Amiri', serif;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #14532d; /* أخضر داكن مريح للعين */
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- تحسين التباعد عند عرض عدة فيديوهات --- */
+.video-grid {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr; /* فيديوهين جنب بعض على الشاشات المتوسطة فأعلى */
+  }
+}
 
         /* --- ستايل صف الفيديوهات (المدود) --- */
         .videos-row {
@@ -793,7 +905,8 @@ button:hover, .smart-nav-btn:hover {
           min-width: 250px; /* يضمن حجم مناسب قبل النزول لسطر جديد */
           margin-bottom: 0; /* إزالة الهامش السفلي المزدوج */
         }
-        #quran-teacher {
+
+#quran-teacher {
   background-color: rgba(255, 250, 240, 0.9);
   border-radius: 16px;
   margin: 40px auto;
@@ -875,7 +988,6 @@ button:hover, .smart-nav-btn:hover {
   </button>
  
 </div>
-
                         <button id="search-btn" title="بحث" class="header-icon-btn">
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 5.293 14.293l4.414 4.414a1 1 0 0 0 1.414-1.414l-4.414-4.414A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12A6 6 0 0 1 10 4Z"/></svg>
                         </button>
@@ -884,6 +996,7 @@ button:hover, .smart-nav-btn:hover {
                     <button id="increase-font" title="تكبير الخط" class="header-icon-btn text-lg font-bold">A+</button>
                     <button id="decrease-font" title="تصغير الخط" class="header-icon-btn text-sm font-bold">A-</button>
                     <button id="contrast-toggle" title="وضع التباين" class="header-icon-btn">
+                      
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.106a.75.75 0 0 1 0 1.06l-1.591 1.59a.75.75 0 1 1-1.06-1.061l1.59-1.591a.75.75 0 0 1 1.061 0ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5h2.25a.75.75 0 0 1 .75.75ZM17.894 17.894a.75.75 0 0 1-1.06 0l-1.59-1.591a.75.75 0 1 1 1.06-1.06l1.591 1.59a.75.75 0 0 1 0 1.061ZM12 18a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.894a.75.75 0 0 1 0-1.06l1.59-1.591a.75.75 0 1 1 1.061 1.06l-1.59 1.591a.75.75 0 0 1-1.061 0ZM6.106 7.167a.75.75 0 0 1 1.06 0l1.591 1.59a.75.75 0 0 1-1.06 1.061L6.106 8.227a.75.75 0 0 1 0-1.061ZM3 12a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Z" /></svg>
                     </button>
                     <div class="flex flex-col items-center -space-y-1">
@@ -937,7 +1050,7 @@ button:hover, .smart-nav-btn:hover {
                     <p class="text-center text-sm -mt-2 mb-4">مصري الجنسية</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">الإجازة:</strong> مجاز بقراءة الإمام عاصم الكوفي براوييه شعبة وحفص من طريق الشاطبية.</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">العمل:</strong> معلم أساسي في مدرسة القرآن الكريم.</p>
-                    <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> صاحب فكرة ومحتوى هذه المخطوطة التعليمية، سعى لجعل تعلم التجويد رحلة ميسرة وممتعة.</p>
+                    <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> يتولى تطوير الموقع والإشراف على بنيته التقنية ومحتواه التعليمي، ساعيًا إلى تحويل علوم التجويد إلى تجربة رقمية تفاعلية تجمع بين الدقة والجمال.</p>
                 </div>
                 <div class="text-center">
                     <a href="https://wa.me/201003328748" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-base bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105">
@@ -1009,7 +1122,7 @@ button:hover, .smart-nav-btn:hover {
                                  <div>
                                     <h4 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">العمل به (التلاوة):</h4>
                                     <p>فرض عين على كل مسلم ومسلمة عند قراءة القرآن.</p>
-                                     <div class="video-section my-8">
+                                    <div class="video-section my-8">
   <h2 class="video-title font-amiri text-2xl md:text-3xl mb-4 text-center" style="color: #b8860b;">
     🎧 مقدمة عن علم التجويد - الجزء الأول
   </h2>
@@ -1025,7 +1138,7 @@ button:hover, .smart-nav-btn:hover {
                                  <div>
                                     <h4 class="font-bold text-xl mb-2 title-font" style="color: var(--color-gold-dark);">العلم به (الدراسة):</h4>
                                     <p>فرض كفاية، إذا قام به من يكفي سقط الإثم عن الباقين.</p>
-                                     <div class="video-section my-8">
+                                         <div class="video-section my-8">
   <h2 class="video-title font-amiri text-2xl md:text-3xl mb-4 text-center" style="color: #b8860b;">
     🎧 مقدمة عن علم التجويد - الجزء الثاني
   </h2>
@@ -1096,7 +1209,7 @@ button:hover, .smart-nav-btn:hover {
                         <p class="text-sm mt-2">ادرس أحكام المثلين والمتقاربين والمتجانسين.</p>
                    </div>
                </div>
-               <div class="hub-card p-4 md:p-6" data-target="practice-section">
+<div class="hub-card p-4 md:p-6" data-target="practice-section">
                     <div class="card-content">
                         <div class="icon">📖</div>
                         <h2 class="title-font text-xl mt-4">التطبيق العملي</h2>
@@ -1122,7 +1235,7 @@ button:hover, .smart-nav-btn:hover {
         <div id="noon-sakinah-section" class="page-section hidden"> <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">أحكام النون الساكنة والتنوين</h1> <p class="text-gray-400">هي نون خالية من الحركة، أو تنوين يلحق آخر الأسماء</p> <button class="smart-nav-btn back-to-tuhfa" data-target="tuhfa-section" data-scroll-to="tuhfa-noon-sakinah" title="العودة لشرح هذا الباب في متن التحفة"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg><span>العودة للمتن</span></button></div>
         <!-- تم إضافة الفقرة التمهيدية هنا بدل الصورة -->
         <div class="intro-section" style="background-color:#f8f3eb; padding:1rem; border-radius:1rem; margin-bottom:1.5rem; border:1px solid #e8d6b5;">
-          <h3 style="color:#8b6f47; margin-bottom:0.5rem;">🔹 تمهيد مختصر:</h3>
+          <h3 style="color:#8b6f47; margin-bottom:0.5rem;"               >🔹 تمهيد مختصر:</h3>
           <p style="color:#4b3b26; line-height:1.8;">
             النون الساكنة هي النون التي يكون عليها سكونٌ في اللفظ، وتثبت في الوصل والوقف،  
             أمّا التنوين فهو نون ساكنة زائدة تلحق آخر الأسماء نطقًا لا خطًّا.<br><br>
@@ -1133,32 +1246,6 @@ button:hover, .smart-nav-btn:hover {
             4. الإخفاء<br><br>
             تابع تفصيل هذه الأحكام فيما يلي بإذن الله.
           </p>
-            <!-- 🟤 قسم شارك برأيك -->
-<div id="feedback-section" class="page-section hidden">
-  <section class="feedback-container text-center p-6">
-    <h2 class="text-3xl font-bold mb-4 text-[#b68b55]" style="font-family: 'Amiri', serif;">
-      شارك برأيك لتطوير الموقع
-    </h2>
-    <p class="text-lg mb-6 text-[#4e3b2a]">
-      يسعدنا سماع آرائكم واقتراحاتكم لتحسين التجربة التعليمية 🌿
-    </p>
-
-    <form action="https://formsubmit.co/omaralimam141@gmail.com" method="POST" class="max-w-md mx-auto bg-white bg-opacity-80 p-6 rounded-2xl shadow-lg space-y-4">
-      <input type="text" name="name" placeholder="الاسم" required
-             class="w-full p-3 rounded-lg border border-[#d4b996] focus:outline-none focus:ring-2 focus:ring-[#b68b55]">
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required
-             class="w-full p-3 rounded-lg border border-[#d4b996] focus:outline-none focus:ring-2 focus:ring-[#b68b55]">
-      <textarea name="message" rows="5" placeholder="اكتب رأيك أو اقتراحك هنا..." required
-                class="w-full p-3 rounded-lg border border-[#d4b996] focus:outline-none focus:ring-2 focus:ring-[#b68b55]"></textarea>
-      
-      <button type="submit"
-              class="w-full bg-[#b68b55] text-white font-semibold py-3 rounded-lg hover:bg-[#a0743f] transition">
-        إرسال التعليق
-      </button>
-    </form>
-  </section>
-</div>
-        </div>
         
         <!-- قسم الفيديوهات المضافة -->
         <div class="rule-card">
@@ -1715,6 +1802,7 @@ button:hover, .smart-nav-btn:hover {
     </iframe>
   </div>
 </div>
+
  <div class="mind-map-container p-4 md:p-8"> <div class="node text-center"> <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">التطبيق العملي</h1> <p class="text-gray-400">استخرج الأحكام بنفسك من الآيات.</p> </div><div class="rule-card text-center"><div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">تدريب على سورة الإخلاص</h2></div><div class="rule-card-body"><div class="practice-verse text-2xl md:text-4xl leading-loose md:leading-loose">
             <div class="example-item" data-surah="112" data-ayah="1">
                 <span class="practice-word" data-info="قُلْ: القاف مفخمة واللام مظهرة.">قُلْ</span> 
@@ -1734,7 +1822,7 @@ button:hover, .smart-nav-btn:hover {
                 <span class="practice-word" data-info="وَلَمْ يَكُن لَّهُ: إدغام النون في اللام (إدغام كامل بلا غنة).">وَلَمْ يَكُن لَّهُ</span> 
                 <span class="practice-word" data-info="كُفوًا أَحَدٌ: تنوين بعده همزة (إظهار حلقي).">كُفوًا أَحَدٌ</span> (٤)
             </div>
-     <!-- قسم المصحف المعلم - الشيخ محمود خليل الحصري (جزء عم) -->
+            <!-- قسم المصحف المعلم - الشيخ محمود خليل الحصري (جزء عم) -->
 <section id="quran-teacher" class="py-10 text-center">
   <h2 class="text-2xl font-bold mb-6">📖 المصحف المعلم - الشيخ محمود خليل الحصري (جزء عم)</h2>
   <p class="text-base mb-4 text-gray-700">استمع وتابع الترديد مع الشيخ محمود خليل الحصري في تلاوة جزء عمّ</p>
@@ -1918,7 +2006,26 @@ button:hover, .smart-nav-btn:hover {
                         <p class="mt-4">يختتم الناظم منظومته بحمد الله، ويذكر أن عدد أبياتها 61، ثم يصلي ويسلم على النبي محمد ﷺ وآله وصحبه ومن تبعهم.</p>
                     </div>
                 </div>
+<div id="feedback-section" class="page-section hidden">
+  <section class="feedback-container text-center p-6">
+    <h2 class="text-3xl font-bold mb-4 text-[#b68b55]" style="font-family: 'Amiri', serif;">
+      شارك برأيك لتطوير الموقع
+    </h2>
+    <p class="text-lg mb-6 text-[#4e3b2a]">
+      يسعدنا سماع آرائكم واقتراحاتكم لتحسين التجربة التعليمية 🌿
+    </p>
 
+    <form action="https://formsubmit.co/omaralimam141@gmail.com" method="POST" class="max-w-md mx-auto bg-white bg-opacity-80 p-6 rounded-2xl shadow-lg space-y-4">
+      <input type="text" name="name" placeholder="الاسم" required class="w-full p-3 rounded-lg border border-[#d4b996] focus:outline-none focus:ring-2 focus:ring-[#b68b55]">
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required class="w-full p-3 rounded-lg border border-[#d4b996] focus:outline-none focus:ring-2 focus:ring-[#b68b55]">
+      <textarea name="message" rows="5" placeholder="اكتب رأيك أو اقتراحك هنا..." required class="w-full p-3 rounded-lg border border-[#d4b996] focus:outline-none focus:ring-2 focus:ring-[#b68b55]"></textarea>
+      
+      <button type="submit" class="w-full bg-[#b68b55] text-white font-semibold py-3 rounded-lg hover:bg-[#a0743f] transition">
+        إرسال التعليق
+      </button>
+    </form>
+  </section>
+</div>
             </div>
         </div>
     </div>
@@ -2388,10 +2495,128 @@ button:hover, .smart-nav-btn:hover {
         }
     });
 </script>
+<!-- 🔹 تحميل خط أميري -->
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  .font-amiri {
+    font-family: 'Amiri', serif;
+  }
+
+  /* لضبط تموضع النافذة في المنتصف */
+  #aboutModal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #aboutModal.active {
+    display: flex;
+  }
+</style>
+
+<!-- 🔸 زر اللمحة العائم -->
+<button id="aboutBtn"
+  class="fixed bottom-6 left-6 bg-amber-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform scale-90 opacity-0 hover:scale-105 hover:bg-amber-700 z-50"
+  title="لمحة عن المطوّر">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M12 6v6m0 2v2m-6-4h12m-6-8a9 9 0 100 18 9 9 0 000-18z" />
+  </svg>
+</button>
+
+<!-- 🔸 الواجهة المنبثقة -->
+<div id="aboutModal"
+  class="fixed inset-0 bg-black bg-opacity-40 items-center justify-center z-50 backdrop-blur-sm">
+  <div id="aboutContent"
+    class="relative bg-gradient-to-br from-[#f8f3e7] to-[#efe3cc] rounded-2xl shadow-2xl p-8 max-w-md w-[90%] text-center transform transition-all duration-300 opacity-0 scale-90 border border-amber-900 font-amiri">
+       
+    <button id="closeModal"
+      class="absolute top-3 right-3 text-amber-800 hover:text-amber-600 text-2xl font-bold">&times;</button>
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-1">عمر بن عبدالحميد الإمام</h2>
+    <p class="text-lg text-gray-700 mb-6">مصري الجنسية</p>
+
+    <div class="space-y-3 text-right text-[1.05rem] text-gray-800 leading-relaxed">
+      <p><span class="font-bold text-amber-900">الإجازة:</span> مجاز بقراءة الإمام عاصم الكوفي براوييه شعبة وحفص من طريق الشاطبية.</p>
+      <p><span class="font-bold text-amber-900">العمل:</span> معلم أساسي في مدرسة القرآن الكريم بمحافظة المنوفية قرية منشأة سلطان.</p>
+      <p><span class="font-bold text-amber-900">دوره:</span> المطوّر والمشرف على تنفيذ البنية التقنية والمحتوى التعليمي للموقع، وقد تولّى تطويره وتصميمه لتحويل المحتوى إلى تجربة رقمية متكاملة.</p>
+    </div>
+
+    <div class="text-center mt-6">
+      <a href="https://wa.me/201003328748" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-base bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-all shadow-md hover:shadow-lg transform hover:scale-105">
+        <span>تواصل عبر واتساب</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M16.6,14.2l-1.5-0.8c-0.4-0.2-1-0.1-1.3,0.2L12.5,15c-1.5-0.8-2.8-2.1-3.5-3.5l1.1-1.3c0.3-0.3,0.4-0.9,0.2-1.3l-0.8-1.5
+                   c-0.2-0.5-0.8-0.8-1.4-0.6L4.8,7.3C4.3,7.4,4,7.9,4,8.5c0,5.8,4.7,10.5,10.5,10.5c0.6,0,1.1-0.3,1.3-0.8l0.6-1.9
+                   C17.4,15,17.1,14.4,16.6,14.2z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 🔸 سكريبت التشغيل -->
+<script>
+  const aboutBtn = document.getElementById('aboutBtn');
+  const aboutModal = document.getElementById('aboutModal');
+  const aboutContent = document.getElementById('aboutContent');
+  const closeModal = document.getElementById('closeModal');
+
+  // إظهار الزر فقط بعد الصفحة الافتتاحية
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.8) {
+      aboutBtn.style.opacity = '1';
+      aboutBtn.style.pointerEvents = 'auto';
+      aboutBtn.style.transform = 'scale(1)';
+    } else {
+      aboutBtn.style.opacity = '0';
+      aboutBtn.style.pointerEvents = 'none';
+      aboutBtn.style.transform = 'scale(0.8)';
+    }
+  });
+
+  // فتح النافذة
+  aboutBtn.addEventListener('click', () => {
+    aboutModal.classList.add('active');
+    setTimeout(() => {
+      aboutContent.classList.remove('opacity-0', 'scale-90');
+      aboutContent.classList.add('opacity-100', 'scale-100');
+    }, 50);
+  });
+
+  // إغلاق النافذة
+  closeModal.addEventListener('click', () => {
+    aboutContent.classList.add('opacity-0', 'scale-90');
+    setTimeout(() => {
+      aboutModal.classList.remove('active');
+    }, 250);
+  });
+
+  // إغلاق عند الضغط خارج المحتوى
+  aboutModal.addEventListener('click', (e) => {
+    if (e.target === aboutModal) {
+      aboutContent.classList.add('opacity-0', 'scale-90');
+      setTimeout(() => {
+        aboutModal.classList.remove('active');
+      }, 250);
+    }
+  });
+</script>
+
 <!-- Footer حقوق النشر -->
 <footer style="text-align: center; padding: 15px 0; color: #5a4632; font-size: 14px; background-color: rgba(255,255,255,0.8);">
     &copy; 2025 حقوق النشر محفوظة لـ عمر بن عبدالحميد الإمام
 </footer>
+<script>
+  const toggleButton = document.getElementById('darkModeToggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
 
 </body>
 </html>
