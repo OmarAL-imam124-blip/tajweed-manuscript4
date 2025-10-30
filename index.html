@@ -149,11 +149,65 @@ button:hover, .smart-nav-btn:hover {
   width: 100%;
 }
 
-.hadith-intro {
+/* ===== قسم المقدمة (التمهيدية) ===== */
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  max-width: 900px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* لضبط توازن المحتوى داخل الصفحة */
+.intro-section * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* تدرّج الظهور */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تحسين الخطوط */
+.intro-section h3,
+.intro-section blockquote,
+.intro-section p {
   font-family: 'Amiri', serif;
-  color: #c29a5c; /* ذهبي ناعم */
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  color: #4b2e05; /* البني الغامق */
+}
+
+.hadith-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.hadith-source {
+  font-size: 1rem;
+  color: #6a4b1c;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  line-height: 1.8;
+  color: #3c2a08;
+  max-width: 750px;
 }
 
 .hadith-text {
@@ -1096,7 +1150,7 @@ button:hover, .smart-nav-btn:hover {
                     <p class="text-center text-sm -mt-2 mb-4">مصري الجنسية</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">الإجازة:</strong> مجاز بقراءة الإمام عاصم الكوفي براوييه شعبة وحفص من طريق الشاطبية.</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">العمل:</strong> معلم أساسي في مدرسة القرآن الكريم.</p>
-                    <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> المطوّر والمشرف على تنفيذ البنية التقنية للموقع ومحتواه التعليمي، تولّى تطوير وتصميم الموقع وتحويل المحتوى التعليمي إلى تجربة رقمية متكاملة.</p>
+                    <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> </p>
                 </div>
                 <div class="text-center">
                     <a href="https://wa.me/201003328748" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-base bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105">
@@ -1151,15 +1205,21 @@ button:hover, .smart-nav-btn:hover {
         <div id="main-content-template">
             <div class="px-4 md:px-8 py-6 max-w-5xl mx-auto">
                 <div class="rule-card">
-                   <!-- ✨ حديث شريف في مقدمة الموقع ✨ -->
-<section class="hadith-section">
+                   <section class="intro-section">
   <div class="hadith-content">
-    <h3 class="hadith-intro">قال رسول الله ﷺ</h3>
+    <h3>قال رسول الله ﷺ</h3>
     <blockquote class="hadith-text">
       "خيرُكم من تعلَّمَ القرآنَ وعلَّمه"
     </blockquote>
     <p class="hadith-source">— رواه البخاري —</p>
   </div>
+
+  <p class="intro-text">
+    علم التجويد هو علم يهدف إلى تلاوة القرآن الكريم كما أُنزل، 
+    محافظًا على مخارج الحروف وصفاتها. 
+    ومن خلال هذه المنصة التعليمية، نسعى لتبسيط قواعد التجويد 
+    بالشرح المصوّر والتفاعل المباشر لتسهيل الفهم والتطبيق.
+  </p>
 </section>
 
                     <div class="rule-card-header"><h2 class="rule-title text-2xl md:text-3xl">ما هو علم <span class="glossary-term" data-term="التجويد">التجويد</span>؟</h2></div>
