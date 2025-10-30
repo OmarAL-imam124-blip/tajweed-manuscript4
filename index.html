@@ -77,6 +77,47 @@ button:hover, .smart-nav-btn:hover {
     transition: all 0.3s ease;
 }
 
+/* ===== تحسين الشريط العلوي للعرض على الموبايل ===== */
+header, nav, .navbar {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap; /* يسمح بانتقال الأيقونات للسطر التالي عند ضيق العرض */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  box-sizing: border-box;
+}
+
+.navbar a, 
+.navbar button, 
+.navbar .icon {
+  flex-shrink: 0; /* يمنع تصغير الأيقونات */
+}
+
+/* يخلي الشريط متجاوب بشكل متناسق مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .navbar .icon, 
+  .navbar a, 
+  .navbar button {
+    font-size: 1rem;
+  }
+
+  .floating-lamhah-btn {
+    position: static; /* يخلي زر اللمحة يدخل ضمن الشريط بدل ما يطلع بره */
+    transform: none;
+  }
+}
+
 .about-preview h2 { color: #4e3b2a; margin-bottom: 10px; }
 .about-preview p { color: #5a4632; line-height: 1.5; }
 .about-preview a {
@@ -1150,7 +1191,9 @@ button:hover, .smart-nav-btn:hover {
                     <p class="text-center text-sm -mt-2 mb-4">مصري الجنسية</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">الإجازة:</strong> مجاز بقراءة الإمام عاصم الكوفي براوييه شعبة وحفص من طريق الشاطبية.</p>
                     <p><strong class="font-semibold" style="color: var(--color-gold-dark);">العمل:</strong> معلم أساسي في مدرسة القرآن الكريم.</p>
-                    <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> </p>
+                    <p><strong class="font-semibold" style="color: var(--color-gold-dark);">دوره:</strong> المطوّر والمشرف على تنفيذ البنية التقنية للموقع ومحتواه التعليمي، تولّى تطوير وتصميم الموقع وتحويل المحتوى التعليمي إلى تجربة رقمية متكاملة.
+
+</p>
                 </div>
                 <div class="text-center">
                     <a href="https://wa.me/201003328748" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-base bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105">
