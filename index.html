@@ -1462,48 +1462,80 @@ header, nav, .navbar {
       <h3 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-600 inline-block pb-1">📖 الكتب العربية</h3>
     </div>
 
-<!-- 📖 المصحف التفاعلي المنبثق -->
-<div class="bg-[#3b2a1a] text-white rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 cursor-pointer animate-fade p-5 text-center" onclick="openQuranPopup()">
-  <h3 class="text-xl font-bold mb-2">📖 مصحف التجويد التفاعلي</h3>
-  <p class="text-gray-200 text-sm">اضغط هنا لفتح المصحف في نافذة منبثقة وتصفح الصفحات مباشرة من Quran.com.</p>
+<!-- 🌿 تبويب المصحف التفاعلي -->
+<div class="my-8 border border-amber-700/30 rounded-2xl shadow-lg overflow-hidden bg-[#3b2a1a] transition-all duration-500">
+  <button onclick="openQuranPopup()" class="w-full flex justify-between items-center bg-[#3b2a1a] hover:bg-[#2f2419] text-white text-2xl font-bold py-4 px-6 transition duration-300">
+    <div class="flex items-center gap-2">
+      📖 المصحف التفاعلي
+    </div>
+  </button>
 </div>
 
 <!-- نافذة منبثقة للمصحف -->
 <div id="quran-popup" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center hidden z-50">
-  <div class="bg-white w-11/12 md:w-3/4 h-4/5 rounded-xl shadow-lg relative">
-    <button onclick="closeQuranPopup()" class="absolute top-3 right-3 text-2xl font-bold text-red-600">✖</button>
-    
-    <!-- iframe المصحف من Quran.com -->
-    <iframe id="quran-iframe" 
-            src="https://quran.com/embed?translations=131&font=v1&theme=light" 
-            class="w-full h-full rounded-xl" allowfullscreen></iframe>
-    
+  <div class="bg-white w-11/12 md:w-4/5 h-4/5 rounded-xl shadow-lg relative flex flex-col">
+    <!-- زر الإغلاق -->
+    <button onclick="closeQuranPopup()" class="absolute top-3 right-3 text-2xl font-bold text-red-600 z-50">✖</button>
+
+    <!-- iframe المصحف -->
+    <iframe id="quran-frame" 
+            src="https://quran.com" 
+            class="w-full h-full rounded-xl mt-10 shadow-inner flex-1 transition-all duration-500"
+            allowfullscreen>
+    </iframe>
+
     <!-- أزرار التحكم -->
-    <div class="absolute bottom-3 right-3 flex gap-2">
-      <button onclick="toggleFullscreen('quran-iframe')" class="bg-amber-700 text-white px-3 py-1 rounded">تكبير/تصغير</button>
-      <a href="https://quran.com/download" target="_blank" class="bg-green-600 text-white px-3 py-1 rounded">تحميل المصحف</a>
+    <div class="absolute bottom-4 right-4 flex gap-2 z-50">
+      <button id="fullscreen-btn" onclick="toggleFullscreen()" class="bg-amber-500 hover:bg-amber-400 text-white font-semibold px-3 py-1 rounded-lg transition">
+        ⛶ تكبير/تصغير
+      </button>
+      <a href="https://ia803207.us.archive.org/18/items/quran-pdf_202103/quran.pdf" target="_blank" 
+         class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-3 py-1 rounded-lg shadow-md transition">
+        📥 تحميل PDF
+      </a>
     </div>
-    
   </div>
 </div>
 
+<!-- 🎵 ملف الصوت -->
+<audio id="toggle-sound" preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_03ba356c3e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🧠 كود التحكم -->
 <script>
-function openQuranPopup() {
-  document.getElementById('quran-popup').classList.remove('hidden');
-}
+  function openQuranPopup() {
+    const popup = document.getElementById('quran-popup');
+    const sound = document.getElementById('toggle-sound');
+    popup.classList.remove('hidden');
 
-function closeQuranPopup() {
-  document.getElementById('quran-popup').classList.add('hidden');
-}
-
-function toggleFullscreen(iframeId) {
-  const iframe = document.getElementById(iframeId);
-  if (!document.fullscreenElement) {
-    iframe.requestFullscreen?.();
-  } else {
-    document.exitFullscreen?.();
+    sound.currentTime = 0;
+    sound.play();
   }
-}
+
+  function closeQuranPopup() {
+    const popup = document.getElementById('quran-popup');
+    popup.classList.add('hidden');
+  }
+
+  function toggleFullscreen() {
+    const frame = document.getElementById('quran-frame');
+    const button = document.getElementById('fullscreen-btn');
+
+    if (!document.fullscreenElement) {
+      frame.requestFullscreen().then(() => {
+        button.textContent = '⤺ تصغير';
+        button.classList.add('bg-red-600', 'hover:bg-red-500');
+        button.classList.remove('bg-amber-500', 'hover:bg-amber-400');
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        button.textContent = '⛶ تكبير/تصغير';
+        button.classList.add('bg-amber-500', 'hover:bg-amber-400');
+        button.classList.remove('bg-red-600', 'hover:bg-red-500');
+      });
+    }
+  }
 </script>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
