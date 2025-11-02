@@ -1439,67 +1439,166 @@ header, nav, .navbar {
            <!-- 📚 المكتبة الرقمية للعلوم القرآنية -->
 <section id="library-section" class="max-w-5xl mx-auto mt-10 mb-16 p-6 bg-gradient-to-b from-[#f8f5f0] to-[#f2e8da] rounded-3xl shadow-xl border border-amber-800/30 font-[Amiri] text-right">
   <button onclick="toggleLibrary()" class="w-full flex justify-between items-center bg-[#4b2e05] hover:bg-[#3a2404] text-white text-2xl font-bold py-4 px-6 rounded-2xl shadow-lg transition duration-300">
-  <div class="flex items-center">
-    <!--  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <defs>
-    <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#b8860b"/>
-    </linearGradient>
-  </defs>
-  <path d="M2 4h8a2 2 0 012 2v14a2 2 0 01-2-2H2zM22 4h-8a2 2 0 00-2 2v14a2 2 0 012-2h8z"/>
-</svg>  -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-6 h-6 mr-2 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 5h18M8 5v14m8-14v14M5 19h14a2 2 0 002-2V5H3v12a2 2 0 002 2z"/>
-    </svg>
-    المكتبة الرقمية للعلوم القرآنية
-  </div>
-  <span id="library-toggle-icon" class="text-white text-2xl">+</span>
-</button>
+    <div class="flex items-center">
+      <!-- 🌟 أيقونة الكتاب الذهبية -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <defs>
+          <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#b8860b"/>
+          </linearGradient>
+        </defs>
+        <path d="M2 4h8a2 2 0 012 2v14a2 2 0 01-2-2H2zM22 4h-8a2 2 0 00-2 2v14a2 2 0 012-2h8z"/>
+      </svg>
+      المكتبة الرقمية للعلوم القرآنية
+    </div>
+    <span id="library-toggle-icon" class="text-white text-2xl">+</span>
+  </button>
 
   <div id="library-content" class="hidden mt-6 space-y-6">
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer" onclick="openBookModal('https://drive.google.com/file/d/17x_gbzApfT0B-QiLt2pV5F78DVSW7mBP/preview')">
+    
+    <!-- 🎓 القسم العربي -->
+    <div class="text-center my-6">
+      <h3 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-600 inline-block pb-1">📖 الكتب العربية</h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      
+      <!-- 📖 مصحف التجويد -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/17x_gbzApfT0B-QiLt2pV5F78DVSW7mBP/preview')">
         <div class="p-5">
           <h3 class="text-xl font-bold text-amber-800 mb-2">📖 مصحف التجويد</h3>
           <p class="text-gray-700 text-sm leading-relaxed">مصحف ملون يوضح أحكام التجويد عمليًا.</p>
         </div>
       </div>
 
-      <div class="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer" onclick="openBookModal('https://drive.google.com/file/d/1z71tOEfusj5B9hO0lSzQdamUSjbUDa__/preview')">
+      <!-- 📘 الميسر المفيد في أحكام التجويد -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1z71tOEfusj5B9hO0lSzQdamUSjbUDa__/preview')">
         <div class="p-5">
           <h3 class="text-xl font-bold text-amber-800 mb-2">📘 الميسر المفيد في أحكام التجويد</h3>
           <p class="text-gray-700 text-sm leading-relaxed">تأليف الشيخ يوسف أحمد القاسم – مرجع مبسط وشامل لأحكام التجويد.</p>
         </div>
       </div>
+      
+<!-- 📕 نور البيان لتعليم القراءة وترتيل القرآن -->
+<div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade"
+     onclick="openBookModal('https://drive.google.com/file/d/1AYXFIqKRTBdWgaiNKycykIiLll_mybKi/preview')">
+  <div class="p-5">
+    <h3 class="text-xl font-bold text-amber-800 mb-2">📕 نور البيان لتعليم القراءة وترتيل القرآن</h3>
+    <p class="text-gray-700 text-sm leading-relaxed">
+      منهج تعليمي متكامل لتعليم الأطفال والكبار القراءة الصحيحة للقرآن الكريم، بأسلوب مبسط ومتدرج.
+    </p>
+  </div>
+</div>
 
-      <div class="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer" onclick="openBookModal('https://drive.google.com/file/d/1O1k5FRmHlnZQGjbGkSv-mHIW1JgGUPHW/preview')">
+      <!-- 📗 حصن المسلم للأطفال -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1O1k5FRmHlnZQGjbGkSv-mHIW1JgGUPHW/preview')">
         <div class="p-5">
           <h3 class="text-xl font-bold text-amber-800 mb-2">📗 حصن المسلم للأطفال</h3>
           <p class="text-gray-700 text-sm leading-relaxed">مجموعة من الأذكار اليومية مبسطة للأطفال.</p>
         </div>
       </div>
+
+      <!-- 📘 الرياحين في شرح تُحفة الأطفال للمبتدئين -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1A4hMs5lHqCgyyQGGTzc0U5seH-T9oRcU/preview')">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-800 mb-2">📘 الرياحين في شرح تُحفة الأطفال للمبتدئين</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">شرح مبسط وميسر لمتن تُحفة الأطفال، مناسب للمبتدئين في دراسة علم التجويد.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- ✨ الجملة الختامية المزخرفة -->
-    <div class="text-center mt-10 text-lg md:text-xl text-amber-900 font-semibold border-t border-amber-700/20 pt-6 relative leading-relaxed">
-      <div class="flex justify-center items-center gap-3">
-        <span class="text-amber-700 text-2xl">﴿</span>
-        <p>
-          نحن في انتظار آرائكم واقتراحاتكم، وإن كنت ترغب في إضافة كتاب معين إلى المكتبة،
-          <a href="mailto:omaralimam141@gmail.com?subject=اقتراح%20إضافة%20كتاب%20جديد%20إلى%20المكتبة" class="text-amber-700 hover:text-amber-900 font-bold underline decoration-dotted">
-         <a href="mailto:omaralimam141@gmail.com?subject=اقتراح%20إضافة%20كتاب%20جديد%20إلى%20المكتبة&body=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0A%0Aأود%20اقتراح%20إضافة%20الكتاب%20التالي%20إلى%20المكتبة%20الرقمية%20للعلوم%20القرآنية%3A%0A%0Aاسم%20الكتاب%3A%0Aالمؤلف%3A%0Aرابط%20التحميل%20(إن%20وجد)%3A%0A%0Aجزاكم%20الله%20خيرًا%20ونفع%20بكم." 
-class="text-amber-700 hover:text-amber-900 font-bold underline decoration-dotted">
-📩 راسلنا
-</a>
-          وسنقوم بإضافته بإذن الله في أقرب وقت، فغايتنا خدمة طلاب العلم وتيسير سبل التعلم.
-        </p>
-        <span class="text-amber-700 text-2xl">﴾</span>
+    <!-- ✨ فاصل -->
+    <div class="my-10 border-t border-amber-300 w-2/3 mx-auto opacity-70"></div>
+
+    <!-- 🌍 القسم الإنجليزي -->
+    <div class="text-center my-6">
+      <h3 class="text-2xl font-bold text-amber-800 border-b-2 border-amber-600 inline-block pb-1">🌍 English Section</h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      
+      <!-- 📗 Advanced Tajweed Book -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1VNwCDPWWg8dE7irDZqhWJATAnu4HqGQK/preview')">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-800 mb-1">📗 Advanced Tajweed Book</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">A comprehensive reference for advanced learners covering detailed Tajweed rules and applications.</p>
+        </div>
+      </div>
+
+      <!-- 📘 Tajweed Rules -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1zJguEVj1HgTJJn1jj28IkA2e1cffHMiM/preview')">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-800 mb-1">📘 Tajweed Rules</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">A concise and structured guide summarizing essential Tajweed principles for students and teachers.</p>
+        </div>
+      </div>
+
+      <!-- 📗 نور البيان | Noor Al-Bayan -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1Xu7fEuads5hOGwylseY2aOPvS8IffMGv/preview')">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-800 mb-1">📗 نور البيان <span class="text-gray-600">| Noor Al-Bayan</span></h3>
+          <p class="text-gray-700 text-sm leading-relaxed">A foundational Arabic reading and pronunciation curriculum for Quran learners.</p>
+        </div>
+      </div>
+
+      <!-- 📘 تحفة الأطفال | Tuhfat Al-Atfal -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/177EptKA9eu3SNRafAeqcy0hOx76tdPDG/preview')">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-800 mb-1">📘 تحفة الأطفال <span class="text-gray-600">| Tuhfat Al-Atfal</span></h3>
+          <p class="text-gray-700 text-sm leading-relaxed">A classic didactic poem introducing the rules of Tajweed, suitable for beginners and students of Quranic recitation.</p>
+        </div>
+      </div>
+
+<!-- 📘 دليل مُعلّم القرآن في إدارة الحصة الأونلاين | Guide for Quran Teachers in Managing Online Classes -->
+<div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade"
+     onclick="openBookModal('https://drive.google.com/file/d/17OnC_GwZYTbiW89-bDJFkMRSgb4iKRZr/preview')">
+  <div class="p-5">
+    <h3 class="text-xl font-bold text-amber-800 mb-1">
+      📘 دليل مُعلّم القرآن في إدارة الحصة الأونلاين
+      <span class="text-gray-600">| Guide for Quran Teachers in Managing Online Classes</span>
+    </h3>
+    <p class="text-gray-700 text-sm leading-relaxed">
+      A practical guide for Quran teachers to effectively manage online lessons and engage students efficiently.
+    </p>
+  </div>
+</div>
+
+      <!-- 📕 تفسير معاني القرآن الكريم | Interpretation of the Meanings of the Holy Quran -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer animate-fade" onclick="openBookModal('https://drive.google.com/file/d/1woaZCKYLK8yTVWQokaAfIBAyy2h6PaOE/preview')">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-amber-800 mb-1">📕 تفسير معاني القرآن الكريم <span class="text-gray-600">| Interpretation of the Meanings of the Holy Quran</span></h3>
+          <p class="text-gray-700 text-sm leading-relaxed">An English-translated interpretation of the meanings of the Holy Quran, aiming to help non-Arabic speakers understand the divine message.</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- ✨ الجملة الختامية -->
+  <div class="text-center mt-10 text-lg md:text-xl text-amber-900 font-semibold border-t border-amber-700/20 pt-6 relative leading-relaxed">
+    <div class="flex justify-center items-center gap-3">
+      <span class="text-amber-700 text-2xl">﴿</span>
+      <p>
+        نحن في انتظار آرائكم واقتراحاتكم، وإن كنت ترغب في إضافة كتاب معين إلى المكتبة،
+        <a href="mailto:omaralimam141@gmail.com?subject=اقتراح%20إضافة%20كتاب%20جديد%20إلى%20المكتبة&body=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0A%0Aأود%20اقتراح%20إضافة%20الكتاب%20التالي%20إلى%20المكتبة%20الرقمية%20للعلوم%20القرآنية%3A%0A%0Aاسم%20الكتاب%3A%0Aالمؤلف%3A%0Aرابط%20التحميل%20(إن%20وجد)%3A%0A%0Aجزاكم%20الله%20خيرًا%20ونفع%20بكم." 
+           class="text-amber-700 hover:text-amber-900 font-bold underline decoration-dotted">📩 راسلنا</a>
+        وسنقوم بإضافته بإذن الله في أقرب وقت، فغايتنا خدمة طلاب العلم وتيسير سبل التعلم.
+      </p>
+      <span class="text-amber-700 text-2xl">﴾</span>
+    </div>
+  </div>
 </section>
+
+<!-- ✨ مؤثر دخول بسيط -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade {
+    animation: fadeIn 1s ease both;
+  }
+</style>
             <div class="text-center pt-8">
                 <h2 class="rule-title text-3xl md:text-4xl">الفهرس</h2>
             </div>
